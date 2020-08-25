@@ -1,0 +1,92 @@
+
+2020-04-30 13:52:44
+AttributeError("'tuple' object has no attribute 'append'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 134, in delete_producingplan
+    args.append(autoid)
+AttributeError: 'tuple' object has no attribute 'append'
+
+删除生产记录时出错
+
+2020-04-30 13:54:56
+AttributeError("'tuple' object has no attribute 'append'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 134, in delete_producingplan
+    args.append(autoid)
+AttributeError: 'tuple' object has no attribute 'append'
+
+删除生产记录时出错
+1
+
+2020-04-30 13:59:52
+AttributeError("'tuple' object has no attribute 'append'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 134, in delete_producingplan
+    args.append(autoid)
+AttributeError: 'tuple' object has no attribute 'append'
+
+删除生产记录时出错
+kwargs={"arg": [1], "flag": "2568"}
+-------------------------------------------------------
+2020-04-30 13:59:52
+AttributeError("'tuple' object has no attribute 'append'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 134, in delete_producingplan
+    args.append(autoid)
+AttributeError: 'tuple' object has no attribute 'append'
+
+删除生产记录时出错
+kwargs={"arg": [1], "flag": "2568"}
+-------------------------------------------------------
+2020-04-30 14:03:28
+AttributeError("'tuple' object has no attribute 'append'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 134, in delete_producingplan
+    args.append(autoid)
+AttributeError: 'tuple' object has no attribute 'append'
+
+删除生产记录时出错
+kwargs={"arg": [1], "flag": "2568"}
+-------------------------------------------------------
+2020-04-30 14:07:39
+AttributeError("'tuple' object has no attribute 'append'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 134, in delete_producingplan
+    args.append(autoid)
+AttributeError: 'tuple' object has no attribute 'append'
+
+删除生产记录时出错
+kwargs={"arg": [0], "flag": "2569"}
+-------------------------------------------------------
+2020-04-30 14:10:03
+AttributeError("'tuple' object has no attribute 'append'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 134, in delete_producingplan
+    args.append(autoid)
+AttributeError: 'tuple' object has no attribute 'append'
+
+删除生产记录时出错
+kwargs={"arg": [0], "flag": "2569"}
+-------------------------------------------------------
+2020-04-30 14:24:17
+UnboundLocalError("local variable 'list' referenced before assignment")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 133, in delete_producingplan
+    list = list(args)
+UnboundLocalError: local variable 'list' referenced before assignment
+
+删除生产记录时出错
+2569
+kwargs={"flat": 0}
+-------------------------------------------------------
+2020-04-30 14:26:03
+UnboundLocalError("local variable 'list' referenced before assignment")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 133, in delete_producingplan
+    list = list(args)
+UnboundLocalError: local variable 'list' referenced before assignment
+
+删除生产记录时出错
+2569
+kwargs={"flat": 0}
+-------------------------------------------------------

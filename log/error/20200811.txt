@@ -1,0 +1,66 @@
+
+2020-08-11 09:59:57
+<class 'ValueError'>
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 313, in on_treeWidget_drawstuff_droped
+    res = self.reckon_drawamount(srid, presamount, precision, pracamount_expression, drawamount_expression, loss, False)
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 242, in reckon_drawamount
+    if stuffkindorsrid != (item['stuffkind'] if flat else item['srid']):
+KeyError: 'srid'
+
+拖动库存信息时出错,没有找到对应的库存记录,
+1815
+args=[null]
+--------------------
+2020-08-11 10:02:07
+<class 'ValueError'>
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 314, in on_treeWidget_drawstuff_droped
+    res = self.reckon_drawamount(p_str, presamount, precision, pracamount_expression, drawamount_expression, loss, False)
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 243, in reckon_drawamount
+    if stuffkindorsrid != (item['stuffkind'] if flat else str(item['srid'])):
+KeyError: 'srid'
+
+拖动库存信息时出错,没有找到对应的库存记录,
+1815
+args=[null]
+--------------------
+2020-08-11 10:03:48
+<class 'ValueError'>
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 316, in on_treeWidget_drawstuff_droped
+    res = self.reckon_drawamount(p_str, presamount, precision, pracamount_expression, drawamount_expression, loss, False)
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 245, in reckon_drawamount
+    if stuffkindorsrid != (item['stuffkind'] if flat else str(item['srid'])):
+KeyError: 'srid'
+
+拖动库存信息时出错,没有找到对应的库存记录,
+1815
+args=[null]
+--------------------
+2020-08-11 10:05:40
+<class 'ValueError'>
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 317, in on_treeWidget_drawstuff_droped
+    res = self.reckon_drawamount(p_str, presamount, precision, pracamount_expression, drawamount_expression, loss, False)
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 245, in reckon_drawamount
+    if stuffkindorsrid != (item['stuffkind'] if flat else str(item['srid'])):
+KeyError: 'srid'
+
+拖动库存信息时出错,没有找到对应的库存记录,
+1815
+args=[null]
+--------------------
+2020-08-11 10:08:01
+<class 'ValueError'>
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 318, in on_treeWidget_drawstuff_droped
+    res = self.reckon_drawamount(p_str, presamount, precision, pracamount_expression, drawamount_expression, loss, False)
+  File "d:\pyproject\GMPsystem\warehouse\modules\drawstuffmodule.py", line 245, in reckon_drawamount
+    if stuffkindorsrid != (item['stuffkind'] if flat else str(item['srid'])):
+KeyError: 'srid'
+
+拖动库存信息时出错,没有找到对应的库存记录,
+1815
+args=[null]
+--------------------

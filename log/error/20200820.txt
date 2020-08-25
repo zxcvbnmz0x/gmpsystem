@@ -1,0 +1,32 @@
+
+2020-08-20 08:32:19
+FieldError("Cannot resolve keyword 'unit' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1866, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'unit' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 63, in get_prodstuff
+    res = Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 836, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 804, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2146, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1889, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'unit' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname
+
+获取产品物料时出错
+lrid
+args=["stuffid", "stuffname", "batchno", "spec", "package", "presamount", "realamount", "drawamount", "content", "cunit", "water", "impurity", "rdensity", "unit", "presunit"]
+kwargs={"sdpid": "6870"}
+--------------------

@@ -1,0 +1,25 @@
+abs(x)	x的绝对值，代替||
+rnd(x, num)	四舍六入五成双,x被修约的数字，num修约位数
+ceilf(x, num)	取整，x要修约的数，num = 1为向上取整，num = -1为向下取整，num为其他值只不做处理 
+x / y	精确除法（不修约）x除以y
+x // y	整除	x除以y取整
+x % y	取余	x除以y取余
+x * y	乘法	x乘以y
+x**num	幂函数	x的num次方
+x + y	加法	x加y
+x - y	减法	x减y
+log(x, base)	对数,x:对数的值。base:底数，默认为e
+log10(x)	以10为底的对数,x:要求对数的值
+log2(x)		以2为底的对数,x:要求对数的值
+sin(x)		x的正弦值
+tan(x)		正切函数
+mathe		数学常量e = 2.718281828459045
+mathpi		数学常量π = 3.141592653589793
+factorial(x)	x的阶乘
+pown(x,num)	开根号，x:要计算的数。num:开num次根，默认为2次根。
+x if 表达式 else y	判断,如果表达式为真则返回x,否则返回y
+
+sum(x,y,z..n)	多个数值求个
+avg(x,y,z..n)	多个数值求平均
+
+

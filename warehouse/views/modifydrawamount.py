@@ -1,0 +1,96 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'modifydrawamount.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.2
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(354, 138)
+        self.gridLayout = QtWidgets.QGridLayout(Dialog)
+        self.gridLayout.setObjectName("gridLayout")
+        self.label_unit = QtWidgets.QLabel(Dialog)
+        self.label_unit.setText("")
+        self.label_unit.setObjectName("label_unit")
+        self.gridLayout.addWidget(self.label_unit, 5, 2, 1, 1)
+        self.label_amount = QtWidgets.QLabel(Dialog)
+        self.label_amount.setText("")
+        self.label_amount.setObjectName("label_amount")
+        self.gridLayout.addWidget(self.label_amount, 3, 1, 1, 1)
+        self.label_useamount = QtWidgets.QLabel(Dialog)
+        self.label_useamount.setText("")
+        self.label_useamount.setObjectName("label_useamount")
+        self.gridLayout.addWidget(self.label_useamount, 4, 1, 1, 1)
+        self.lineEdit_drawamount = QtWidgets.QLineEdit(Dialog)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_drawamount.sizePolicy().hasHeightForWidth())
+        self.lineEdit_drawamount.setSizePolicy(sizePolicy)
+        self.lineEdit_drawamount.setObjectName("lineEdit_drawamount")
+        self.gridLayout.addWidget(self.lineEdit_drawamount, 5, 1, 1, 1)
+        self.label_6 = QtWidgets.QLabel(Dialog)
+        self.label_6.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_6.setObjectName("label_6")
+        self.gridLayout.addWidget(self.label_6, 5, 0, 1, 1)
+        self.label_stuff = QtWidgets.QLabel(Dialog)
+        self.label_stuff.setText("")
+        self.label_stuff.setObjectName("label_stuff")
+        self.gridLayout.addWidget(self.label_stuff, 0, 1, 1, 1)
+        self.label = QtWidgets.QLabel(Dialog)
+        self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.label_4 = QtWidgets.QLabel(Dialog)
+        self.label_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 3, 0, 1, 1)
+        self.label_batchno = QtWidgets.QLabel(Dialog)
+        self.label_batchno.setText("")
+        self.label_batchno.setObjectName("label_batchno")
+        self.gridLayout.addWidget(self.label_batchno, 2, 1, 1, 1)
+        self.label_3 = QtWidgets.QLabel(Dialog)
+        self.label_3.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+        self.label_5 = QtWidgets.QLabel(Dialog)
+        self.label_5.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_5.setObjectName("label_5")
+        self.gridLayout.addWidget(self.label_5, 4, 0, 1, 1)
+        self.pushButton_accept = QtWidgets.QPushButton(Dialog)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_accept.sizePolicy().hasHeightForWidth())
+        self.pushButton_accept.setSizePolicy(sizePolicy)
+        self.pushButton_accept.setObjectName("pushButton_accept")
+        self.gridLayout.addWidget(self.pushButton_accept, 6, 0, 1, 1)
+        self.pushButton_cancel = QtWidgets.QPushButton(Dialog)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_cancel.sizePolicy().hasHeightForWidth())
+        self.pushButton_cancel.setSizePolicy(sizePolicy)
+        self.pushButton_cancel.setObjectName("pushButton_cancel")
+        self.gridLayout.addWidget(self.pushButton_cancel, 6, 1, 1, 1)
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "请输入领料量"))
+        self.label_6.setText(_translate("Dialog", "请设置新的领取量："))
+        self.label.setText(_translate("Dialog", "物料名称："))
+        self.label_4.setText(_translate("Dialog", "库存剩余量："))
+        self.label_3.setText(_translate("Dialog", "进厂批号："))
+        self.label_5.setText(_translate("Dialog", "库存可使用量："))
+        self.pushButton_accept.setText(_translate("Dialog", "确认"))
+        self.pushButton_cancel.setText(_translate("Dialog", "取消"))

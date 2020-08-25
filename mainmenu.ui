@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>794</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>主界面</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="userloginimages.qrc">
+    <normaloff>:/images/mainwindowlogo.png</normaloff>:/images/mainwindowlogo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>390</y>
+      <width>221</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="usrnamelabel">
+       <property name="text">
+        <string>姓名</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="deptlabel">
+       <property name="text">
+        <string>部门</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="usrname">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="deptname">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="datatime">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QStackedWidget" name="workbench">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>10</y>
+      <width>570</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QTreeWidget" name="treeWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>220</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="indentation">
+       <number>0</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>部门编号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>部门名称</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+       <property name="text">
+        <string>人事部</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+       <property name="text">
+        <string>财务部</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+       <property name="text">
+        <string>生产部</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>301</string>
+        </property>
+        <property name="text">
+         <string>粉散剂车间</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>302</string>
+        </property>
+        <property name="text">
+         <string>颗粒剂车间</string>
+        </property>
+       </item>
+      </item>
+     </widget>
+     <widget class="QTreeWidget" name="clerkslist">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>0</y>
+        <width>351</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="indentation">
+       <number>0</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>编号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>姓名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>性别</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>出生日期</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>雇佣日期</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>文化程度</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>婚姻状况</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>身份证号码</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>联系方式</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string/>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+       <property name="text">
+        <string>sys</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+       <property name="text">
+        <string>tom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+       <property name="text">
+        <string>tony</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>4</string>
+       </property>
+       <property name="text">
+        <string>sim</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>5</string>
+       </property>
+       <property name="text">
+        <string>mary</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>6</string>
+       </property>
+       <property name="text">
+        <string>john</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>7</string>
+       </property>
+       <property name="text">
+        <string>jony</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QTabWidget" name="stufflist">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>561</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <widget class="QTreeWidget" name="treeWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>90</y>
+          <width>461</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>编号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>商品名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>通用名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>含量规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>包装规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>批准文号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>生产厂家</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>供应商</string>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+       <widget class="QTreeWidget" name="treeWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>40</y>
+          <width>461</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>编号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>商品名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>通用名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>含量规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>包装规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>批准文号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>生产厂家</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>供应商</string>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>页</string>
+       </attribute>
+       <widget class="QTreeWidget" name="treeWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>100</y>
+          <width>461</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>编号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>商品名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>通用名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>含量规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>包装规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>批准文号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>生产厂家</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>供应商</string>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>页</string>
+       </attribute>
+       <widget class="QTreeWidget" name="treeWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>461</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>编号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>商品名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>通用名</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>含量规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>包装规格</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>批准文号</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>生产厂家</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>供应商</string>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>新建项目</string>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QTreeWidget" name="menulist">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>220</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="indentation">
+     <number>0</number>
+    </property>
+    <attribute name="headerCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>模块名</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>基础资料</string>
+     </property>
+     <property name="flags">
+      <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+     </property>
+     <item>
+      <property name="text">
+       <string>部门员工管理</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>物料字典</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>产品字典</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>供应商管理</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>自定义文档</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>新建子项目</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>系统设置</string>
+      </property>
+     </item>
+    </item>
+    <item>
+     <property name="text">
+      <string>采购管理</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>质量管理</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>生产管理</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>794</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="userloginimages.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>menulist</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>display()</slot>
+ </slots>
+</ui>

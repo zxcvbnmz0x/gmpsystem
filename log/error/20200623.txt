@@ -1,0 +1,296 @@
+
+2020-06-23 14:48:07
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+-------------------------------------------------------
+2020-06-23 14:52:56
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+59
+
+2020-06-23 14:54:08
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+34
+
+2020-06-23 14:54:53
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+
+2020-06-23 14:56:06
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+
+2020-06-23 14:56:51
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+
+2020-06-23 15:00:29
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+
+2020-06-23 15:03:46
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+kwargs={"planamount": "2", "instructorid": "001", "instructorname": "sys02", "plantime": "2020-06-23 15:03:38", "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null}
+-------------------------------------------------------
+2020-06-23 15:04:49
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+kwargs={"planamount": "2", "instructorid": "001", "instructorname": "sys02", "plantime": "2020-06-23 15:04:41", "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null}
+-------------------------------------------------------
+2020-06-23 15:25:12
+AttributeError("'str' object has no attribute 'utcoffset'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\modules\editproducingplanmodule.py", line 218, in on_accept_button_clicked
+    **self.new_detail)
+  File "d:\pyproject\GMPsystem\product\controllers\product.py", line 51, in update_producingplan
+    return self.PM.update_producingplan(autoid, *args, **kwargs)
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 174, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 752, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1499, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1465, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 821, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1376, in get_db_prep_value
+    return connection.ops.adapt_datetimefield_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\operations.py", line 205, in adapt_datetimefield_value
+    if timezone.is_aware(value):
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\timezone.py", line 248, in is_aware
+    return value.utcoffset() is not None
+AttributeError: 'str' object has no attribute 'utcoffset'
+
+提交生产指令时出错
+kwargs={"planamount": "2", "instructorid": "001", "instructorname": "sys02", "plantime": "2020-06-23 15:25:04", "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null}
+--------------------

@@ -1,0 +1,509 @@
+
+2020-07-28 15:57:27
+IntegrityError(1048, "Column 'PaperType' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 102, in update_stuffdrawpaper
+    return Stuffdrawpaper.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 746, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 784, in save_base
+    force_update, using, update_fields,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 926, in _do_insert
+    using=using, raw=raw,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+更新领料单信息时出错
+
+2020-07-28 15:58:09
+IntegrityError(1048, "Column 'PaperType' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 102, in update_stuffdrawpaper
+    return Stuffdrawpaper.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 746, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 784, in save_base
+    force_update, using, update_fields,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 926, in _do_insert
+    using=using, raw=raw,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+更新领料单信息时出错
+
+2020-07-28 15:58:56
+IntegrityError(1048, "Column 'PaperType' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 102, in update_stuffdrawpaper
+    return Stuffdrawpaper.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 746, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 784, in save_base
+    force_update, using, update_fields,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 926, in _do_insert
+    using=using, raw=raw,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+更新领料单信息时出错
+
+2020-07-28 15:59:51
+IntegrityError(1048, "Column 'PaperType' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 102, in update_stuffdrawpaper
+    return Stuffdrawpaper.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 746, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 784, in save_base
+    force_update, using, update_fields,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 926, in _do_insert
+    using=using, raw=raw,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'PaperType' cannot be null")
+
+更新领料单信息时出错
+kwargs={"status": 1, "chargerid": "001", "chargername": "sys02", "applytime": "2020-07-28 15:59:49"}
+--------------------
+2020-07-28 16:02:04
+TypeError("'int' object is not iterable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 100, in update_stuffdrawpaper
+    return Stuffdrawpaper.objects.filter(autoid__in=autoid).update(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1382, in _add_q
+    check_filterable=check_filterable,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1312, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1166, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\lookups.py", line 217, in get_prep_lookup
+    for rhs_value in self.rhs:
+TypeError: 'int' object is not iterable
+
+更新领料单信息时出错
+6781
+kwargs={"status": 1, "chargerid": "001", "chargername": "sys02", "applytime": "2020-07-28 16:02:02"}
+--------------------
+2020-07-28 16:45:26
+TypeError('len() takes exactly one argument (0 given)')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 63, in get_prodstuff
+    if len(*args):
+TypeError: len() takes exactly one argument (0 given)
+
+获取产品物料时出错
+kwargs={"sdpid": 6781}
+--------------------
+2020-07-28 16:46:58
+TypeError('len() takes exactly one argument (12 given)')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 63, in get_prodstuff
+    if len(*args):
+TypeError: len() takes exactly one argument (12 given)
+
+获取产品物料时出错
+stuffid
+args=["stuffname", "batchno", "presamount", "realamount", "drawamount", "content", "water", "impurity", "rdensity", "unit", "presunit"]
+kwargs={"sdpid": 6781}
+--------------------
+2020-07-28 16:48:30
+FieldError("Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1866, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 64, in get_prodstuff
+    return Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 836, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 804, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2146, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1889, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+获取产品物料时出错
+stuffid
+args=["stuffname", "batchno", "presamount", "realamount", "drawamount", "content", "water", "impurity", "rdensity", "unit", "presunit"]
+kwargs={"sdpid": 6781}
+--------------------
+2020-07-28 16:51:05
+FieldError("Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1866, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 64, in get_prodstuff
+    return Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 836, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 804, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2146, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1889, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+获取产品物料时出错
+stuffid
+args=["stuffname", "batchno", "presamount", "realamount", "drawamount", "content", "water", "impurity", "rdensity", "unit", "presunit"]
+kwargs={"sdpid": 6781}
+--------------------
+2020-07-28 16:52:15
+FieldError("Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1866, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 64, in get_prodstuff
+    return Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 836, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 804, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2146, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1889, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'rdensity' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, rDensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+获取产品物料时出错
+stuffid
+args=["stuffname", "batchno", "presamount", "realamount", "drawamount", "content", "water", "impurity", "rdensity", "unit", "presunit"]
+kwargs={"sdpid": 6781}
+--------------------
+2020-07-28 17:10:55
+FieldError("Cannot resolve keyword 'stuffname' into field. Join on 'stuffid' not permitted.")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1586, in transform
+    return self.try_transform(wrapped, name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1201, in try_transform
+    "permitted%s" % (name, output_field.__name__, suggestion)
+django.core.exceptions.FieldError: Unsupported lookup 'stuffname' for CharField or join on the field not permitted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 64, in get_prodstuff
+    return Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 836, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 804, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2146, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1873, in add_fields
+    cols.append(join_info.transform_function(target, final_alias))
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1590, in transform
+    raise last_field_exception
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1517, in names_to_path
+    " not permitted." % (names[pos + 1], name))
+django.core.exceptions.FieldError: Cannot resolve keyword 'stuffname' into field. Join on 'stuffid' not permitted.
+
+获取产品物料时出错
+autoid
+args=["lrid", "stuffid__stuffname", "batchno", "presamount", "realamount", "drawamount", "content", "water", "impurity", "rdensity", "unit", "presunit"]
+kwargs={"sdpid": 6781}
+--------------------

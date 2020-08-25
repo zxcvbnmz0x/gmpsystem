@@ -1,0 +1,32 @@
+
+2020-08-17 16:22:27
+FieldError("Cannot resolve keyword 'basicunit, lrid' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1866, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'basicunit, lrid' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\GMPsystem\warehouse\models\warehousemodel.py", line 33, in get_stuffrepository
+    return res.values(*args)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 809, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 804, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2146, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1889, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'basicunit, lrid' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water
+
+WarehouseModel-get_stuffrepository获取库存信息时出错
+autoid
+args=["stuffkind", "stuffid", "stuffname", "spec", "package", "batchno", "mbatchno", "amount", "producer", "supid", "content", "cunit", "water", "rdensity", "impurity", "basicunit, lrid"]
+kwargs={"stuffkind__in": ["无水葡萄糖", "酒石酸泰万菌素"], "amount__gt": 0}
+--------------------

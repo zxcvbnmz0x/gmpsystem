@@ -1,0 +1,356 @@
+#设置产品字典
+ALTER TABLE `productdictionary`
+MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ,
+MODIFY COLUMN `InputCode`  varchar(60) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `ProdName`;
+
+#设置生产指令的默认值
+ALTER TABLE `producingplan`
+MODIFY COLUMN `spec`  varchar(200) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `CommonName`,
+MODIFY COLUMN `PlanAmount`  decimal(10,2) NOT NULL DEFAULT 0 AFTER `ProductGist`,
+MODIFY COLUMN `RealAmount`  decimal(10,2) NOT NULL DEFAULT 0 AFTER `PlanTime`,
+MODIFY COLUMN `status`  int(11) NOT NULL DEFAULT 0 AFTER `StatusTime`,
+MODIFY COLUMN `MidStatus`  int(11) NOT NULL DEFAULT 0 AFTER `status`,
+MODIFY COLUMN `ProdStatus`  int(11) NOT NULL DEFAULT 0 AFTER `MidStatus`,
+MODIFY COLUMN `plType`  int(11) NOT NULL DEFAULT 0 AFTER `bpDate`,
+MODIFY COLUMN `bpExecutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `plType`,
+MODIFY COLUMN `bpExecutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `bpExecutorID`,
+MODIFY COLUMN `bpExecuteTime`  datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `bpExecutorName`,
+MODIFY COLUMN `hpUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `bpExecuteTime`,
+MODIFY COLUMN `bpAmount`  int(11) NOT NULL DEFAULT 0 AFTER `hpUnit`,
+MODIFY COLUMN `DayKind`  tinyint(4) NOT NULL DEFAULT 0 AFTER `bpAmount`,
+MODIFY COLUMN `plflag`  int(11) NOT NULL DEFAULT 0 AFTER `DayKind`,
+AUTO_INCREMENT=4;
+
+
+#建立生产指令
+delimiter $$
+CREATE FUNCTION createproducingplan(flag int, id varchar(40)) RETURNS int(11)
+begin
+if flag=0
+then
+insert into producingplan (prodid,prodname,commonname,spec,medkind,package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basicamount,basicunit,lineid,expireddates) 
+				    select prodid,prodname,commonname,spec,medkind,package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basicamount,basicunit,plid,expireddates from productdictionary where autoid = id;
+elseif flag = 1
+then
+insert into producingplan (prodid,prodname,commonname,spec,medkind,package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basucamount,basicunit,lineid,expireddates) select prodid,prodname,kind,spec,'前处理',package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basicamount,basicunit,plid,expireddays from productdictionary where autoid = id;
+else
+return 0;
+end if;
+select last_insert_id() into @autoid;
+update producingplan as pp, productline as pl set pp.linename=pl.linename,pp.workshopid=pl.deptid,pp.workshopname=pl.deptname  where pp.autoid = @autoid and pp.lineid = pl.autoid;
+return @autoid;
+end$$
+delimiter ;
+
+#生产线增加设置物料仓和成品仓
+ALTER TABLE `productline`
+ADD COLUMN `StuffWorkshopID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `plflag`,
+ADD COLUMN `ProductWorkshopID`  varchar(10) CHARACTER SET gbk NOT NULL DEFAULT '' AFTER `StuffWorkshopID`;
+
+#部门增加索引
+ALTER TABLE `department`
+ADD INDEX `DeptID` (`DeptID`) USING BTREE ;
+
+#中间产品请验单序号改到-17，原来的清场合格证（正本）（-17）开始都往后-1
+update postdocument set docid=docid-1 where docid<=-17;
+update postdocument set docid=-17 where docid = -31;
+update linepostdocumentset docid=docid-1 where docid<=-17;
+update linepostdocumentset set docid=-17 where docid = -31;
+update labrecords set labtype = labtype+1 where labtype>=4;
+update labrecords set labtype = 4 where labtype>=10;
+
+#更新检验记录
+ALTER TABLE `labrecords`
+MODIFY COLUMN `LabType`  int(11) NOT NULL AFTER `autoid`,
+MODIFY COLUMN `BatchNo`  varchar(50) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `PaperNo`,
+MODIFY COLUMN `mBatchNo`  varchar(50) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `BatchNo`,
+MODIFY COLUMN `spec`  varchar(200) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `chkName`,
+MODIFY COLUMN `producer`  varchar(60) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `Package`,
+MODIFY COLUMN `status`  int(11) NOT NULL DEFAULT 0 AFTER `ExpiredDate`,
+MODIFY COLUMN `PaperType`  int(11) NOT NULL DEFAULT 0 AFTER `status`,
+MODIFY COLUMN `NoSub`  tinyint(4) NOT NULL DEFAULT 0 AFTER `SeqID`,
+MODIFY COLUMN `itType`  int(11) NOT NULL DEFAULT '-1' AFTER `NoSub`;
+
+#岗位表添加索引
+ALTER TABLE `linepost`
+ADD INDEX `roomname` (`RoomName`) USING BTREE ;
+MODIFY COLUMN `SeqID`  int(11) NOT NULL DEFAULT 0 AFTER `ppID`,
+MODIFY COLUMN `status`  int(11) NOT NULL DEFAULT 0 AFTER `Humidity`;
+
+
+
+
+# 建立生产文档
+delimiter $$
+drop procedure if exists startproducingplan$$
+CREATE procedure startproducingplan(id varchar(40))
+begin
+declare done,lid,workid,seid,opt,exdays,sid,postid,docid_var,did,wid,i int default 0;
+declare prodid_var,proddeptid, proddeptname,stuffdeptid,stuffdeptname, prodname_var , batchno_var , spec_var , package_var,pname,rname varchar(40) default '';
+
+declare fname varchar(50);
+# 岗位游标
+declare poname cursor for (select 
+
+autoid,SeqID,PostName,RoomName,Options,ExpiredDays from workflow where plid = lid);
+# 岗位文档游标
+declare 
+
+document cursor for (select SeqID,DocID from postdocument where wfID = workid);
+declare continue handler for 
+
+not found set done=1;
+SELECT 
+    prodid, prodname, batchno, spec, package, lineid
+INTO prodid_var , 
+
+prodname_var , batchno_var , spec_var , package_var, lid FROM
+    producingplan
+WHERE
+    autoid = id;
+    
+SELECT 
+    pl.ProductWorkshopID, dp.DeptName
+INTO proddeptid , proddeptname FROM
+    productline AS pl,
+    department 
+
+AS dp
+WHERE
+    pl.ProductWorkshopID = dp.deptid
+        AND pl.autoid = lid;
+
+SELECT 
+    pl.StuffWorkshopID, 
+
+dp.DeptName
+INTO stuffdeptid , stuffdeptname FROM
+    productline AS pl,
+    department AS dp
+WHERE
+    
+
+pl.StuffWorkshopID = dp.deptid
+        AND pl.autoid = lid;
+
+open poname;
+
+createpost:loop
+	fetch poname into 
+
+workid,seid,pname,rname,opt,exdays;
+	if done = 1 then
+		leave createpost;
+	end if;
+    
+
+insert into linepost (ppid,SeqID,PostName,RoomName,Options,ExpiredDays) values 
+
+(id,seid,pname,rname,opt,exdays);
+	select last_insert_id() into postid;
+    open document;
+    
+
+createdocument:loop
+		fetch document into sid,docid_var;
+		if done = 1 then
+		
+
+	leave createdocument;
+		end if;
+        if docid_var > 0 then
+			insert into 
+
+forms (Format,sdfID) select Format,autoid from selfdefinedformat where autoid = 
+
+docid_var;
+
+set fname = (select formatname from selfdefinedformat where autoid = docid_var);
+            SELECT LAST_INSERT_ID() INTO did;
+			insert into linepostdocument
+
+(lpID,SeqID,DocID,formatname) values(postid,sid,did,fname);
+            iterate createdocument;
+		elseif docid_var in 
+
+(-2,-3,-4) then
+			insert into stuffdrawpaper (PaperType,ppID,DeptID,DeptName,sdpType) values
+
+(abs(docid_var)-2,id,stuffdeptid,stuffdeptname,1);
+		elseif docid_var = -13 then
+			
+
+insert into productputinnotes (WarehouseID,WarehouseName,ppID,plType) VALUES (proddeptid,proddeptname,id,0);
+	
+
+	elseif docid_var = -14 then
+			insert into productputinnotes 
+
+(WarehouseID,WarehouseName,ppID,plType) VALUES (stuffdeptid,stuffdeptname,id,1);
+		elseif 
+
+docid_var in (-15,-16,-17,-18) then
+			insert into labrecords 
+
+(LabType,chkID,chkName,BatchNo,ciID,Spec,Package) values (abs(docid_var)-
+
+13,prodid_var,prodname_var,batchno_var,id,spec_var,package_var);
+		elseif docid_var = -19 then
+	
+
+		
+			insert into cleanconfirmity 
+
+(ppID,lpID,SeqID,RoomName,LinePostName,LastProdID,LastProdName,LastBatchNo,ProdID,ProdName,BatchNo,CleanerID,
+
+CleanerName,CleanDate,CheckerID,CheckerName,CheckDate,ValidDate,IsCopy,OrigID) 
+            select 
+
+id,lp.autoid,sid,rname,pname,cl.ProdID,cl.ProdName,cl.BatchNo,prodid_var,prodname_var,batchno_var,cl.CleanerI
+
+D,cl.CleanerName,cl.CleanDate,cl.CheckerID,cl.CheckerName,cl.CheckDate,cl.ValidDate,1,cl.autoid from 
+
+cleanconfirmity as cl,linepost as lp where cl.lpid=lp.autoid and lp.roomname=rname and lp.status = 2 order by 
+
+lp.starttime desc limit 1;
+		elseif docid_var = -20 then
+			insert into 
+
+cleanconfirmity (ppID,lpID,SeqID,RoomName,LinePostName,ProdID,ProdName,BatchNO,IsCopy) 
+            select 
+
+id,lp.autoid,sid,rname,pname,prodid_var,prodname_var,batchno_var,0 from cleanconfirmity as cl,linepost as lp 
+
+where cl.lpid=lp.autoid and lp.roomname=rname and lp.status = 2 order by lp.starttime desc limit 1;
+		
+
+else
+			insert into linepostdocument(lpID,SeqID,DocID) values(postid,sid,docid_var);
+          
+
+  iterate createdocument;
+		end if;
+		SELECT LAST_INSERT_ID() INTO did;
+		
+
+insert into linepostdocument(lpID,SeqID,DocID,aid) values(postid,sid,docid_var,did);
+	end loop 
+
+createdocument;
+    close document;
+    set done = 0;
+end loop createpost;
+close poname;
+end$$
+delimiter ;
+
+ALTER TABLE `linepostdocument`
+ADD COLUMN `formatname`  varchar(50) NOT NULL DEFAULT '' AFTER `aid`;
+
+
+ALTER TABLE `workerpost`
+ADD COLUMN `SeqID`  tinyint NOT NULL AFTER `plID`;
+
+ALTER TABLE `workflow`
+DROP INDEX `pp` ,
+ADD UNIQUE INDEX `pp` (`plID`, `SeqID`, `PostName`) USING BTREE ;
+
+ALTER TABLE `workflow`
+ADD COLUMN `SpareRoom`  varchar(200) NOT NULL DEFAULT '' AFTER `ExpiredDays`;
+
+ALTER TABLE `equipments`
+MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ;
+
+ALTER TABLE `eqrunnotes`
+MODIFY COLUMN `RunStartTime`  datetime NOT NULL AFTER `FillTime`,
+MODIFY COLUMN `Remark`  varchar(60) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `RunStatus`,
+MODIFY COLUMN `Maintenance`  int(11) NOT NULL DEFAULT 0 AFTER `PostName`,
+AUTO_INCREMENT=41309;
+
+ALTER TABLE `eqrunnotes`
+MODIFY COLUMN `RunStartTime`  datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `FillTime`,
+MODIFY COLUMN `RunEndTime`  datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `lpID`;
+MODIFY COLUMN `StartStatus`  tinyint(4) NOT NULL DEFAULT 0 AFTER `Maintenance`,
+MODIFY COLUMN `StopStatus`  tinyint(4) NOT NULL DEFAULT 0 AFTER `StartStatus`;
+
+ALTER TABLE `productstuff`
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT '杂质' AFTER `wdName`,
+ADD COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT '相对密度' AFTER `impurity`;
+
+ALTER TABLE `stuffrepository`
+MODIFY COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT '相对密度' AFTER `source`,
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT '杂质' AFTER `rDensity`;
+
+
+ALTER TABLE `productstuff`
+ADD COLUMN `cUnit`  varchar(20) NOT NULL DEFAULT '' AFTER `Content`;
+MODIFY COLUMN `Water`  decimal(6,2) NOT NULL DEFAULT 0.000 AFTER `cUnit`;
+
+ALTER TABLE `planprescription`
+ADD COLUMN `formula`  varchar(200) NOT NULL DEFAULT '' AFTER `amount`;
+ADD COLUMN `expression`  varchar(200) NOT NULL DEFAULT '' AFTER `formula`;
+
+ALTER TABLE `productprescription`
+ADD COLUMN `formula`  varchar(200) NOT NULL DEFAULT '' AFTER `amount`;
+ADD COLUMN `expression`  varchar(200) NOT NULL DEFAULT '' AFTER `formula`;
+
+ALTER TABLE `stuffrepository`
+ADD COLUMN `SupId`  varchar(10) NOT NULL DEFAULT '' AFTER `Producer`,
+
+ALTER TABLE `planprescription`
+CHANGE COLUMN `expression` `PresExpression`  varchar(200) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `formula`,
+ADD COLUMN `PracExpression`  varchar(200) NOT NULL DEFAULT '' AFTER `PresExpression`,
+ADD COLUMN `DrawExpression`  varchar(200) NOT NULL DEFAULT '' AFTER `PracExpression`;
+
+ALTER TABLE `productprescription`
+CHANGE COLUMN `expression` `PresExpression`  varchar(200) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `formula`,
+ADD COLUMN `Version`  varchar(20) NOT NULL DEFAULT '' AFTER `ProdID`,
+ADD COLUMN `PracExpression`  varchar(200) NOT NULL DEFAULT '' AFTER `PresExpression`,
+ADD COLUMN `drawExpression`  varchar(200) NOT NULL DEFAULT '' AFTER `PracExpression`;
+
+ALTER TABLE `productstuff`
+ADD COLUMN `PracAmount`  decimal(10,3) NOT NULL AFTER `CheckAmount`;
+
+ALTER TABLE `productstuff`
+CHANGE COLUMN `Kind` `StuffKind`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `StuffType`;
+
+
+
+ALTER TABLE `producingplan`
+ADD COLUMN `Version`  varchar(20) NOT NULL DEFAULT '' AFTER `CommonName`;
+
+ALTER TABLE `productdictionary`
+MODIFY COLUMN `CommonName`  varchar(60) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `ProdName`,
+ADD COLUMN `Version`  varchar(20) NOT NULL DEFAULT '' AFTER `CommonName`;
+
+ALTER TABLE `productstuff`
+CHANGE COLUMN `fe` `precision`  integer NOT NULL DEFAULT 1 AFTER `mBatchNo`;
+
+ALTER TABLE `productstuff`
+MODIFY COLUMN `Price`  decimal(8,3) NOT NULL DEFAULT 0.000 AFTER `AllowNo`,
+MODIFY COLUMN `Producer`  varchar(60) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `Price`,
+MODIFY COLUMN `BatchNo`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `Producer`,
+MODIFY COLUMN `lrID`  int(11) NOT NULL DEFAULT 0 AFTER `BatchNo`,
+MODIFY COLUMN `Content`  decimal(6,3) NOT NULL DEFAULT 0.000 AFTER `lrID`,
+MODIFY COLUMN `cUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `Content`,
+MODIFY COLUMN `Water`  decimal(6,2) NOT NULL DEFAULT 0.00 AFTER `cUnit`,
+MODIFY COLUMN `PresAmount`  decimal(10,2) NOT NULL AFTER `Water`,
+MODIFY COLUMN `PresUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `PresAmount`,
+MODIFY COLUMN `CheckAmount`  decimal(10,3) NOT NULL DEFAULT 0.000 AFTER `PresUnit`,
+MODIFY COLUMN `PracAmount`  decimal(10,3) NOT NULL AFTER `CheckAmount`,
+MODIFY COLUMN `RealAmount`  decimal(10,3) NOT NULL DEFAULT 0.000 AFTER `PracAmount`,
+MODIFY COLUMN `DrawAmount`  decimal(10,2) NOT NULL AFTER `RealAmount`;
+
+ALTER TABLE `productstuff`
+CHANGE COLUMN `Unit` `PracUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `PracAmount`,
+ADD COLUMN `DrawUnit`  varchar(20) NOT NULL DEFAULT '' AFTER `DrawAmount`;
+
+ALTER TABLE `productprescription`
+CHANGE COLUMN `Unit` `PresUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `PresExpression`,
+CHANGE COLUMN `spUnit` `PracUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `PracExpression`,
+CHANGE COLUMN `spAmount` `DrawUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `drawExpression`;
+
+ALTER TABLE `productprescription`
+CHANGE COLUMN `flag` `precision`  int(11) NOT NULL AFTER `IsMainAux`;
+
+

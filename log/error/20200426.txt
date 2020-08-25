@@ -1,0 +1,57 @@
+
+2020-04-26 14:49:55
+FieldError("Cannot resolve keyword 'backage' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutetime, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executetime, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plantime, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, realamount, remark, spamount, spec, spprice, spunit, status, statustime, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1768, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1504, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1420, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'backage' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutetime, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executetime, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plantime, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, realamount, remark, spamount, spec, spprice, spunit, status, statustime, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 118, in get_producingplan
+    'workshopid', 'workshopname')
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 825, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 793, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2020, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1791, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'backage' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutetime, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executetime, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plantime, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, realamount, remark, spamount, spec, spprice, spunit, status, statustime, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+查寻生产记录时出错
+-------------------------------------------------------
+2020-04-26 14:50:27
+FieldError("Cannot resolve keyword 'backage' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutetime, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executetime, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plantime, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, realamount, remark, spamount, spec, spprice, spunit, status, statustime, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1768, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1504, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1420, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'backage' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutetime, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executetime, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plantime, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, realamount, remark, spamount, spec, spprice, spunit, status, statustime, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 118, in get_producingplan
+    'workshopid', 'workshopname')
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 825, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 793, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2020, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1791, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'backage' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutetime, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executetime, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plantime, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, realamount, remark, spamount, spec, spprice, spunit, status, statustime, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+查寻生产记录时出错
+-------------------------------------------------------

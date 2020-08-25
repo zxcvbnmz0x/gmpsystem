@@ -1,0 +1,82 @@
+2020-04-14 16:25:05
+AttributeError("'SetCheckItem' object has no attribute 'itemtype'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 142, in on_accept_clicked
+    self.detail['itemtype'] = self.itemtype
+AttributeError: 'SetCheckItem' object has no attribute 'itemtype'
+
+保存检验项目出错
+args=[{"stuffid": "03020361", "seqid": "1", "kind": "123", "referencevalue": "asdzx"}]
+-------------------------------------------------------2020-04-14 16:48:41
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 143, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020361", "seqid": "1", "kind": "asd", "itemname": "zxc", "referencevalue": "zxcasdqwe"}]
+-------------------------------------------------------2020-04-14 16:51:02
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 140, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020361"}]
+-------------------------------------------------------2020-04-14 16:56:00
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 142, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020361", "seqid": "1"}]
+-------------------------------------------------------2020-04-14 16:58:23
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 142, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020361", "seqid": "1"}]
+-------------------------------------------------------2020-04-14 16:59:19
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 142, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020361", "kind": "1", "seqid": "1"}]
+-------------------------------------------------------2020-04-14 17:02:49
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 142, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020361", "seqid": "1", "kind": "a"}]
+-------------------------------------------------------2020-04-14 17:04:51
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 142, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020361", "seqid": "1", "kind": "asd"}]
+-------------------------------------------------------2020-04-14 17:13:53
+AttributeError("'NoneType' object has no attribute 'autoid'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\labrecord\controllers\setcheckitem.py", line 142, in on_accept_clicked
+    if res.autoid > 0:
+AttributeError: 'NoneType' object has no attribute 'autoid'
+
+保存检验项目出错
+args=[{"stuffid": "03020411", "seqid": "1", "kind": "a", "referencevalue": "z"}]
+-------------------------------------------------------

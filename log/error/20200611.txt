@@ -1,0 +1,56 @@
+
+2020-06-11 11:43:17
+TypeError('expected string or bytes-like object')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 741, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1429, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1087, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 793, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1279, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1274, in get_prep_value
+    return self.to_python(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1236, in to_python
+    parsed = parse_date(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    match = date_re.match(value)
+TypeError: expected string or bytes-like object
+
+更新生产指令出错
+20
+
+2020-06-11 11:44:13
+ValidationError(["'PyQt5.QtCore.QDate(2020, 6, 11)' value has an invalid date format. It must be in YYYY-MM-DD format."])
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 741, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1429, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1087, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 793, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1279, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1274, in get_prep_value
+    return self.to_python(value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 1249, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'PyQt5.QtCore.QDate(2020, 6, 11)' value has an invalid date format. It must be in YYYY-MM-DD format."]
+
+更新生产指令出错
+21
+kwargs={"makedate": "PyQt5.QtCore.QDate(2020, 6, 11)", "planamount": "23451", "batchno": "2020061102", "remark": "qwe", "instructorid": "001", "instructorname": "sys02", "plantime": "2020-06-11 11:43:53", "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": "2020-06-11"}
+-------------------------------------------------------

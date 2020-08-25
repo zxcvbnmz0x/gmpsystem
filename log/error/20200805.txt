@@ -1,0 +1,80 @@
+
+2020-08-05 16:30:30
+FieldError("Cannot resolve keyword 'stuffknd' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\models\warehousemodel.py", line 29, in get_stuffrepository
+    return Stuffrepository.objects.filter(**kwargs).values_list(
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1382, in _add_q
+    check_filterable=check_filterable,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1251, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1088, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'stuffknd' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water
+
+WarehouseModel-get_stuffrepository»ñÈ¡¿â´æĞÅÏ¢Ê±³ö´í
+stuffid
+args=["stuffname", "spec", "package", "batchno", "mbatchno", "amount", "producer", "supid", "content", "cunit", "water", "rdensity", "impurity"]
+kwargs={"stuffknd__in": ["»î", "»îĞÔ", "»îĞÔÌ¿", "»îĞÔÌ¿Ì¿", "»îĞÔÌ¿Ì¿Ì¿", "»îĞÔÌ¿Ì¿Ì¿Ì¿", "ÁòËá¿¨ÄÇÃ¹ËØ×¢ÉäÒºÏäÇ©0502330", "ÁòËá¿¨ÄÇÃ¹ËØ×¢ÉäÒºÖ½ºĞ0506138", "ÂÁËÜ¸Ç(20#)0599036", "ÑÇÁòËáÇâÄÆ"], "amount__gt": 0}
+--------------------
+2020-08-05 16:34:51
+TypeError('QuerySet.annotate() received non-expression(s): False.')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\models\warehousemodel.py", line 30, in get_stuffrepository
+    *args, flat=flat)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 809, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 802, in _values
+    clone = clone.annotate(**expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1042, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1329, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): False.
+
+WarehouseModel-get_stuffrepository»ñÈ¡¿â´æĞÅÏ¢Ê±³ö´í
+stuffid
+args=["stuffname", "spec", "package", "batchno", "mbatchno", "amount", "producer", "supid", "content", "cunit", "water", "rdensity", "impurity"]
+kwargs={"stuffkind__in": ["»î", "»îĞÔ", "»îĞÔÌ¿", "»îĞÔÌ¿Ì¿", "»îĞÔÌ¿Ì¿Ì¿", "»îĞÔÌ¿Ì¿Ì¿Ì¿", "ÁòËá¿¨ÄÇÃ¹ËØ×¢ÉäÒºÏäÇ©0502330", "ÁòËá¿¨ÄÇÃ¹ËØ×¢ÉäÒºÖ½ºĞ0506138", "ÂÁËÜ¸Ç(20#)0599036", "ÑÇÁòËáÇâÄÆ"], "amount__gt": 0}
+--------------------
+2020-08-05 17:04:01
+FieldError("Cannot resolve keyword 'unit' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1866, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'unit' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\warehouse\models\warehousemodel.py", line 33, in get_stuffrepository
+    return res.values(*args)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 809, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 804, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 2146, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1889, in add_fields
+    "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'unit' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkintime, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putintime, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, warehousemanid, warehousemanname, water
+
+WarehouseModel-get_stuffrepository»ñÈ¡¿â´æĞÅÏ¢Ê±³ö´í
+autoid
+args=["stuffid", "stuffname", "spec", "package", "batchno", "mbatchno", "amount", "producer", "supid", "content", "cunit", "water", "rdensity", "impurity", "unit"]
+kwargs={"stuffkind__in": ["»î", "»îĞÔ", "»îĞÔÌ¿", "»îĞÔÌ¿Ì¿", "»îĞÔÌ¿Ì¿Ì¿", "»îĞÔÌ¿Ì¿Ì¿Ì¿", "ÁòËá¿¨ÄÇÃ¹ËØ×¢ÉäÒºÏäÇ©0502330", "ÁòËá¿¨ÄÇÃ¹ËØ×¢ÉäÒºÖ½ºĞ0506138", "ÂÁËÜ¸Ç(20#)0599036", "ÑÇÁòËáÇâÄÆ"], "amount__gt": 0}
+--------------------

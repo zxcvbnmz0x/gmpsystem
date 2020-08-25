@@ -1,0 +1,161 @@
+
+2020-06-03 14:41:53
+FieldError("Cannot resolve keyword 'stuffkind' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).annotate(Count('stuffkind'))
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1071, in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1022, in add_annotation
+    summarize=is_summary)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\expressions.py", line 625, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\expressions.py", line 532, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1685, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'stuffkind' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:41:53
+FieldError("Cannot resolve keyword 'stuffkind' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).annotate(Count('stuffkind'))
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1071, in annotate
+    clone.query.add_annotation(annotation, alias, is_summary=False)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1022, in add_annotation
+    summarize=is_summary)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\aggregates.py", line 47, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\expressions.py", line 625, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\expressions.py", line 532, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize, simple_col)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1685, in resolve_ref
+    join_info = self.setup_joins(field_list, self.get_meta(), self.get_initial_alias(), can_reuse=reuse)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1568, in setup_joins
+    names[:pivot], opts, allow_many, fail_on_missing=True,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1484, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'stuffkind' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, fe, flag, impurity, ismainaux, kind, loss, lpid, lrid, mbatchno, midamount, package, ppid, presamount, presunit, price, producer, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffname, stufftype, supervisorid, supervisorname, unit, water, wdid, wdname
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:49:38
+TypeError('QuerySet.annotate() received non-expression(s): kind.')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).annotate('kind')
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1042, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1329, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): kind.
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:49:38
+TypeError('QuerySet.annotate() received non-expression(s): kind.')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).annotate('kind')
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1042, in annotate
+    self._validate_values_are_expressions(args + tuple(kwargs.values()), method_name='annotate')
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1329, in _validate_values_are_expressions
+    ', '.join(invalid_args),
+TypeError: QuerySet.annotate() received non-expression(s): kind.
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:52:49
+AttributeError("'QuerySet' object has no attribute 'value'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).value('kind')
+AttributeError: 'QuerySet' object has no attribute 'value'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:52:49
+AttributeError("'QuerySet' object has no attribute 'value'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).value('kind')
+AttributeError: 'QuerySet' object has no attribute 'value'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:54:00
+AttributeError("'QuerySet' object has no attribute 'annoate'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).values('kind').annoate()
+AttributeError: 'QuerySet' object has no attribute 'annoate'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:54:00
+AttributeError("'QuerySet' object has no attribute 'annoate'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).values('kind').annoate()
+AttributeError: 'QuerySet' object has no attribute 'annoate'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:54:28
+AttributeError("'QuerySet' object has no attribute 'annoate'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).values('kind').annoate('kind')
+AttributeError: 'QuerySet' object has no attribute 'annoate'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:54:28
+AttributeError("'QuerySet' object has no attribute 'annoate'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).values('kind').annoate('kind')
+AttributeError: 'QuerySet' object has no attribute 'annoate'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:54:45
+AttributeError("'QuerySet' object has no attribute 'annoate'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).values('kind').annoate(Count('kind'))
+AttributeError: 'QuerySet' object has no attribute 'annoate'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-03 14:54:45
+AttributeError("'QuerySet' object has no attribute 'annoate'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 69, in get_Mprodstuff
+    return Productstuff.objects.filter(ppid=ppid).values('kind').annoate(Count('kind'))
+AttributeError: 'QuerySet' object has no attribute 'annoate'
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------

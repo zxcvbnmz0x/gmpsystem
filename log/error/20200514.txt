@@ -1,0 +1,344 @@
+
+2020-05-14 10:10:32
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+49
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "49"}
+-------------------------------------------------------
+2020-05-14 10:13:41
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+49
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "49"}
+-------------------------------------------------------
+2020-05-14 10:15:53
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+46
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "46"}
+-------------------------------------------------------
+2020-05-14 10:15:56
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+46
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "46"}
+-------------------------------------------------------
+2020-05-14 10:24:06
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+48
+kwargs={"batchno": "6", "instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "48"}
+-------------------------------------------------------
+2020-05-14 10:25:52
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+49
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "49"}
+-------------------------------------------------------
+2020-05-14 10:32:46
+FieldDoesNotExist("Producingplan has no field named 'type'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'type'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'type'
+
+更新生产指令出错
+12
+kwargs={"type": 0, "instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "12"}
+-------------------------------------------------------
+2020-05-14 10:40:17
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+64
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "64"}
+-------------------------------------------------------
+2020-05-14 10:41:38
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+38
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "38"}
+-------------------------------------------------------
+2020-05-14 10:41:40
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+38
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "38"}
+-------------------------------------------------------
+2020-05-14 10:43:34
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+12
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "12"}
+-------------------------------------------------------
+2020-05-14 10:46:37
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+56
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "56"}
+-------------------------------------------------------
+2020-05-14 10:48:37
+FieldDoesNotExist("Producingplan has no field named 'id'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 565, in get_field
+    return self.fields_map[field_name]
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 158, in update_producingplan
+    **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 737, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\subqueries.py", line 117, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\options.py", line 567, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Producingplan has no field named 'id'
+
+更新生产指令出错
+56
+kwargs={"instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部", "id": "56"}
+-------------------------------------------------------
+2020-05-14 11:14:47
+TypeError("int() argument must be a string, a bytes-like object or a number, not 'tuple'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 157, in update_producingplan
+    return Producingplan.objects.filter(autoid=autoid).update(
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 892, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 910, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1290, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1318, in _add_q
+    split_subq=split_subq, simple_col=simple_col,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1251, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 1116, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\fields\__init__.py", line 972, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+
+更新生产指令出错
+(12,)
+kwargs={"planamount": "29999", "batchno": "2020050901", "remark": "abc", "instructorid": "001", "instructorname": "sys02", "plantime": "2020-05-14", "deptid": "002", "deptname": "生产部"}
+-------------------------------------------------------

@@ -1,0 +1,283 @@
+2020-04-20 16:26:14
+TypeError("save_image() got an unexpected keyword argument 'img'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 96, in save_productlabel
+    image_id = image_model.save_image(**kwargs)[0]
+TypeError: save_image() got an unexpected keyword argument 'img'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:27:47
+TypeError("save_image() got an unexpected keyword argument 'img'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 97, in save_productlabel
+    image_id = image_model.save_image(**kwargs)[0]
+TypeError: save_image() got an unexpected keyword argument 'img'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:29:08
+TypeError("save_image() got an unexpected keyword argument 'img'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 97, in save_productlabel
+    image_id = image_model.save_image(**kwargs)[0]
+TypeError: save_image() got an unexpected keyword argument 'img'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:31:00
+TypeError("save_image() got an unexpected keyword argument 'img'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 97, in save_productlabel
+    image_id = image_model.save_image(**kwargs)[0]
+TypeError: save_image() got an unexpected keyword argument 'img'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:32:02
+TypeError("save_image() got an unexpected keyword argument 'img'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 97, in save_productlabel
+    image_id = image_model.save_image(**kwargs)[0]
+TypeError: save_image() got an unexpected keyword argument 'img'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:35:23
+TypeError("save_image() got an unexpected keyword argument 'img'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 97, in save_productlabel
+    image_id = image_model.save_image(**kwargs)
+TypeError: save_image() got an unexpected keyword argument 'img'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:40:55
+NameError("name 'kwarg' is not defined")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 97, in save_productlabel
+    image_id = image_model.save_image(**kwargs)
+  File "d:\pyproject\GMPsystem\imageslib\controllers\image.py", line 17, in save_image
+    return self.IM.save_image(autoid, *args, **kwarg)
+NameError: name 'kwarg' is not defined
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:42:53
+NameError("name 'kwarg' is not defined")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 97, in save_productlabel
+    image_id = image_model.save_image(**kwargs)
+  File "d:\pyproject\GMPsystem\imageslib\controllers\image.py", line 17, in save_image
+    return self.IM.save_image(autoid, *args, **kwarg)
+NameError: name 'kwarg' is not defined
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:43:26
+TypeError("'Imagelib' object is not subscriptable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 99, in save_productlabel
+    date['imgid'] = image_id[0]
+TypeError: 'Imagelib' object is not subscriptable
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:44:52
+TypeError("'Imagelib' object is not subscriptable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 98, in save_productlabel
+    print(image_id[0])
+TypeError: 'Imagelib' object is not subscriptable
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 16:45:24
+TypeError("'Imagelib' object is not subscriptable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 98, in save_productlabel
+    print(image_id, image_id[0])
+TypeError: 'Imagelib' object is not subscriptable
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:02:41
+TypeError("'Imagelib' object is not subscriptable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 98, in save_productlabel
+    print(image_id, image_id[0])
+TypeError: 'Imagelib' object is not subscriptable
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:03:59
+TypeError("'Imagelib' object is not subscriptable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 99, in save_productlabel
+    date['imgid'] = image_id[0]
+TypeError: 'Imagelib' object is not subscriptable
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:04:25
+TypeError("'Imagelib' object is not subscriptable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 99, in save_productlabel
+    print(image_id[0])
+TypeError: 'Imagelib' object is not subscriptable
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:04:53
+TypeError("'Imagelib' object is not subscriptable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 100, in save_productlabel
+    date['imgid'] = image_id[0]
+TypeError: 'Imagelib' object is not subscriptable
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:05:21
+TypeError("Productlabel() got an unexpected keyword argument 'image_name'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 101, in save_productlabel
+    return Productlabel.objects.create(**date)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 420, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Productlabel() got an unexpected keyword argument 'image_name'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:06:08
+TypeError("Productlabel() got an unexpected keyword argument 'image_name'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 100, in save_productlabel
+    return Productlabel.objects.create(**date)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 420, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Productlabel() got an unexpected keyword argument 'image_name'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:07:47
+TypeError("Productlabel() got an unexpected keyword argument 'image_name'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 100, in save_productlabel
+    return Productlabel.objects.create(**date)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 420, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Productlabel() got an unexpected keyword argument 'image_name'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------2020-04-20 17:08:41
+TypeError("Productlabel() got an unexpected keyword argument 'image_name'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 100, in save_productlabel
+    return Productlabel.objects.create(**date)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 420, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Productlabel() got an unexpected keyword argument 'image_name'
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------
+2020-04-20 17:11:08
+IntegrityError(1048, "Column 'flag' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 72, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'flag' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\product\models\productmodel.py", line 100, in save_productlabel
+    return Productlabel.objects.create(**date)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\backends\mysql\base.py", line 72, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'flag' cannot be null")
+
+保存产品标签图时出错
+kwargs={"autoid": null, "args": []}
+-------------------------------------------------------

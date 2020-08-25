@@ -1,0 +1,14 @@
+<RCC>
+  <qresource>
+    <file>add.png</file>
+    <file>delete.png</file>
+    <file>printer.png</file>
+    <file>query.png</file>
+    <file>record.png</file>
+    <file>refresh.png</file>
+    <file>logo.png</file>
+    <file>logo2.png</file>
+    <file>mainwindowlogo.png</file>
+    <file>switch.png</file>
+  </qresource>
+</RCC>

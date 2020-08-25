@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>物料详细信息</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tab">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="tabsClosable">
+      <bool>false</bool>
+     </property>
+     <property name="movable">
+      <bool>false</bool>
+     </property>
+     <property name="tabBarAutoHide">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="tab_1">
+      <attribute name="title">
+       <string>基础资料</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="2" column="4">
+        <widget class="QComboBox" name="checkunit">
+         <property name="editable">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Kg（千克）</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>g（克）</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>L（升）</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ml（毫升）</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="checkunitlabel">
+         <property name="text">
+          <string>取样单位：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="idlabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>编号：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="typelabel">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>物料类别：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="namelabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>名称：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QLabel" name="workshoplabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>生产车间：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="externalnolabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>外部编码：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="kindlabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>种类：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="purchasingunitlabel">
+         <property name="text">
+          <string>入库单位：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="4">
+        <widget class="QLineEdit" name="expired"/>
+       </item>
+       <item row="7" column="4">
+        <widget class="QLineEdit" name="ceffectunit"/>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="stuffname"/>
+       </item>
+       <item row="5" column="4">
+        <widget class="QLineEdit" name="recheck"/>
+       </item>
+       <item row="4" column="4">
+        <widget class="QLineEdit" name="lowlimit"/>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLineEdit" name="upperlimit">
+         <property name="inputMethodHints">
+          <set>Qt::ImhNone</set>
+         </property>
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="kind"/>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="externalno"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="stuffid"/>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="lowlimitlabel">
+         <property name="text">
+          <string>库存上限：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="upperlimitlabel">
+         <property name="text">
+          <string>库存下限：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QLabel" name="rechecklabel">
+         <property name="text">
+          <string>复检天数：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QLabel" name="expiredlabel">
+         <property name="text">
+          <string>有效期：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QComboBox" name="purchasingunit">
+         <item>
+          <property name="text">
+           <string>Kg（千克）</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>g（克）</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>L（升）</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ml（毫升）</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QComboBox" name="stufftype">
+         <item>
+          <property name="text">
+           <string>主材料</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>前处理材料</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>辅材料</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>内包材</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>外包材</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QLabel" name="productionlinelabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>生产线：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QLabel" name="productionline">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="4">
+        <widget class="QPushButton" name="cancelButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>取消</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="3">
+        <widget class="QPushButton" name="acceptButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>确认</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3">
+        <widget class="QLabel" name="ceffectunitlabel">
+         <property name="text">
+          <string>效价单位：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="3">
+        <widget class="QLabel" name="ceffectlabel">
+         <property name="text">
+          <string>效价系数：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="4">
+        <widget class="QLineEdit" name="ceffect"/>
+       </item>
+       <item row="9" column="4">
+        <widget class="QLineEdit" name="storage"/>
+       </item>
+       <item row="9" column="3">
+        <widget class="QLabel" name="storagelabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>储存条件：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLabel" name="packagelabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>包装规格：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="QLineEdit" name="package_2"/>
+       </item>
+       <item row="8" column="2">
+        <widget class="QComboBox" name="packageLv">
+         <item>
+          <property name="text">
+           <string>一级包装</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>二级包装</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>三级包装</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>四级包装</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLabel" name="packageLvlabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>包装级别：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="speclabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>含量规格：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLineEdit" name="spec"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="inputlabel">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>输入码：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLineEdit" name="inputcode"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="allownolabel">
+         <property name="text">
+          <string>批准文号：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="allowno"/>
+       </item>
+       <item row="10" column="2">
+        <widget class="QToolButton" name="workshop">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>原料检验项目</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="checkitem">
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>序号</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>类别</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>项目名称</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>标准规定</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>结果类型</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>入库类别</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>前处理配方</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="formula">
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>类别</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>种类</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>数量</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>计算公式</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>前处理检验项目</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="precheckitem">
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>序号</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>类别</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>项目名称</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>标准规定</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>结果类型</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>入库类别</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>供应商和生产厂家</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="pdandsp">
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>供应商编号</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>供应商名称</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>生产厂家</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>stufftype</tabstop>
+  <tabstop>stuffid</tabstop>
+  <tabstop>stuffname</tabstop>
+  <tabstop>externalno</tabstop>
+  <tabstop>kind</tabstop>
+  <tabstop>allowno</tabstop>
+  <tabstop>inputcode</tabstop>
+  <tabstop>spec</tabstop>
+  <tabstop>packageLv</tabstop>
+  <tabstop>package_2</tabstop>
+  <tabstop>purchasingunit</tabstop>
+  <tabstop>checkunit</tabstop>
+  <tabstop>upperlimit</tabstop>
+  <tabstop>lowlimit</tabstop>
+  <tabstop>recheck</tabstop>
+  <tabstop>expired</tabstop>
+  <tabstop>ceffectunit</tabstop>
+  <tabstop>ceffect</tabstop>
+  <tabstop>storage</tabstop>
+  <tabstop>workshop</tabstop>
+  <tabstop>acceptButton</tabstop>
+  <tabstop>cancelButton</tabstop>
+  <tabstop>tab</tabstop>
+  <tabstop>checkitem</tabstop>
+  <tabstop>formula</tabstop>
+  <tabstop>precheckitem</tabstop>
+  <tabstop>pdandsp</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

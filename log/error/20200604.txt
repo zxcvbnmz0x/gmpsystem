@@ -1,0 +1,137 @@
+
+2020-06-04 09:13:06
+InvalidQuery('Raw query must include the primary key')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 76, in get_Mprodstuff
+    for item in res:
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1421, in __iter__
+    self._fetch_all()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1408, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1436, in iterator
+    raise InvalidQuery('Raw query must include the primary key')
+django.db.models.query_utils.InvalidQuery: Raw query must include the primary key
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 09:13:48
+InvalidQuery('Raw query must include the primary key')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 76, in get_Mprodstuff
+    for item in res:
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1421, in __iter__
+    self._fetch_all()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1408, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1436, in iterator
+    raise InvalidQuery('Raw query must include the primary key')
+django.db.models.query_utils.InvalidQuery: Raw query must include the primary key
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 09:14:41
+InvalidQuery('Raw query must include the primary key')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 77, in get_Mprodstuff
+    for item in res:
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1421, in __iter__
+    self._fetch_all()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1408, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1436, in iterator
+    raise InvalidQuery('Raw query must include the primary key')
+django.db.models.query_utils.InvalidQuery: Raw query must include the primary key
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 09:15:04
+InvalidQuery('Raw query must include the primary key')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 77, in get_Mprodstuff
+    for item in res:
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1421, in __iter__
+    self._fetch_all()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1408, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1436, in iterator
+    raise InvalidQuery('Raw query must include the primary key')
+django.db.models.query_utils.InvalidQuery: Raw query must include the primary key
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 09:16:08
+InvalidQuery('Raw query must include the primary key')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 77, in get_Mprodstuff
+    for item in res:
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1421, in __iter__
+    self._fetch_all()
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1408, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1436, in iterator
+    raise InvalidQuery('Raw query must include the primary key')
+django.db.models.query_utils.InvalidQuery: Raw query must include the primary key
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 09:19:42
+TypeError('not all arguments converted during string formatting')
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 76, in get_Mprodstuff
+    print("res=",res)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1458, in __repr__
+    return "<%s: %s>" % (self.__class__.__name__, self.query)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 126, in __str__
+    return self.sql % self.params_type(self.params)
+TypeError: not all arguments converted during string formatting
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 09:20:24
+TypeError("'int' object is not iterable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 76, in get_Mprodstuff
+    print("res=",res)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1458, in __repr__
+    return "<%s: %s>" % (self.__class__.__name__, self.query)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 126, in __str__
+    return self.sql % self.params_type(self.params)
+TypeError: 'int' object is not iterable
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 09:21:05
+TypeError("'int' object is not iterable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 76, in get_Mprodstuff
+    print("res=",res)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1458, in __repr__
+    return "<%s: %s>" % (self.__class__.__name__, self.query)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 126, in __str__
+    return self.sql % self.params_type(self.params)
+TypeError: 'int' object is not iterable
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------
+2020-06-04 10:23:32
+TypeError("'int' object is not iterable")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\stuff\models\stuffmodel.py", line 76, in get_Mprodstuff
+    print("res=",res)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\query.py", line 1458, in __repr__
+    return "<%s: %s>" % (self.__class__.__name__, self.query)
+  File "D:\Anaconda3\envs\lib\site-packages\django\db\models\sql\query.py", line 126, in __str__
+    return self.sql % self.params_type(self.params)
+TypeError: 'int' object is not iterable
+
+获取产品物料(部分批次)时出错
+3
+-------------------------------------------------------

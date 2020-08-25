@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>558</width>
+    <height>369</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>编辑检验项目</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="6" column="2">
+    <widget class="QPushButton" name="acceptbutton">
+     <property name="text">
+      <string>确认</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3">
+    <widget class="QPushButton" name="cancelbutton">
+     <property name="text">
+      <string>取消</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="standardlabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>标准规定：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="seqid"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="typelabel">
+     <property name="text">
+      <string>结果类型：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="itemlabel">
+     <property name="text">
+      <string>项目名称：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLineEdit" name="itemname"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="kind"/>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="restype">
+     <item>
+      <property name="text">
+       <string>文本</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>数据</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="putintype">
+     <item>
+      <property name="text">
+       <string>无</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>含量</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>水分</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>效价</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>相对密度</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>杂质</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="4">
+    <widget class="QTextEdit" name="referencevalue">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="inputlabel">
+     <property name="text">
+      <string>入库类别：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="nolabel">
+     <property name="text">
+      <string>序号：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="classificationslabel">
+     <property name="text">
+      <string>类别：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="1">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

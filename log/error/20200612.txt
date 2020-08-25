@@ -1,0 +1,40 @@
+
+2020-06-12 23:42:34
+AttributeError("module 'db.models' has no attribute 'clerks'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\lib\mywidget\comboline.py", line 75, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'clerks'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "clerks", "row": ["clerkid", "pid", "clerkname"], "key": ["pid", "clerkname"], "row_name": ["id", "编号", "姓名"]}
+-------------------------------------------------------
+2020-06-12 23:46:21
+AttributeError("module 'db.models' has no attribute 'clerks'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\lib\mywidget\comboline.py", line 75, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'clerks'
+
+下来菜单设置数据表出错
+
+2020-06-12 23:47:12
+AttributeError("module 'db.models' has no attribute 'clerks'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\lib\mywidget\comboline.py", line 75, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'clerks'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "clerks", "row": ["clerkid", "pid", "clerkname"], "key": ["pid", "clerkname"], "row_name": ["id", "编号", "姓名"]}
+-------------------------------------------------------
+2020-06-12 23:50:25
+AttributeError("module 'db.models' has no attribute 'clerks'")
+Traceback (most recent call last):
+  File "d:\pyproject\GMPsystem\lib\mywidget\comboline.py", line 75, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'clerks'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "clerks", "row": ["Clerkid", "pid", "clerkname"], "key": ["pid", "clerkname"], "row_name": ["id", "编号", "姓名"]}
+-------------------------------------------------------
