@@ -34,7 +34,7 @@ class EditProducingplan(QtWidgets.QDialog, Ui_Dialog):
         super().__init__(parent)
         self.product = ProductController()
 
-        self.autoid = 0
+        self.autoid = autoid
         self.setupUi(self)
         self.prodname.namelist.resize(650, 250)
         self.oridetail = dict()
@@ -138,7 +138,7 @@ class EditProducingplan(QtWidgets.QDialog, Ui_Dialog):
 
     # 修改批号时触发
     @QtCore.pyqtSlot(str)
-    def on_batchno_textChanged(self, p_str):
+    def on_batchno_textEdited(self, p_str):
         try:
             if p_str != self.oridetail['batchno']:
                 self.new_detail['batchno'] = p_str
@@ -152,8 +152,8 @@ class EditProducingplan(QtWidgets.QDialog, Ui_Dialog):
 
     # 修改生产日期时触发
     @QtCore.pyqtSlot(QtCore.QDate)
-    def on_makedate_dateChanged(self, p_date):
-        #date = p_date.toString('yyyy-MM-dd')
+    def on_makedate_dateChanged(self, q_date):
+        p_date = q_date.toPyDate()
         try:
             if p_date != self.oridetail['makedate']:
                 self.new_detail['makedate'] = p_date
@@ -202,7 +202,7 @@ class EditProducingplan(QtWidgets.QDialog, Ui_Dialog):
                 # 修改过记录，把当前的人员和日期存入修改记录中
                 self.new_detail['instructorid'] = user.user_id
                 self.new_detail['instructorname'] = user.user_name
-                self.new_detail['plantime'] = user.time
+                self.new_detail['plandate'] = user.now_date
                 self.new_detail['deptid'] = user.dept_id
                 self.new_detail['deptname'] = user.dept_name
                 self.new_detail['bpconstitutorid'] = user.user_id
@@ -221,7 +221,9 @@ class EditProducingplan(QtWidgets.QDialog, Ui_Dialog):
                     prodtype = self.productkind.currentIndex()
                     prod_id = self.prodname.namelist.currentItem().text(0)
                     self.new_detail['id'] = prod_id
-                    res = self.product.update_producingplan(prodtype=prodtype, **self.new_detail)
+                    res = self.product.update_producingplan(
+                        prodtype=prodtype, **self.new_detail
+                    )
                     if res:
                         self.flush_signal.emit()
                         self.accept()

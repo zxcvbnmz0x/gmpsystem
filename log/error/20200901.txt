@@ -1,0 +1,73 @@
+
+2020-09-01 10:42:36
+AttributeError("'int' object has no attribute 'split'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\selfdefinedfirmat\models\selfdefinedformatmodel.py", line 19, in get_selfdefinedformat
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+AttributeError: 'int' object has no attribute 'split'
+
+获取自定义文档时出错
+2
+--------------------
+2020-09-01 10:47:52
+AttributeError("'int' object has no attribute 'split'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\selfdefinedfirmat\models\selfdefinedformatmodel.py", line 19, in get_selfdefinedformat
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+AttributeError: 'int' object has no attribute 'split'
+
+获取自定义文档时出错
+2
+--------------------
+2020-09-01 10:51:51
+AttributeError("'int' object has no attribute 'split'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\selfdefinedfirmat\models\selfdefinedformatmodel.py", line 19, in get_selfdefinedformat
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+AttributeError: 'int' object has no attribute 'split'
+
+获取自定义文档时出错
+2
+--------------------
+2020-09-01 10:57:04
+AttributeError("'int' object has no attribute 'split'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\selfdefinedfirmat\models\selfdefinedformatmodel.py", line 19, in get_selfdefinedformat
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+AttributeError: 'int' object has no attribute 'split'
+
+获取自定义文档时出错
+2
+--------------------

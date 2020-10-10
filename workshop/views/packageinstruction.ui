@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>821</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="2">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>审核人：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="SignButton" name="pushButton_bpexecutor">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>执行人：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>审核日期：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="SignButton" name="pushButton_bpconstitutor">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="SignButton" name="pushButton_bpwarrantor">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QDateEdit" name="dateEdit_bpconsdate">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QDateEdit" name="dateEdit_bpwarrantdate">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="QDateEdit" name="dateEdit_bpexecutedate">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>执行日期：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="6">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>包装日期：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>制定日期：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>制定人：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="7">
+    <widget class="QDateEdit" name="dateEdit_bpdate">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="8">
+    <widget class="QTreeWidget" name="treeWidget_stufflist">
+     <property name="indentation">
+      <number>0</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>id</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>lrid</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>物料</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>进厂批号</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>含量规格</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>包装规格</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>计划量</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>含量/效价</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>水分</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>相对密度</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>杂质</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="1" column="7">
+    <widget class="QPushButton" name="pushButton_accept">
+     <property name="text">
+      <string>保存</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SignButton</class>
+   <extends>QPushButton</extends>
+   <header>lib.sign.signbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>treeWidget_stufflist</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

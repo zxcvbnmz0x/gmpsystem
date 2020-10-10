@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="window">
-    <file>basicdict.png</file>
-    <file>productdict.png</file>
-    <file>stuffdict.png</file>
-    <file>../images/mainwindowlogo.png</file>
-  </qresource>
-</RCC>

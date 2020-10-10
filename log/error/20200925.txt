@@ -1,0 +1,390 @@
+
+2020-09-25 09:23:19
+OperationalError(1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 227, in create_producingplan
+    cursor.execute(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+新建生产记录时出错
+kwargs={"makedate": null, "qrtype": 2, "planamount": "333", "batchno": "03", "instructorid": "001", "instructorname": "sys02", "plandate": null, "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null, "id": "56"}
+--------------------
+2020-09-25 09:25:34
+OperationalError(1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 227, in create_producingplan
+    cursor.execute(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+新建生产记录时出错
+kwargs={"makedate": null, "qrtype": 2, "planamount": "333", "batchno": "03", "instructorid": "001", "instructorname": "sys02", "plandate": null, "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null, "id": "56"}
+--------------------
+2020-09-25 09:25:52
+OperationalError(1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 227, in create_producingplan
+    cursor.execute(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+新建生产记录时出错
+kwargs={"makedate": null, "qrtype": 2, "planamount": "33", "batchno": "03", "instructorid": "001", "instructorname": "sys02", "plandate": null, "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null, "id": "56"}
+--------------------
+2020-09-25 09:29:26
+OperationalError(1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 227, in create_producingplan
+    cursor.execute(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1305, 'FUNCTION dhngmp.createproducingplan does not exist')
+
+新建生产记录时出错
+kwargs={"makedate": null, "qrtype": 2, "planamount": "33", "batchno": "03", "instructorid": "001", "instructorname": "sys02", "plandate": null, "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null, "id": "56"}
+--------------------
+2020-09-25 09:39:42
+TypeError("Field 'autoid' expected a number but got (711,).")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'tuple'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 186, in update_producingplan
+    return Producingplan.objects.filter(autoid=autoid).update(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\lookups.py", line 74, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 1776, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'autoid' expected a number but got (711,).
+
+更新生产指令出错
+(711,)
+kwargs={"makedate": null, "planamount": "23", "batchno": "03", "instructorid": "001", "instructorname": "sys02", "plandate": null, "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null}
+--------------------
+2020-09-25 09:42:27
+TypeError('expected string or bytes-like object')
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 186, in update_producingplan
+    return Producingplan.objects.filter(autoid=autoid).update(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 784, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1515, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1141, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1481, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\pyproject\gmpsystem\db\models.py", line 35, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 1217, in get_prep_value
+    return self.to_python(value)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 1179, in to_python
+    parsed = parse_date(value)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\utils\dateparse.py", line 75, in parse_date
+    match = date_re.match(value)
+TypeError: expected string or bytes-like object
+
+更新生产指令出错
+713
+kwargs={"makedate": null, "planamount": "123", "batchno": "03", "instructorid": "001", "instructorname": "sys02", "plandate": null, "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null}
+--------------------
+2020-09-25 09:48:00
+TypeError('expected string or bytes-like object')
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 186, in update_producingplan
+    return Producingplan.objects.filter(autoid=autoid).update(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 784, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1515, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1141, in execute_sql
+    sql, params = self.as_sql()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1481, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "D:\pyproject\gmpsystem\db\models.py", line 35, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 1217, in get_prep_value
+    return self.to_python(value)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\fields\__init__.py", line 1179, in to_python
+    parsed = parse_date(value)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\utils\dateparse.py", line 75, in parse_date
+    match = date_re.match(value)
+TypeError: expected string or bytes-like object
+
+更新生产指令出错
+714
+kwargs={"makedate": null, "planamount": "123", "batchno": "03", "instructorid": "001", "instructorname": "sys02", "plandate": null, "deptid": "002", "deptname": "生产部", "bpconstitutorid": "001", "bpconstitutorname": "sys02", "bpconsdate": null}
+--------------------
+2020-09-25 10:14:14
+FieldError("Cannot resolve keyword 'lpamount' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpamount' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 126, in get_producingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpamount' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+ProductModel-get_producing获取批记录信息时出错
+lpamount
+args=["bpamount", "mpamount", "spamount", "qrtype"]
+kwargs={"autoid": 77}
+--------------------

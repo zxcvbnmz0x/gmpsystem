@@ -1,0 +1,63 @@
+
+2020-10-09 17:27:09
+FieldError("Cannot resolve keyword 'createdate' into field. Choices are: autoid, createtime, creatorid, creatorname, deptid, deptname, invaliddate, paperno, remark, status, supid, supname, warrantorid, warrantorname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'createdate' into field. Choices are: autoid, createtime, creatorid, creatorname, deptid, deptname, invaliddate, paperno, remark, status, supid, supname, warrantorid, warrantorname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\supplyer\models\supplyermodel.py", line 61, in get_purchasingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'createdate' into field. Choices are: autoid, createtime, creatorid, creatorname, deptid, deptname, invaliddate, paperno, remark, status, supid, supname, warrantorid, warrantorname
+
+获取采购单信息时出错
+autoid
+args=["paperno", "createdate", "creatorid", "creatorname", "supid", "supname", "basicunit", "warrantorid", "warrantorname", "remark", "invaliddate"]
+kwargs={"status": 0}
+--------------------
+2020-10-09 17:28:13
+FieldError("Cannot resolve keyword 'basicunit' into field. Choices are: autoid, createdate, creatorid, creatorname, deptid, deptname, invaliddate, paperno, remark, status, supid, supname, warrantorid, warrantorname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'basicunit' into field. Choices are: autoid, createdate, creatorid, creatorname, deptid, deptname, invaliddate, paperno, remark, status, supid, supname, warrantorid, warrantorname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\supplyer\models\supplyermodel.py", line 61, in get_purchasingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'basicunit' into field. Choices are: autoid, createdate, creatorid, creatorname, deptid, deptname, invaliddate, paperno, remark, status, supid, supname, warrantorid, warrantorname
+
+获取采购单信息时出错
+autoid
+args=["paperno", "createdate", "creatorid", "creatorname", "supid", "supname", "basicunit", "warrantorid", "warrantorname", "remark", "invaliddate"]
+kwargs={"status": 0}
+--------------------

@@ -19,8 +19,10 @@ from lib.xmlwidget.xmltextedit import XmlTextEdit
 from lib.xmlwidget.xmllineedit import XmlLineEdit
 
 from lib.utils.saveexcept import SaveExcept
+from lib.utils.messagebox import MessageBox
 
 from lib.xmlwidget.showxml import Ui_Form
+
 
 # 批记录产品信息类变量
 PRODUCT_DICT = {'PBIANHAO': 'prodid', 'PMING': 'prodname', 'PGUIGE': 'spec',
@@ -351,7 +353,7 @@ class XMLReadWrite(QWidget, Ui_Form):
                     try:
                         widget.varToWidget(item, (
                             0, self.proddetail[PRODUCT_DICT[item[1: -1]]]))
-                    except IndexError:
+                    except (IndexError, TypeError):
                         widget.varToWidget(item, (0, ''))
                 # 产品物料，分批次
                 elif item[3: -2] in STUFF_DICT or item[3: -3] in STUFF_DICT:

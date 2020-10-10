@@ -103,7 +103,6 @@ class StuffpickingModule(QDialog, Ui_Form):
             timer.start(1000)
             timer.timeout.connect(msg.close)
 
-    # 物料类型的选择，6个按键共用一个方法
     @pyqtSlot()
     def on_statusButton_clicked(self):
         button_name = self.sender()

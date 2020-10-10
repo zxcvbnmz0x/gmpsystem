@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>830</width>
+    <height>464</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>9</x>
      <y>9</y>
-     <width>621</width>
-     <height>341</height>
+     <width>810</width>
+     <height>451</height>
     </rect>
    </property>
    <property name="title">
@@ -62,16 +62,6 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>房间：</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="0">
      <widget class="QLabel" name="label_8">
       <property name="text">
@@ -84,6 +74,16 @@
     </item>
     <item row="0" column="4">
      <widget class="QLineEdit" name="lineEdit_postname"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>房间：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
     </item>
     <item row="1" column="4">
      <widget class="QLineEdit" name="lineEdit_old_batchno"/>
@@ -98,8 +98,42 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="4">
-     <widget class="QLineEdit" name="lineEdit_new_batchno"/>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_sec_clean">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>二次清场</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="3">
+     <widget class="QLabel" name="label_sec_checkdate">
+      <property name="text">
+       <string>复查日期：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="4">
+     <widget class="QLineEdit" name="lineEdit_sec_checkdate"/>
+    </item>
+    <item row="4" column="4">
+     <widget class="QLineEdit" name="lineEdit_cleandate"/>
     </item>
     <item row="0" column="3">
      <widget class="QLabel" name="label_4">
@@ -108,6 +142,66 @@
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <widget class="QLineEdit" name="lineEdit_checkdate"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>检查者：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_sec_checker">
+      <property name="text">
+       <string>复查者：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="SignButton" name="pushButton_sec_cleaner">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lineEdit_roomname"/>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLabel" name="label_15">
+      <property name="text">
+       <string>清场日期：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="3">
+     <widget class="QLabel" name="label_sec_cleandate">
+      <property name="text">
+       <string>二次清场日期：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="SignButton" name="pushButton_cleaner">
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>
@@ -131,130 +225,6 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="4">
-     <widget class="QLineEdit" name="lineEdit_sec_checkdate"/>
-    </item>
-    <item row="8" column="1">
-     <widget class="SignButton" name="pushButton_sec_cleaner">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="SignButton" name="pushButton_sec_checker">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QLineEdit" name="lineEdit_validdate"/>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="label_sec_clean">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>1</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>二次清场</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
-     <widget class="QLabel" name="label_sec_cleaner">
-      <property name="text">
-       <string>二次清场者：</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="4">
-     <widget class="QLineEdit" name="lineEdit_cleandate"/>
-    </item>
-    <item row="8" column="3">
-     <widget class="QLabel" name="label_sec_cleandate">
-      <property name="text">
-       <string>二次清场日期：</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="4">
-     <widget class="QLineEdit" name="lineEdit_checkdate"/>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_9">
-      <property name="text">
-       <string>检查者：</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="3">
-     <widget class="QLabel" name="label_sec_checkdate">
-      <property name="text">
-       <string>复查日期：</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="SignButton" name="pushButton_cleaner">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="QLabel" name="label_15">
-      <property name="text">
-       <string>清场日期：</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="label_sec_checker">
-      <property name="text">
-       <string>复查者：</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="4">
-     <widget class="QLineEdit" name="lineEdit_sec_cleandate"/>
-    </item>
-    <item row="5" column="1">
-     <widget class="SignButton" name="pushButton_checker">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="0" colspan="5">
      <widget class="QLabel" name="label_7">
       <property name="font">
@@ -270,8 +240,38 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEdit_roomname"/>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_sec_cleaner">
+      <property name="text">
+       <string>二次清场者：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="SignButton" name="pushButton_checker">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="lineEdit_validdate"/>
+    </item>
+    <item row="2" column="4">
+     <widget class="QLineEdit" name="lineEdit_new_batchno"/>
+    </item>
+    <item row="9" column="1">
+     <widget class="SignButton" name="pushButton_sec_checker">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="4">
+     <widget class="QLineEdit" name="lineEdit_sec_cleandate"/>
     </item>
    </layout>
   </widget>

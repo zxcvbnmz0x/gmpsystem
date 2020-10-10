@@ -1,14 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2578acca-1a85-4b91-a6e5-bbf7b3242777" name="Default Changelist" comment="" />
+    <list default="true" id="2578acca-1a85-4b91-a6e5-bbf7b3242777" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/imageslib/imagesmodel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labrecord/modules/checkreportmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labrecord/modules/editcheckitemmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labrecord/modules/labreportlistmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labrecord/modules/labsamplelistmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labrecord/modules/oricheckpapermodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labrecord/modules/samplingmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labrecord/modules/selectoricheckpaper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mywidget/myplaintextedit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/pdf2pxmap.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/tts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menu/modules/menumodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qrcode/controlllers/qrcodecontroller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qrcode/models/qrcodemodel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcodeinputmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcodeoutputmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcoderepositorymodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcodereturnmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale/controllers/salecontroller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale/models/salemodel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/selfdefinedfirmat/controllers/selfdefinedformatcontroller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/selfdefinedfirmat/models/selfdefinedformatmodel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supplyer/modules/editpurstuffmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supplyer/modules/purchasingplanmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supplyer/modules/selectstuffModule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system/controllers/systemcontroller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system/models/systemmodel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/oddmentputinnotemodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/productputinlistmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/midproddetailmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/midproddrawnotemodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/modifymiddetailmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/modifyoddmentmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/oddmentdetailmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/oddmentdrawnotemodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/oddmentregisternotemodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/packageinstructionmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/productioninstructionmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/productputinnotemodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/qrcodelistmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/scanqrcodemodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workshop/modules/selectoddmentdrawmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.ui" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.ui" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/controllers/labrecordscontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/controllers/labrecordscontroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/models/labmodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/models/labmodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/modules/applycheckmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/modules/applycheckmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/views/applycheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/views/applycheck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/views/applycheck.ui" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/views/applycheck.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mywidget/comboline.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mywidget/comboline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mywidget/mylineedit.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mywidget/mylineedit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sign/sign.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/sign.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sign/sign.ui" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/sign.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sign/signbutton.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/signbutton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sign/signmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/signmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/messagebox.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/messagebox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/saveexcept.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/saveexcept.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/xmlwidget/xmlcombobox.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/xmlwidget/xmlcombobox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/xmlwidget/xmlreadwrite.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/xmlwidget/xmlreadwrite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linepost/modules/postdetailmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/linepost/modules/postdetailmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linepost/views/postdetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/linepost/views/postdetail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linepost/views/postdetail.ui" beforeDir="false" afterPath="$PROJECT_DIR$/linepost/views/postdetail.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/controllers/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/controllers/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/views/mainmenu.ui" beforeDir="false" afterPath="$PROJECT_DIR$/menu/views/mainmenu.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/views/mainmenuUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/views/mainmenuUI.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/views/menuimages.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/menuimages.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/views/menuimages_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/menuimages_rc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/controllers/productcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/controllers/productcontroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/models/productmodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models/productmodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/modules/editproducingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/modules/editproducingplanmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/modules/producingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/modules/producingplanmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/modules/productdetailmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/modules/productdetailmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff/controllers/stuffcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/controllers/stuffcontroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff/controllers/stuffdetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/controllers/stuffdetail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff/models/stuffmodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/models/stuffmodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supplyer/controllers/supplyercontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/controllers/supplyercontroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supplyer/models/supplyermodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/models/supplyermodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse/controllers/warehousecontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/controllers/warehousecontroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse/models/warehousemodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/models/warehousemodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse/modules/stuffpickingmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/modules/stuffpickingmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workshop/controllers/workshopcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/controllers/workshopcontroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workshop/models/workshopmodels.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/models/workshopmodels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workshop/modules/producingmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/modules/producingmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据库结构修改.txt" beforeDir="false" afterPath="$PROJECT_DIR$/数据库结构修改.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="GMPsystem" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -17,45 +130,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>QTreeWidgetItemIterator</find>
-      <find>productpr</find>
-      <find>stuff_repository</find>
-      <find>get_stuffrepository</find>
-      <find>productstuff</find>
-      <find>transaction</find>
-      <find>Productstuff</find>
-      <find>kwargs</find>
-      <find>productst</find>
-      <find>self.stuff_repository</find>
-      <find>with</find>
-      <find>DrawstuffModule</find>
-      <find>QtGui</find>
-      <find>QtWidgets</find>
-      <find>self.detail</find>
-      <find>load_params</find>
-      <find>QtCore</find>
-      <find>reject</find>
-      <find>timer</find>
-      <find>not_find_proddetail</find>
-      <find>show_errormsg</find>
-      <find>STUFFDRAWPAPER</find>
-      <find>kind</find>
-      <find>print</find>
-      <find>get_labrecord</find>
-      <find>Labrecords</find>
-      <find>LabrecordsController</find>
-      <find>Labrecord</find>
-      <find>set_stuff_supplyer</find>
-      <find>StuffdrawpaperModule</find>
-    </findStrings>
-    <dirStrings>
-      <dir>D:\pyproject\GMPsystem\stuff\views</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gZPnxKISiWUPvrZNDVV4CW6wxj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -66,9 +142,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Anaconda3/envs/py3.8.5/Scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/supplyer/modules" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -83,18 +159,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pyproject\gmpsystem\qrcode\modules" />
+      <recent name="D:\pyproject\gmpsystem\warehouse\views" />
+      <recent name="D:\pyproject\gmpsystem" />
+      <recent name="D:\pyproject\gmpsystem\imageslib" />
       <recent name="D:\pyproject\GMPsystem\linepost\views" />
-      <recent name="D:\pyproject\GMPsystem\cleanfirmity\views" />
-      <recent name="D:\pyproject\GMPsystem\cleanfirmity" />
-      <recent name="D:\pyproject\GMPsystem\general_document\views" />
-      <recent name="D:\pyproject\GMPsystem" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\pyproject\GMPsystem\warehouse\modules" />
-      <recent name="D:\pyproject\GMPsystem\cleanfirmity\modules" />
-      <recent name="D:\pyproject\GMPsystem\lib\xmlwidget" />
-      <recent name="D:\pyproject\GMPsystem\lib\utils" />
-      <recent name="D:\pyproject\GMPsystem\lib\mywidget" />
+      <recent name="D:\pyproject\gmpsystem\supplyer\modules" />
+      <recent name="D:\pyproject\gmpsystem\qrcode\modules" />
+      <recent name="D:\pyproject\gmpsystem\lib\mywidget" />
+      <recent name="D:\pyproject\gmpsystem\warehouse\modules" />
+      <recent name="D:\pyproject\gmpsystem\menu\modules" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test2">
@@ -224,7 +300,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GMPsystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -232,11 +308,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stuff" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stuff/testb.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -246,21 +322,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.teat" />
+      <item itemvalue="Python.test2" />
       <item itemvalue="Python.evalenv" />
       <item itemvalue="Python.main2" />
-      <item itemvalue="Python.teat" />
       <item itemvalue="Python.test (1)" />
-      <item itemvalue="Python.test2" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.testb" />
+      <item itemvalue="Python.test3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test3" />
         <item itemvalue="Python.main2" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.evalenv" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.testb" />
       </list>
     </recent_temporary>
   </component>
@@ -314,32 +390,146 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="397" y="109" key="FileChooserDialogImpl" timestamp="1598320687765">
+    <state x="384" y="141" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602315982073">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="384" y="141" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602315982073" />
+    <state x="420" y="50" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1598335178873">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="420" y="50" key="#com.intellij.ide.macro.MacrosDialog/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598335178873" />
+    <state x="371" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599097703621">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="371" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1599097703621" />
+    <state x="404" y="174" key="#com.intellij.tools.ToolEditorDialog" timestamp="1598335181003">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="404" y="174" key="#com.intellij.tools.ToolEditorDialog/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598335181003" />
+    <state x="397" y="109" key="FileChooserDialogImpl" timestamp="1598336112299">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="397" y="109" key="FileChooserDialogImpl/0.0.1280.689/1920.0.1920.1050@0.0.1280.689" timestamp="1598320687765" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1598320712648">
+    <state x="397" y="109" key="FileChooserDialogImpl/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336112299" />
+    <state width="1259" height="179" key="GridCell.Tab.0.bottom" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1899" height="268" key="GridCell.Tab.0.bottom/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854503" />
+    <state width="1259" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.0.bottom/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
+    <state width="1259" height="156" key="GridCell.Tab.0.bottom/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
+    <state width="1259" height="155" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
+    <state width="1259" height="179" key="GridCell.Tab.0.center" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1899" height="268" key="GridCell.Tab.0.center/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854502" />
+    <state width="1259" height="179" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.0.center/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
+    <state width="1259" height="156" key="GridCell.Tab.0.center/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
+    <state width="1259" height="155" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
+    <state width="1259" height="179" key="GridCell.Tab.0.left" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1899" height="268" key="GridCell.Tab.0.left/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854502" />
+    <state width="1259" height="179" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.0.left/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816788" />
+    <state width="1259" height="156" key="GridCell.Tab.0.left/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
+    <state width="1259" height="155" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
+    <state width="1259" height="179" key="GridCell.Tab.0.right" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1899" height="268" key="GridCell.Tab.0.right/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854503" />
+    <state width="1259" height="179" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.0.right/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
+    <state width="1259" height="156" key="GridCell.Tab.0.right/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
+    <state width="1259" height="155" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
+    <state width="1259" height="179" key="GridCell.Tab.1.bottom" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.1.bottom/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816790" />
+    <state width="1259" height="183" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
+    <state width="1259" height="179" key="GridCell.Tab.1.center" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.1.center/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
+    <state width="1259" height="183" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
+    <state width="1259" height="179" key="GridCell.Tab.1.left" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.1.left/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
+    <state width="1259" height="183" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
+    <state width="1259" height="179" key="GridCell.Tab.1.right" timestamp="1602322149547">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
+    <state width="1259" height="183" key="GridCell.Tab.1.right/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816790" />
+    <state width="1259" height="183" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1598492974436">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
+    <state x="213" y="0" key="SettingsEditor/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598338808321" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1598492974436" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.689/1920.0.1920.1050@0.0.1280.689" timestamp="1598320712648" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336386754" />
+    <state x="158" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599637502641">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="158" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1599637502641" />
+    <state x="0" y="0" width="605" height="680" key="find.popup" timestamp="1602317061627">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" width="605" height="680" key="find.popup/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602317061627" />
+    <state x="0" y="0" width="605" height="689" key="find.popup/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600069898032" />
+    <state x="303" y="10" width="672" height="670" key="search.everywhere.popup" timestamp="1602316066654">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="10" width="672" height="670" key="search.everywhere.popup/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602316066654" />
+    <state x="303" y="10" width="672" height="670" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1600757373741" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1599809042872" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>474</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/labrecord/modules/editcheckitemmodule.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>328</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/workshop/modules/modifyoddmentmodule.py</url>
+          <line>169</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/stuff/modules/stuffdrawpapermodule.py</url>
+          <url>file://$PROJECT_DIR$/product/modules/editproducingplanmodule.py</url>
+          <line>199</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/workshop/modules/scanqrcodemodule.py</url>
+          <line>327</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py</url>
           <line>71</line>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/supplyer/models/supplyermodel.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

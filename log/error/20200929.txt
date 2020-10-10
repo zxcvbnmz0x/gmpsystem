@@ -1,0 +1,247 @@
+
+2020-09-29 11:06:57
+FieldError("Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 126, in get_producingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+ProductModel-get_producing获取批记录信息时出错
+autoid
+args=["prodid", "prodname", "batchno", "spec", "package", "makedate", "lpunit", "bpunit", "mpunit", "spunit", " makedate"]
+kwargs={"autoid": 3}
+--------------------
+2020-09-29 14:00:58
+FieldError("Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 126, in get_producingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+ProductModel-get_producing获取批记录信息时出错
+autoid
+args=["prodid", "prodname", "batchno", "spec", "package", "makedate", "lpunit", "bpunit", "mpunit", "spunit", " makedate"]
+kwargs={"autoid": 3}
+--------------------
+2020-09-29 14:03:50
+FieldError("Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 126, in get_producingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+ProductModel-get_producing获取批记录信息时出错
+autoid
+args=["prodid", "prodname", "batchno", "spec", "package", "makedate", "lpunit", "bpunit", "mpunit", "spunit", " makedate"]
+kwargs={"autoid": 36}
+--------------------
+2020-09-29 14:04:15
+FieldError("Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 126, in get_producingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'lpunit' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, hpunit, instructorid, instructorname, labelimgid, lineid, linename, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+ProductModel-get_producing获取批记录信息时出错
+autoid
+args=["prodid", "prodname", "batchno", "spec", "package", "makedate", "lpunit", "bpunit", "mpunit", "spunit", " makedate"]
+kwargs={"autoid": 36}
+--------------------
+2020-09-29 14:08:08
+FieldError("Cannot resolve keyword ' makedate' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, instructorid, instructorname, labelimgid, lineid, linename, lpunit, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword ' makedate' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, instructorid, instructorname, labelimgid, lineid, linename, lpunit, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 126, in get_producingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword ' makedate' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, instructorid, instructorname, labelimgid, lineid, linename, lpunit, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+ProductModel-get_producing获取批记录信息时出错
+autoid
+args=["prodid", "prodname", "batchno", "spec", "package", "makedate", "lpunit", "bpunit", "mpunit", "spunit", " makedate"]
+kwargs={"autoid": 36}
+--------------------
+2020-09-29 14:09:56
+FieldError("Cannot resolve keyword ' makedate' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, instructorid, instructorname, labelimgid, lineid, linename, lpunit, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword ' makedate' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, instructorid, instructorname, labelimgid, lineid, linename, lpunit, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\product\models\productmodel.py", line 126, in get_producingplan
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword ' makedate' into field. Choices are: allowno, autoid, basicamount, basicunit, batchno, bpamount, bpconsdate, bpconstitutorid, bpconstitutorname, bpdate, bpexecutedate, bpexecutorid, bpexecutorname, bpqadate, bpqaid, bpqaname, bpunit, bpwarrantdate, bpwarrantorid, bpwarrantorname, commonname, daykind, deptid, deptname, executedate, executorid, executorname, expireddates, instructorid, instructorname, labelimgid, lineid, linename, lpunit, makedate, medkind, midstatus, mpamount, mpunit, package, planamount, plandate, plflag, pltype, prodid, prodname, prodstatus, productgist, qaauditorid, qaauditorname, qadate, qrflag, qrtype, realamount, remark, spamount, spec, spprice, spunit, status, statustime, version, warrantdate, warrantorid, warrantorname, workshopid, workshopname
+
+ProductModel-get_producing获取批记录信息时出错
+autoid
+args=["prodid", "prodname", "batchno", "spec", "package", "makedate", "lpunit", "bpunit", "mpunit", "spunit", " makedate"]
+kwargs={"autoid": 36}
+--------------------
+2020-09-29 14:13:50
+FieldError("Cannot resolve keyword 'ppid' into field. Choices are: allowno, autoid, companyname, createdate, prodname, qrcode, telno, used, useddate")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\workshop\models\workshopmodels.py", line 68, in get_qrcoderep
+    res = Qrcoderepository.objects.filter(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1258, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1084, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'ppid' into field. Choices are: allowno, autoid, companyname, createdate, prodname, qrcode, telno, used, useddate
+
+获取二维码库时出错
+qrcode0
+args=["qrcode1", "qrcode2", "qrcode3"]
+kwargs={"ppid": 36}
+--------------------
+2020-09-29 14:17:00
+FieldError("Cannot resolve keyword 'ppid' into field. Choices are: allowno, autoid, companyname, createdate, prodname, qrcode, telno, used, useddate")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\workshop\models\workshopmodels.py", line 68, in get_qrcoderep
+    res = Qrcoderepository.objects.filter(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1258, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1084, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'ppid' into field. Choices are: allowno, autoid, companyname, createdate, prodname, qrcode, telno, used, useddate
+
+获取二维码库时出错
+qrcode0
+args=["qrcode1", "qrcode2", "qrcode3"]
+kwargs={"ppid": 36}
+--------------------

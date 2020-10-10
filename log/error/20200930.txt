@@ -1,0 +1,32 @@
+
+2020-09-30 15:19:32
+FieldError("Cannot resolve keyword 'country' into field. Choices are: address, autoid, bankaccount, bankname, charger, chargertelno, chargertitle, city, clientid, clientname, county, dues, email, faxno, homepage, inputcode, kind, linkman, postzip, province, remark, salerid, salername, taxno, telno, totalmoney, unitcode")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'country' into field. Choices are: address, autoid, bankaccount, bankname, charger, chargertelno, chargertitle, city, clientid, clientname, county, dues, email, faxno, homepage, inputcode, kind, linkman, postzip, province, remark, salerid, salername, taxno, telno, totalmoney, unitcode
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\sale\models\salemodel.py", line 19, in get_client
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'country' into field. Choices are: address, autoid, bankaccount, bankname, charger, chargertelno, chargertitle, city, clientid, clientname, county, dues, email, faxno, homepage, inputcode, kind, linkman, postzip, province, remark, salerid, salername, taxno, telno, totalmoney, unitcode
+
+获取客户信息时出错
+clientname
+args=["kind", "unitcode", "province", "city", "country"]
+kwargs={"clientid": "XNPCFW"}
+--------------------

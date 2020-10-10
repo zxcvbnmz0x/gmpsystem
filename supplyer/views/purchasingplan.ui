@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>785</width>
+    <height>583</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_0">
+      <attribute name="title">
+       <string>编辑</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="treeWidget_orderlist">
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>spid</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>单号</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>供应商</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>建立日期</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>申请人</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>批准人</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>计划到货日期</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>备注</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>采购物料</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QTreeWidget" name="treeWidget_stufflist">
+            <property name="contextMenuPolicy">
+             <enum>Qt::CustomContextMenu</enum>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::ExtendedSelection</enum>
+            </property>
+            <column>
+             <property name="text">
+              <string>id</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>名称</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>类别</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>含量规格</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>包装规格</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>采购数量</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>已到货数量</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>单位</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>生产厂家</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_1">
+      <attribute name="title">
+       <string>正在执行</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>已完成</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

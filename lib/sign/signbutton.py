@@ -16,9 +16,16 @@ class SignButton(QPushButton):
             "SignButton{background-color: rgb(255, 0, 0);border:none;}")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
         self.setSizePolicy(sizePolicy)
-        self.setMinimumSize(QSize(130, 20))
+        self.setMinimumSize(QSize(130, 34))
         self.clicked.connect(self.open_sign)
-        self.SM.userchanged.connect(self.sign)
+        self.SM.userchanged.connect(self.setSign)
+
+    def setEnabled(self, p_bool):
+        if not p_bool:
+            self.setStyleSheet(
+                "SignButton{background-color: rgba(255, 0, 0, 0);border:none;}"
+            )
+        super(SignButton, self).setEnabled(p_bool)
 
     def open_sign(self):
         if len(self.text()):
@@ -26,7 +33,14 @@ class SignButton(QPushButton):
         else:
             self.SM.username.clear()
         self.SM.exec()
-
-    def sign(self, p_str):
-        self.setText(p_str)
+    
+    def setText(self, p_str):
+        if p_str == ' ':
+            return 
+        super(SignButton, self).setText(p_str)
+        
+    def setSign(self, p_str):
         self.signChanged.emit(p_str)
+        if p_str == ' ':
+            return 
+        self.setText(p_str)

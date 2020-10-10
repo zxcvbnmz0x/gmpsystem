@@ -47,3 +47,39 @@ class WarehouseController(object):
 
     def update_stuffrepository_amount(self, *args, **kwargs):
         return WarehouseModel.update_stuffrepository_amount(*args, **kwargs)
+
+    def get_prodputoutpaper(self, display_flag=False, *args, **kwargs):
+        return WarehouseModel.get_productputoutpaper(display_flag, *args, **kwargs)
+
+    def update_prodputoutpaper(self, autoid, *args, **kwargs):
+        return WarehouseModel.update_productputoutpaper(autoid, *args, **kwargs)
+
+    def delete_productputpaper(self, autoid, *args, **kwargs):
+        return WarehouseModel.delete_productputoutpaper(autoid, *args, **kwargs)
+
+    def get_prodwithdrawnote(self, display_flag=False, *args, **kwargs):
+        return WarehouseModel.get_prodwithdrawnote(display_flag, *args, **kwargs)
+
+    def update_prodwithdrawnote(self, autoid, *args, **kwargs):
+        return WarehouseModel.update_prodwithdrawnote(autoid, *args, **kwargs)
+
+    def delete_prodwithdrawnote(self, autoid, *args, **kwargs):
+        return WarehouseModel.delete_prodwithdrawnote(autoid, *args, **kwargs)
+
+    def get_ppopqrcode(self, display_flag=False, *args, **kwargs):
+        return WarehouseModel.get_ppopqrcode(display_flag, *args, **kwargs)
+
+    def update_ppopqrcode(self, autoid, *args, **kwargs):
+        return WarehouseModel.update_ppopqrcode(autoid, *args, **kwargs)
+
+    def delete_ppopqrcode(self, autoid, *args, **kwargs):
+        return WarehouseModel.delete_ppopqrcode(autoid, *args, **kwargs)
+
+    def get_pwqrcode(self, display_flag=False, *args, **kwargs):
+        return WarehouseModel.get_pwqrcode(display_flag, *args, **kwargs)
+
+    def update_pwqrcode(self, autoid, *args, **kwargs):
+        return WarehouseModel.update_pwqrcode(autoid, *args, **kwargs)
+
+    def delete_pwqrcode(self, autoid, *args, **kwargs):
+        return WarehouseModel.delete_pwqrcode(autoid, *args, **kwargs)

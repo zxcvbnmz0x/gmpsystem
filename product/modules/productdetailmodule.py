@@ -179,9 +179,7 @@ class ProductDetailModule(QtWidgets.QDialog, Ui_Dialog):
                                                                          os.path.expanduser(
                                                                              "~") + "\Desktop",
                                                                          "*.jpg;;*.png;;All Files(*)")
-            bt = QtCore.QByteArray()
-            buffer = QtCore.QBuffer(bt)
-            buffer.open(QtCore.QIODevice.WriteOnly)
+
             for item in img_names:
                 imagename_no_ext = item.split("/")[-1]
                 image_ext = item.split(".")[1]

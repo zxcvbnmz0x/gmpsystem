@@ -10,9 +10,10 @@ from clerks.controllers.clerks import Clerks
 from equipment.controllers.equipmentcontroller import EquipmentController
 from equipment.modules.eqrunnotedodule import EqrunnoteModule
 
-import datetime
 import json
 import user
+
+RUN_STATUS = ("正常运行", "停用待修", "故障抢修", "日常小修", "计划大修")
 
 
 class PostdetailModule(QWidget, Ui_Form):
@@ -146,7 +147,6 @@ class PostdetailModule(QWidget, Ui_Form):
                 res = EC.delete_equip_run_note(autoid_list)
             if res:
                 self.get_equiprunnote()
-                self.treeWidget_equipment.itemDoubleClicked()
 
     # 运行记录双击功能
     @pyqtSlot(QTreeWidgetItem, int)
@@ -240,6 +240,3 @@ class PostdetailModule(QWidget, Ui_Form):
 
     def save(self):
         pass
-
-
-RUN_STATUS = ("正常运行", "停用待修", "故障抢修", "日常小修", "计划大修")

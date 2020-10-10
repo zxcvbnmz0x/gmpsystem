@@ -38,5 +38,6 @@ def SaveExcept(error, describe=None, data=None, *args, **kwargs):
 class DateEnconding(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, datetime):
-            print("datetime." + o.strftime('%Y-%m-%d %hh:%MM-%ss'))
-            return "datetime." + o.strftime('%Y-%m-%d %hh:%MM-%ss')
+            print("datetime." + str(o))
+            # return "datetime." + o.strftime('%Y-%m-%d %hh:%MM-%ss')
+            return "datetime." + str(o)

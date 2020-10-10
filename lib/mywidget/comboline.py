@@ -55,7 +55,8 @@ class ComboLine(myLineEdit):
         self.resize(rect.width(), rect.height())
         self.namelist.move(rect.x(), rect.y() + 20)
 
-    def setup(self, db_table: str, row: tuple, key: set, row_name: list):
+    def setup(self, db_table: str, row: tuple, key: set, row_name: list,
+              treewidth: int = 200, treeheight: int = 200):
         """ 初始化下拉输入框
         生产的语句格式：select row from db_table where key like '%str'
         参数
@@ -68,7 +69,12 @@ class ComboLine(myLineEdit):
             要进行比较的数据表列名
         row_name : list
             下拉列表中的表头名
+        treewidth: int
+            下拉列表的宽度
+        treeheight: int
+            下拉列表的高度
         """
+        self.namelist.resize(treewidth, treeheight)
         self.row_name = row_name
         try:
             self.valuetuple = row
@@ -98,15 +104,14 @@ class ComboLine(myLineEdit):
             return self.namelist.currentItem()
         except AttributeError:
             return ''
-    
+
     def setText(self, p_str):
         if len(p_str):
             self.setStyleSheet("background-color: rgb(255, 255, 125);")
         else:
             self.setStyleSheet("background-color: rgb(255, 255, 255);")
         super(ComboLine, self).setText(p_str)
-            
-    
+
     def raise_(self):
         self.namelist.raise_()
 
@@ -121,7 +126,7 @@ class ComboLine(myLineEdit):
             self.getItem.emit(self.get_item())
             self.namelist.setVisible(False)
             self.setStyleSheet("background-color: rgb(255, 255, 125);")
-            #self.flat = 0
+            self.flat = 1
         except:
             self.setStyleSheet("background-color: rgb(255, 255, 255);")
 

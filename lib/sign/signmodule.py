@@ -29,21 +29,20 @@ class SignModule(QDialog, Ui_Dialog):
         self.sign = 0
         self.tipslabel.setVisible(False)
         self.username.setup('Clerks', ('clerkid', 'pid', 'clerkname'), ('pid', 'clerkname'),['id', '编号', '姓名'])
-        self.username.namelist.resize(180, 130)
+        self.username.namelist.resize(280, 200)
     
     def exec(self):
         self.password.clear()
         self.tipslabel.setVisible(False)
         self.RadioButton_sign.setChecked(True)
         self.RadioButton_unsign.setChecked(False)
-        self.username.namelist.resize(180, 130)
+
+        super(SignModule, self).exec()
 
         if len(self.username.text()):
             self.password.setFocus()
         else:
             self.username.setFocus()
-        super(SignModule, self).exec()
-
 
     @pyqtSlot()
     def on_acceptButton_clicked(self):
@@ -74,7 +73,6 @@ class SignModule(QDialog, Ui_Dialog):
                 self.tipslabel.setVisible(True)
         except (ValueError, AttributeError):
             self.close()
-
 
     @pyqtSlot()
     def on_cancelButton_clicked(self):

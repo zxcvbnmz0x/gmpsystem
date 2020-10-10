@@ -6,7 +6,7 @@ import os
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication  ,QWidget,QLineEdit, QDialog
 from PyQt5.QtGui import   QPainter ,QPixmap, QPen
-from PyQt5.QtCore import Qt , QPoint, QFile, QUrl,QTextStream,QIODevice,QByteArray
+from PyQt5.QtCore import Qt , QPoint, QDate,QFile, QUrl,QTextStream,QIODevice,QByteArray, pyqtSlot
 from PyQt5.QtXmlPatterns import QXmlQuery
 from PyQt5.QtXml import QDomDocument,QDomNode,QDomElement
 from equipment.controllers.equipmentcontroller import EquipmentController
@@ -47,7 +47,7 @@ class Winform(QWidget):
         s = StuffdrawpaperModule(6781, 0, parent=self)
         res = s.show()
         print(res)
-from beeprint import pp
+
 from django.db.models import Aggregate, CharField
 from django.db.models.expressions import Func
 class Concat(Func):
@@ -70,11 +70,112 @@ from PyQt5.QtWidgets import QTreeWidgetItem
 from db.models import Productstuff
 from lib.utils.inputcode import Inputcode
 from labrecord.modules.applycheckmodule import ApplycheckModule
+from labrecord.modules.labsamplelistmodule import LabsamplelistModule
+from labrecord.modules.labreportlistmodule import LabreportlistModule
+from labrecord.modules.checkreportmodule import CheckreportModule
+from workshop.modules.productioninstructionmodule import PorductionInstructionModule
+from workshop.modules.packageinstructionmodule import PackageInstructionModule
+from workshop.modules.midproddrawnotemodule import MidproddrawnoteModule
+from workshop.modules.midproddetailmodule import MidproddetailModule
+from workshop.modules.oddmentregisternotemodule import OddmentregisternoteModule
+from workshop.modules.oddmentdrawnotemodule import OddmentdrawnoteModule
+from workshop.modules.oddmentdetailmodule import OddmentdetailModule
+from warehouse.modules.oddmentputinnotemodule import OddmentputinnoteModule
+from workshop.modules.productputinnotemodule import ProductputinModule
+from warehouse.modules.productputinlistmodule import ProductputinlistModule
+from workshop.modules.qrcodelistmodule import QrcodelistModule
+from workshop.modules.scanqrcodemodule import ScanqrcodeModule
+from qrcode.modules.qrcodeinputmodule import QrcodeinputModule
+from qrcode.modules.qrcodeoutputmodule import QrcodeoutputModule
+from qrcode.modules.qrcodereturnmodule import QrcodereturnModule
+from supplyer.modules.purchasingplanmodule import PurchasingplanModule
+
 import re
+from db.models import Relativepictures, Imagelib
+
+class a():
+    b = 0
+
+    @pyqtSlot(QDate)
+    def on_dateEdit_bpdate_dateChanged(self, q_date):
+        try:
+            if type(self.ori_detail['bpdate']) is str:
+                self.new_detail['bpdate'] = q_date.toPyDate()
+                return
+            if q_date != QDate(self.ori_detail['bpdate']):
+                self.new_detail['bpdate'] = q_date.toPyDate()
+            else:
+                try:
+                    del self.new_detail['bpdate']
+                except KeyError:
+                    pass
+        except KeyError:
+            self.new_detail['bpdate'] = q_date.toPyDate()
+
+# 修改备注时触发
+@pyqtSlot(str)
+def on_lineEdit_remark_textChanged(self, p_str):
+    try:
+        if p_str != self.ori_detail['remark']:
+            self.new_detail['remark'] = p_str
+        else:
+            try:
+                del self.new_detail['remark']
+            except KeyError:
+                pass
+    except KeyError:
+        self.new_detail['remark'] = p_str
+
+
+    @pyqtSlot(str)
+    def on_pushButton_warrantor_signChanged(self, p_str):
+        if len(p_str.split(' ')) != 2 and p_str != '':
+            return
+        id, name = p_str.split(' ') if p_str != '' else ('', '')
+        try:
+            if id != self.ori_detail['warrantorid'] or name != self.ori_detail[
+                'warrantorname']:
+                self.new_detail['warrantorid'] = id
+                self.new_detail['warrantorname'] = name
+            else:
+                try:
+                    del self.new_detail['warrantorid']
+                    del self.new_detail['warrantorname']
+                except KeyError:
+                    pass
+        except KeyError:
+            self.new_detail['warrantorid'] = id
+            self.new_detail['warrantorname'] = name
+import datetime
+
+datetime.date.today()
+
+
 if __name__ == "__main__":
+
     app = QApplication(sys.argv)
-    form = ApplycheckModule(4)
-    #form = ApplycheckModule(36, 6808,0)
+    # form = LabreportlistModule()
+    # form = LabsamplelistModule()
+    # form = ApplycheckModule(22)
+    # form = CheckreportModule(8)
+    # form = PorductionInstructionModule(9)
+    # form = PackageInstructionModule(9)
+    # form = MidproddrawnoteModule(4,1)
+    # form = MidproddetailModule()
+    # form = OddmentregisternoteModule(77)
+    # form = OddmentdrawnoteModule(77)
+    # form = OddmentdetailModule()
+    # form = OddmentputinnoteModule()
+    # form = ProductputinModule(ppid=77)
+    # form = ProductputinlistModule()
+
+    # form = QrcodelistModule(77)
+    # form = ScanqrcodeModule(77)
+    # form = QrcodeinputModule()
+    # form = QrcodereturnModule()
+    form = PurchasingplanModule()
     form.show()
     sys.exit(app.exec_())
+
+
 

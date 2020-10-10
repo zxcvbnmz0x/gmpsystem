@@ -5,12 +5,22 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from db.models import Selfdefinedformat
 
 
-from menu.views.mainmenuUI import Ui_MainWindow
+from menu.views.mainmenu import Ui_MainWindow
 from clerks.controllers.deptclerks import Clerks
 from stuff.controllers.stuffdictionary import StuffDictionary
+
 from product.controllers.productdictionary import ProductDictionary
 from product.controllers.producingplan import Producingplan
+
+from labrecord.modules.labsamplelistmodule import LabsamplelistModule
+from labrecord.modules.labreportlistmodule import LabreportlistModule
+
 from warehouse.modules.stuffpickingmodule import StuffpickingModule
+from warehouse.modules.oddmentputinnotemodule import OddmentputinnoteModule
+from warehouse.modules.productputinlistmodule import ProductputinlistModule
+
+from workshop.modules.midproddetailmodule import MidproddetailModule
+from workshop.modules.oddmentdetailmodule import OddmentdetailModule
 
 
 class Menu(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -66,6 +76,22 @@ class Menu(QtWidgets.QMainWindow, Ui_MainWindow):
                 tab_no = self.tabWidget.addTab(menu, "产品字典")
                 self.tabWidget.setCurrentIndex(tab_no)
                 self.tablist.append("productdict")
+        elif item == "请验取样":
+            if "sampling" in self.tablist:
+                self.tabWidget.setCurrentIndex(self.tablist.index("sampling"))
+            else:
+                menu = LabsamplelistModule(self)
+                tab_no = self.tabWidget.addTab(menu, "请验取样")
+                self.tabWidget.setCurrentIndex(tab_no)
+                self.tablist.append("sampling")
+        elif item == "检验报告":
+            if "labreport" in self.tablist:
+                self.tabWidget.setCurrentIndex(self.tablist.index("labreport"))
+            else:
+                menu = LabreportlistModule(self)
+                tab_no = self.tabWidget.addTab(menu, "检验报告")
+                self.tabWidget.setCurrentIndex(tab_no)
+                self.tablist.append("labreport")
         elif item == "生产指令":
             if "producingplan" in self.tablist:
                 self.tabWidget.setCurrentIndex(self.tablist.index("producingplan"))
@@ -100,8 +126,23 @@ class Menu(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.tabWidget.setCurrentIndex(tab_no)
                 self.tablist.append("selfdefineformat")
 
+        elif item == "半成品登记/发放":
+            if "midproddraw" in self.tablist:
+                self.tabWidget.setCurrentIndex(self.tablist.index("midproddraw"))
+            else:
+                menu = MidproddetailModule(self)
+                tab_no = self.tabWidget.addTab(menu, "生产领料")
+                self.tabWidget.setCurrentIndex(tab_no)
+                self.tablist.append("midproddraw")
+        elif item == "零头登记/发放":
+            if "midproddraw" in self.tablist:
+                self.tabWidget.setCurrentIndex(self.tablist.index("midproddraw"))
+            else:
+                menu = MidproddetailModule(self)
+                tab_no = self.tabWidget.addTab(menu, "生产领料")
+                self.tabWidget.setCurrentIndex(tab_no)
+                self.tablist.append("midproddraw")
         elif item == "生产领料":
-            StuffpickingModule
             if "stuffpicking" in self.tablist:
                 self.tabWidget.setCurrentIndex(self.tablist.index("stuffpicking"))
             else:
@@ -109,6 +150,14 @@ class Menu(QtWidgets.QMainWindow, Ui_MainWindow):
                 tab_no = self.tabWidget.addTab(menu, "生产领料")
                 self.tabWidget.setCurrentIndex(tab_no)
                 self.tablist.append("stuffpicking")
+        elif item == "产品寄库":
+            if "prodputin" in self.tablist:
+                self.tabWidget.setCurrentIndex(self.tablist.index("prodputin"))
+            else:
+                menu = ProductputinlistModule(self)
+                tab_no = self.tabWidget.addTab(menu, "产品寄库")
+                self.tabWidget.setCurrentIndex(tab_no)
+                self.tablist.append("prodputin")
 
     def on_close_requested(self, p_str):
         self.tabWidget.removeTab(p_str)

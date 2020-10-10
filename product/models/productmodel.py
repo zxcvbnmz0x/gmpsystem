@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from lib.utils.saveexcept import SaveExcept
 from django.db import transaction, connection
-from db.models import Productdictionary, Productlabel, Producingplan
+from db.models import Productdictionary, Productlabel, Producingplan, Midproddrawnotes, Oddmentdrawnotes
 from imageslib.controllers.image import Image
 import user
 
@@ -114,20 +114,127 @@ class ProductModel(object):
             SaveExcept(e, "保存产品标签图时出错", autoid=autoid, args=args, kwargs=kwargs)
 
     @staticmethod
-    def get_producingplan(flag=0, *args, **kwargs):
+    def get_producingplan(display_flag=False, *args, **kwargs):
         flat = True if len(args) == 1 else False
         try:
+            res = Producingplan.objects.filter(**kwargs)
             if len(args):
-                res = Producingplan.objects.filter(**kwargs)
-                if flag == 0:
+
+                if display_flag:
                     return res.values_list(*args, flat=flat)
                 else:
                     return res.values(*args)
             else:
-                return Producingplan.objects.filter(**kwargs)
+                return res
         except Exception as e:
             SaveExcept(e, "ProductModel-get_producing获取批记录信息时出错", *args,
                        **kwargs)
+
+    @staticmethod
+    def get_midproddrawnotes(flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            res = Midproddrawnotes.objects.filter(**kwargs)
+            if len(args):
+
+                if flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, "获取半成品登记/发放时出错", *args, *kwargs)
+
+    @staticmethod
+    def get_oddmentdrawnotes(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            res = Oddmentdrawnotes.objects.filter(**kwargs)
+            if len(args):
+
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, "获取零头登记/发放时出错", *args, *kwargs)
+
+    @staticmethod
+    def update_producingplan_status(autoid, *args, **kwargs):
+        try:
+            if kwargs['status'] == 2:
+                with transaction.atomic():
+                    cursor = connection.cursor()
+                    for aid in autoid:
+                        cursor.execute("call startproducingplan(%s)" % (aid))
+                    res = Producingplan.objects.filter(
+                        autoid__in=autoid).update(**kwargs)
+                return res
+            else:
+                return Producingplan.objects.filter(autoid__in=autoid).update(
+                    **kwargs)
+        except KeyError:
+            pass
+
+    @staticmethod
+    def update_producingplan(autoid, *args, **kwargs):
+        try:
+            if autoid:
+                return Producingplan.objects.filter(autoid=autoid).update(
+                    **kwargs)
+            elif kwargs:
+                return Productdictionary.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "更新生产指令出错", data=autoid, *args, **kwargs)
+
+    @staticmethod
+    def update_midproddrawnotes(autoid, *args, **kwargs):
+        try:
+            if autoid:
+                if type(autoid) == int:
+                    return Midproddrawnotes.objects.filter(
+                        autoid=autoid).update(**kwargs)
+                else:
+                    return Midproddrawnotes.objects.filter(
+                        autoid__in=autoid).update(**kwargs)
+            elif kwargs:
+                return Midproddrawnotes.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "更新半成品登记/发放记录出错", data=autoid, *args, **kwargs)
+
+    @staticmethod
+    def update_oddmentdrawnotes(autoid, *args, **kwargs):
+        try:
+            if autoid:
+                if type(autoid) == int:
+                    return Oddmentdrawnotes.objects.filter(autoid=autoid).update(**kwargs)
+                else:
+                    return Oddmentdrawnotes.objects.filter(
+                        autoid__in=autoid).update(**kwargs)
+            elif kwargs:
+                return Oddmentdrawnotes.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "更新零头登记/发放记录出错", data=autoid, *args, **kwargs)
+
+    @staticmethod
+    def create_producingplan(flat, **kwargs):
+        try:
+            cursor = connection.cursor()
+            cursor.execute(
+                "select createproducingplan(%s,%s)" % (flat, kwargs['id']))
+            aid = cursor.fetchone()
+            del kwargs['id']
+            # kwargs['id'] = aid
+            if aid:
+                ProductModel.update_producingplan(aid[0], **kwargs)
+                return aid[0]
+        except KeyError:
+            SaveExcept(KeyError, "缺少产品autoid", data=flat, **kwargs)
+        except Exception as e:
+            SaveExcept(e, "新建生产记录时出错", data=flat, **kwargs)
 
     @staticmethod
     def delete_producingplan(autoid=None, flat=0, *args):
@@ -153,49 +260,38 @@ class ProductModel(object):
         except Exception as e:
             SaveExcept(e, "删除生产记录时出错", *args, flat=flat)
 
+
     @staticmethod
-    def update_producingplan_status(autoid, *args, **kwargs):
+    def delete_midproddrawnotes(autoid, *args, **kwargs):
         try:
-            if kwargs['status'] == 2:
-                with transaction.atomic():
-                    cursor = connection.cursor()
-                    for aid in autoid:
-                        cursor.execute("call startproducingplan(%s)" % (aid))
-                    res = Producingplan.objects.filter(
-                        autoid__in=autoid).update(**kwargs)
-                return res
+            res = Midproddrawnotes.objects
+            if type(autoid) is int:
+                return res.filter(autoid=autoid).delete()
+            elif type(autoid) is list:
+                return res.filter(autoid__in=autoid).delete()
             else:
-                return Producingplan.objects.filter(autoid__in=autoid).update(
-                    **kwargs)
-        except KeyError:
-            pass
+                return []
+        except Exception as e:
+            SaveExcept(e, "删除半成品登记记录时出错", data=autoid, *args, **kwargs)
 
     @staticmethod
-    def update_producingplan(autoid, *args, **kwargs):
-
+    def delete_oddmentdrawnotes(autoid, *args, **kwargs):
         try:
-            if autoid:
-                return Producingplan.objects.filter(autoid=autoid).update(
-                    **kwargs)
-            elif kwargs:
-                return Productdictionary.objects.create(**kwargs)
+            res = Oddmentdrawnotes.objects
+            if type(autoid) is int:
+                return res.filter(autoid=autoid).delete()
+            elif type(autoid) is list:
+                return res.filter(autoid__in=autoid).delete()
+            else:
+                return []
         except Exception as e:
-            SaveExcept(e, "更新生产指令出错", data=autoid, *args, **kwargs)
+            SaveExcept(e, "删除零头登记记录时出错", data=autoid, *args, **kwargs)
 
     @staticmethod
-    def create_producingplan(flat, **kwargs):
-
-        try:
-            cursor = connection.cursor()
-            cursor.execute(
-                "select createproducingplan(%s,%s)" % (flat, kwargs['id']))
-            aid = cursor.fetchone()
-            del kwargs['id']
-            # kwargs['id'] = aid
-            if aid:
-                # self.update_producingplan(aid, **kwargs)
-                return aid
-        except KeyError:
-            SaveExcept(KeyError, "缺少产品autoid", data=flat, **kwargs)
-        except Exception as e:
-            SaveExcept(e, "新建生产记录时出错", data=flat, **kwargs)
+    def get_oddment_invaliddate(date, validday):
+        cursor = connection.cursor()
+        cursor.execute(
+            r"select calcexpireddate('%s',%s)" % (date, validday))
+        invaliddate = cursor.fetchone()
+        # date 2020-09-09,变成了减法
+        return invaliddate

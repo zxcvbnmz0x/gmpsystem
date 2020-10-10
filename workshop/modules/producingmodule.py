@@ -13,6 +13,10 @@ from linepost.modules.postdetailmodule import PostdetailModule
 from cleanfirmity.modules.cleanconfirmitycopymodule import CleanconfirmityCopyModule
 from cleanfirmity.modules.cleanconfirmityoriginalmodule import CleanconfirmityOriginalModule
 
+from  workshop.modules.productioninstructionmodule import PorductionInstructionModule
+from workshop.modules.packageinstructionmodule import PackageInstructionModule
+
+from labrecord.modules.applycheckmodule import ApplycheckModule
 
 class ProducingModule(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, autoid, parent=None):
@@ -125,34 +129,75 @@ class ProducingModule(QtWidgets.QMainWindow, Ui_MainWindow):
         # 点击的是内建文档
         if qitem.text(1) == '2':
             doctype = int(qitem.text(3))
+            # 生产指令
+            if doctype == -1:
+                self.current_content = PorductionInstructionModule(
+                    self.autoid, self
+                )
             # 领料单
             if doctype in (-2, -3, -4):
                 self.current_content = StuffdrawpaperModule(qitem.text(4), self)
-                self.gridLayout_4.addWidget(self.current_content)
+            # 退料单
+            elif doctype in (-5, -6, -7):
+                pass
+            # 批包装指令
+            elif doctype == -8:
+                self.current_content = PackageInstructionModule(
+                    self.autoid, self
+                )
+            # 批剩余(残次)标签、包装材料销毁记录
+            elif doctype == -9:
+                pass
+            # 称量配料记录
+            elif doctype == -10:
+                pass
+            # 半成品登记/发放记录
+            elif doctype in (-11, -12):
+                pass
+            # 前处理入库单
+            elif doctype == -13:
+                pass
+            # 成品寄库单
+            elif doctype == -14:
+                pass
             # 请验单
             if doctype in (-15, -16, -17, -18):
-                # =============================
-                # =============================
-                # =============================
-                # =============================
-                # =============================
-                # =============================
-                # =============================
-                # =============================
-                # =============================
-                pass
+                self.current_content = ApplycheckModule(int(qitem.text(4)), self)
 
             # 清场合格证（副本）
-            elif doctype == -18:
+            elif doctype == -19:
                 self.current_content = CleanconfirmityCopyModule(int(qitem.text(4)), self)
-                self.gridLayout_4.addWidget(self.current_content)
-                #self.current_content = module
             # 清场合格证（正本）
-            elif doctype == -17:
+            elif doctype == -20:
                 self.current_content = CleanconfirmityOriginalModule(qitem.text(4), qitem.parent().text(2), self)
-                self.gridLayout_4.addWidget(self.current_content)
-                #self.current_content = module
-
+            # 库存零头领取单
+            elif doctype == -21:
+                pass
+            # 尾料销毁记录
+            elif doctype == -22:
+                pass
+            # 产品二维码
+            elif doctype == -23:
+                pass
+            # 小、中包装二维码关联
+            elif doctype == -24:
+                pass
+            # 大、中包装二维码关联
+            elif doctype == -25:
+                pass
+            # 巨、大包装二维码关联
+            elif doctype == -26:
+                pass
+            # 零头登记记录
+            elif doctype == -27:
+                pass
+            # 零头发放记录
+            elif doctype == -28:
+                pass
+            # 退货产品领料单
+            elif doctype == -29:
+                pass
+            self.gridLayout_4.addWidget(self.current_content)
         # 点击的是自定义文档
         elif qitem.text(1) == '3':
             # 自定义文档在Forms表里的id

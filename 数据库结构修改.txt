@@ -354,3 +354,223 @@ ALTER TABLE `productprescription`
 CHANGE COLUMN `flag` `precision`  int(11) NOT NULL AFTER `IsMainAux`;
 
 
+ALTER TABLE `labrecords`
+MODIFY COLUMN `CreateTime`  datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `ciID`,
+MODIFY COLUMN `ApplyerID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `CreateTime`,
+MODIFY COLUMN `ApplyTime`  datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `ApplyerID`,
+MODIFY COLUMN `ApplyerName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `ApplyTime`,
+MODIFY COLUMN `ApplyDeptID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `ApplyerName`,
+MODIFY COLUMN `ApplyDeptName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `ApplyDeptID`,
+MODIFY COLUMN `SampleSource`  varchar(50) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `ApplyDeptName`,
+MODIFY COLUMN `ApplyRemark`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `SampleSource`,
+MODIFY COLUMN `SampleCount`  decimal(10,4) NOT NULL DEFAULT 0.0000 AFTER `SamplerName`,
+MODIFY COLUMN `SampleUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `SampleCount`,
+MODIFY COLUMN `SampleTime`  datetime NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `SampleUnit`,
+MODIFY COLUMN `Remark`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `SampleTime`;
+
+ALTER TABLE `labrecords`
+CHANGE COLUMN `SampleCount` `SampleAmount`  decimal(10,4) NOT NULL DEFAULT 0.0000 AFTER `SamplerName`;
+
+ALTER TABLE `labrecords`
+ADD COLUMN `conclusion`  tinyint NOT NULL DEFAULT 1 AFTER `WarrantorName`;
+
+ALTER TABLE `labrecords`
+ADD COLUMN `supplyer`  varchar(100) NOT NULL DEFAULT '' AFTER `producer`;
+
+ALTER TABLE `relativepictures`
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `CreatorName`;
+
+ALTER TABLE `originalcheckpaper`
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL AFTER `CreatorName`;
+
+ALTER TABLE `originalcheckpapersetting`
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL AFTER `CreatorName`;
+
+
+ALTER TABLE `labrecordsdetail`
+MODIFY COLUMN `Result`  tinyint NOT NULL AFTER `ExprRemark`;
+
+ALTER TABLE `producingplan`
+CHANGE COLUMN `PlanTime` `PlanDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '计划日期，制定日期' AFTER `PlanAmount`,
+MODIFY COLUMN `InstructorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '制定人id' AFTER `LabelImgID`,
+MODIFY COLUMN `InstructorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '制定人name' AFTER `InstructorID`,
+MODIFY COLUMN `QAAuditorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'QA复核人id' AFTER `InstructorName`,
+MODIFY COLUMN `QAAuditorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'QA复核人name' AFTER `QAAuditorID`,
+MODIFY COLUMN `QADate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'QA复核日期' AFTER `QAAuditorName`,
+MODIFY COLUMN `WarrantorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '批准人id' AFTER `QADate`,
+MODIFY COLUMN `WarrantorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '批准人name' AFTER `WarrantorID`,
+MODIFY COLUMN `WarrantDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '批准日期' AFTER `WarrantorName`,
+MODIFY COLUMN `ExecutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '执行人id' AFTER `ProdStatus`,
+MODIFY COLUMN `ExecutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '执行人name' AFTER `ExecutorID`,
+CHANGE COLUMN `ExecuteTime` `ExecuteDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '执行日期' AFTER `ExecutorName`,
+MODIFY COLUMN `bpConstitutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装制定人id' AFTER `ExpiredDates`,
+MODIFY COLUMN `bpConstitutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装制定name' AFTER `bpConstitutorID`,
+MODIFY COLUMN `bpCOnsDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '包装制定日期' AFTER `bpConstitutorName`,
+MODIFY COLUMN `bpQAID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装QA复核人id' AFTER `bpCOnsDate`,
+MODIFY COLUMN `bpQAName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装QA复核人name' AFTER `bpQAID`,
+MODIFY COLUMN `bpQADate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '包装QA复核日期' AFTER `bpQAName`,
+MODIFY COLUMN `bpWarrantorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装批准人id' AFTER `bpQADate`,
+MODIFY COLUMN `bpWarrantorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装批准人name' AFTER `bpWarrantorID`,
+MODIFY COLUMN `bpWarrantDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '包装批准日期' AFTER `bpWarrantorName`,
+MODIFY COLUMN `bpDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '包装日期' AFTER `bpWarrantDate`,
+MODIFY COLUMN `bpExecutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装执行人id' AFTER `plType`,
+MODIFY COLUMN `bpExecutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '包装执行人name' AFTER `bpExecutorID`,
+CHANGE COLUMN `bpExecuteTime` `bpExecuteDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '包装执行日期' AFTER `bpExecutorName`;
+
+ALTER TABLE `producingplan`
+CHANGE COLUMN `bpCOnsDate` `bpConsDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '包装制定日期' AFTER `bpConstitutorName`;
+
+ALTER TABLE `oddmentdrawnotes`
+MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ;
+
+ALTER TABLE `oddmentdrawnotes`
+MODIFY COLUMN `dppID`  int(11) NOT NULL DEFAULT 0 AFTER `flag`,
+MODIFY COLUMN `WarehouseID`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `dppID`,
+MODIFY COLUMN `WarehouseName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `WarehouseID`;
+MODIFY COLUMN `RegDate`  date NOT NULL  AFTER `WarehouseName`;
+
+
+ALTER TABLE `oddmentdrawnotes`
+CHANGE COLUMN `ChargerID` `registerid`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `DrawerName`,
+CHANGE COLUMN `ChargerName` `registername`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `registerid`;
+ADD COLUMN `unit`  varchar(10) NOT NULL DEFAULT '' AFTER `amount`,
+MODIFY COLUMN `status`  int(11) NOT NULL DEFAULT 0 AFTER `MakeDate`;
+MODIFY COLUMN `flag`  tinyint(4) NOT NULL DEFAULT 0 AFTER `WarehousemanName`;
+MODIFY COLUMN `dppID`  int(11) NOT NULL DEFAULT 0 AFTER `flag`;
+MODIFY COLUMN `WarehouseID`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `dppID`,
+MODIFY COLUMN `WarehouseName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `WarehouseID`,
+MODIFY COLUMN `RegDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `WarehouseName`;
+ADD COLUMN `inValidDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `RegDate`;
+ADD COLUMN `QADate`  date NOT NULL DEFAULT '0000-00-00' AFTER `QAName`,
+ADD COLUMN `WarehouseDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `WarehousemanName`;
+
+
+
+
+update oddmentdrawnotes as od, producingplan as pp set od.unit = pp.spunit where od.amount>=1 and od.ppid = pp.autoid;
+update oddmentdrawnotes as od, producingplan as pp set od.amount = od.amount*pp.basicamount and od.unit = pp.basicunit where od.amount<1 and od.ppid = pp.autoid;
+
+
+
+CREATE EVENT `updateoddmentflag`
+ON SCHEDULE EVERY 1 DAY
+ON COMPLETION NOT PRESERVE
+ENABLE
+DO
+update oddmentdrawnotes set flag = 4 where invaliddate < NOW() and flag=0;
+
+ALTER TABLE `productputinnotes`
+MODIFY COLUMN `piAmount`  int(11) NOT NULL DEFAULT 0 AFTER `dpAmount`;
+MODIFY COLUMN `Oddment`  int(11) NOT NULL DEFAULT 0.000 AFTER `UnitType`;
+
+
+ALTER TABLE `productrepository`
+DROP COLUMN `ProdID`,
+DROP COLUMN `ProdName`,
+DROP COLUMN `CommonName`,
+DROP COLUMN `Spec`,
+DROP COLUMN `AllowNo`,
+DROP COLUMN `bpUnit`,
+DROP COLUMN `mpUnit`,
+DROP COLUMN `spUnit`,
+DROP COLUMN `spAmount`,
+DROP COLUMN `mpAmount`,
+DROP COLUMN `BasicAmount`,
+DROP COLUMN `BasicUnit`,
+DROP COLUMN `spPrice`,
+DROP COLUMN `BatchNo`,
+DROP COLUMN `MakeDate`,
+DROP COLUMN `WorkShopID`,
+DROP COLUMN `WorkShopName`,
+DROP COLUMN `ExpiredDays`,
+DROP COLUMN `InputCode`,
+DROP COLUMN `chkPaperNo`,
+DROP COLUMN `flag`,
+DROP COLUMN `hxBatchNo`,
+DROP COLUMN `hxMakeDate`,
+DROP COLUMN `bpAmount`,
+DROP COLUMN `DayKind`,
+MODIFY COLUMN `ppID`  int(11) NOT NULL DEFAULT 0 AFTER `autoid`,
+MODIFY COLUMN `hpUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `DeptName`,
+ADD COLUMN `bpid`  int NOT NULL DEFAULT 0 AFTER `piSource`,
+DROP INDEX `pp`,
+DROP INDEX `InputCode`,
+AUTO_INCREMENT=291;
+
+DELIMITER $$
+create PROCEDURE `addprodrep`(intype int, id int, amount decimal, bpid int, bpamount decimal)
+begin
+if intype in (0, 1, 3) then
+	insert into productrepository (ppid,position,indate,pisource,piamount,stockamount,WarehousemanID,WarehousemanName,DeptID,DeptName) 
+		select ppid,position,pidate,intype,amount,amount,WarehousemanID,WarehousemanName,WarehouseID,WarehouseName from productputinnotes where ppid=id;
+elseif intype = 2 then
+	insert into productrepository (ppid,bpid,position,indate,pisource,piamount,stockamount,hxamount,hxstockamount,WarehousemanID,WarehousemanName,DeptID,DeptName) 
+		select id,bpid,position,pidate,intype,amount,amount,bpamount,bpamount,WarehousemanID,WarehouseID,DeptID,WarehouseName from productputinnotes where ppid=id;
+end if;
+end;
+DELIMITER $$
+
+ALTER TABLE `prodqrcode`
+MODIFY COLUMN `QRCode3`  varchar(200) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `QRCode2`;
+
+ALTER TABLE `producingplan`
+ADD COLUMN `qrtype`  tinyint NOT NULL DEFAULT 0 AFTER `ProductGist`;
+
+ALTER TABLE `prodqrcode`
+MODIFY COLUMN `Used`  tinyint(4) NOT NULL DEFAULT 0 AFTER `BatchNo`,
+MODIFY COLUMN `flag`  int(11) NOT NULL DEFAULT 0 AFTER `Used`,
+MODIFY COLUMN `bflag`  tinyint(4) NOT NULL DEFAULT 0 AFTER `flag`;
+
+ALTER TABLE `qrcoderepository`
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `Used`,
+CHANGE COLUMN `UsedTime` `UsedDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `CreateDate`;
+
+
+ALTER TABLE `producingplan`
+ADD COLUMN `qrflag`  tinyint NOT NULL DEFAULT 0 AFTER `ProdStatus`;
+
+# 把productputinnotes里的qrflag改到producingplan里
+update producingplan as pp, productputinnotes as pi set pp.qrflag = pi.qrflag where pp.autoid = pi.ppid；
+
+
+ALTER TABLE `ppopqrcode`
+ADD COLUMN `ppopid`  int(11) NOT NULL DEFAULT 0 AFTER `autoid`;
+CHANGE COLUMN `ppodID` `batchno`  varchar(20) NOT NULL DEFAULT '' AFTER `autoid`;ALTER TABLE `pwqrcode`
+ADD COLUMN `ppid`  int NOT NULL DEFAULT 0 AFTER `pwdID`,
+ADD COLUMN `batchno`  varchar(20) NOT NULL DEFAULT '' AFTER `ppid`;
+
+ALTER TABLE `purchasingplan`
+MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ,
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `PaperNo`;
+
+
+ALTER TABLE `productputoutpaper`
+DROP COLUMN `ExecTime`,
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `autoid`,
+CHANGE COLUMN `PutOutTime` `PutOutDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `ClientName`;
+
+
+ALTER TABLE `productwithdrawnotes`
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `CreatorName`;
+
+ALTER TABLE `ppopqrcode`
+ADD COLUMN `ppid`  int NOT NULL DEFAULT 0 AFTER `ppopid`;
+
+ALTER TABLE `purchasingplan`
+MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ,
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `PaperNo`;
+MODIFY COLUMN `status`  tinyint(4) NOT NULL DEFAULT 0 AFTER `WarrantorName`;
+
+
+
+ALTER TABLE `pplist`
+ADD COLUMN `ppid`  int NOT NULL DEFAULT 0 AFTER `autoid`;
+ADD COLUMN `package`  varchar(60) NOT NULL DEFAULT '' AFTER `Spec`;
+MODIFY COLUMN `ArrivedAmount`  decimal(10,3) NOT NULL DEFAULT 0 AFTER `Price`,
+MODIFY COLUMN `iPosID`  int(11) NOT NULL DEFAULT 0 AFTER `ArrivedAmount`;
+
+
+update pplist as pp, purchasingplan as pl set pp.ppid = pl.autoid where pp.PaperNo=pl.PaperNo;
+
+UPDATE purchasingplan as pp, supplyer as sp set pp.spid = sp.autoid where pp.SupID = sp.SupID;
+

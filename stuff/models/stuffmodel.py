@@ -31,12 +31,38 @@ class StuffModel(object):
             SaveExcept(e, "获取全部物料信息时出错", data=stufftype)
 
     @staticmethod
-    def get_stuff(autoid):
+    def get_stuff(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
         try:
-            return Stuffdictionary.objects.get(autoid=autoid)
+            if len(args):
+                res = Productstuff.objects.filter(**kwargs).values_list(*args,
+                                                                        flat=flat)
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+
+            else:
+                return Productstuff.objects.filter(**kwargs)
         except Exception as e:
-            print('repr(e):\t', repr(e))
-            return False
+            SaveExcept(e, "获取产品物料时出错", *args, **kwargs)
+
+    @staticmethod
+    def get_stuffdict(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            if len(args):
+                res = Stuffdictionary.objects.filter(**kwargs).values_list(*args,
+                                                                        flat=flat)
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+
+            else:
+                return Productstuff.objects.filter(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "获取产品物料时出错", *args, **kwargs)
 
     def delete_stuff(self, autoid=None, *args):
         if autoid:
@@ -56,12 +82,12 @@ class StuffModel(object):
             print(repr(e))
 
     @staticmethod
-    def get_prodstuff(flag=0, *args, **kwargs):
+    def get_prodstuff(display_flag=False, *args, **kwargs):
         flat = True if len(args) == 1 else False
         try:
             if len(args):
                 res = Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
-                if flag:
+                if display_flag:
                     return res.values_list(*args, flat=flat)
                 else:
                     return res.values(*args)

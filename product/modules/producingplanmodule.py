@@ -9,6 +9,7 @@ from product.controllers.editproducingplan import EditProducingplan
 from workshop.controllers.workshopcontroller import WorkshopController
 
 from product.models.productmodel import ProductModel
+from workshop.modules.producingmodule import ProducingModule
 
 from product.views.producingplan import Ui_Form
 
@@ -46,11 +47,11 @@ class ProducingplanModule(QtWidgets.QDialog, Ui_Form):
         status = BUTTON_KIND.index(self.current_kind)
         vlst = ('autoid', 'prodid', 'prodname', 'commonname', 'batchno',
                 'spec', 'package', 'medkind', 'planamount', 'mpunit',
-                'instructorid', 'instructorname', 'plantime', 'realamount',
+                'instructorid', 'instructorname', 'plandate', 'realamount',
                 'makedate', 'qaauditorid', 'qaauditorname', 'qadate',
-                'executorid', 'executorname', 'executetime', 'linename',
+                'executorid', 'executorname', 'executedate', 'linename',
                 'workshopid', 'workshopname')
-        production_records = self.product.get_producingplan(1, status=status,
+        production_records = self.product.get_producingplan(False, status=status,
                                                             *vlst)
         production_records.reverse()
         if production_records:
@@ -70,17 +71,17 @@ class ProducingplanModule(QtWidgets.QDialog, Ui_Form):
                 tree_item.setText(8, str(item['planamount']) + item['mpunit'])
                 tree_item.setText(9, item['instructorid'] + " " + item[
                     'instructorname'])
-                tree_item.setText(10, str(item['plantime']) if str(
-                    item['plantime'])[0:4] <= '1000' else '')
-                tree_item.setText(11, str(item['makedate']) if str(
-                    item['makedate'])[0:4] <= '1000' else '')
+                tree_item.setText(10, str(item['plandate']) if type(
+                    item['plandate']) is datetime.date else '')
+                tree_item.setText(11, str(item['makedate']) if type(
+                    item['makedate']) is datetime.date else '')
                 tree_item.setText(12, item['qaauditorid'] + " " + item[
                     'qaauditorname'])
                 tree_item.setText(13, str(item['qadate']))
                 tree_item.setText(14, item['executorid'] + " " + item[
                     'executorname'])
-                tree_item.setText(15, str(item['executetime']) if str(
-                    item['executetime'])[0:4] <= '1000' else '')
+                tree_item.setText(15, str(item['executedate']) if type(
+                    item['executedate']) is datetime.date else '')
                 tree_item.setText(16, item['linename'])
                 tree_item.setText(17, item['workshopid'] + " " + item[
                     'workshopname'])
@@ -193,11 +194,11 @@ class ProducingplanModule(QtWidgets.QDialog, Ui_Form):
         elif current_status == 1:
             data['executorid'] = user.user_id if flat else ''
             data['executorname'] = user.user_name if flat else ''
-            data['executetime'] = str(user.now_date) if flat else '1000-01-01'
-            data['qadate'] = str(user.now_date) if flat else '1000-01-01'
+            data['executedate'] = user.now_date if flat else ''
+            data['qadate'] = user.now_date if flat else ''
             data['bpwarrantorid'] = user.user_id if flat else ''
             data['bpwarrantorname'] = user.user_name if flat else ''
-            data['bpwarrantdate'] = str(user.now_date) if flat else '1000-01-01'
+            data['bpwarrantdate'] = user.now_date if flat else ''
             res = self.product.update_producingplan_status(autoid_list, **data)
             if res:
                 self.show_production_list()
@@ -257,7 +258,7 @@ class ProducingplanModule(QtWidgets.QDialog, Ui_Form):
             # 修改了物料记录，刷新列表
             detail.show()
         else:
-            detail = WorkshopController(autoid, self)
+            detail = ProducingModule(autoid, self)
             detail.showMaximized()
 
     # 状态按键功能，5个按键共用一个方法

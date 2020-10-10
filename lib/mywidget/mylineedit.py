@@ -24,3 +24,13 @@ class myLineEdit(QtWidgets.QLineEdit):
 
     def setGeo(self, *__args):
         QtWidgets.QLineEdits.setGeometry(*__args)
+
+class myQrcodeLineEdit(QtWidgets.QLineEdit):
+    focused = QtCore.pyqtSignal()
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+    def focusInEvent(self, e):
+        self.focused.emit()
+        super(myQrcodeLineEdit, self).focusInEvent(e)

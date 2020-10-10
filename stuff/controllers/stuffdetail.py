@@ -34,7 +34,10 @@ class StuffDetail(StuffModule):
             raise TypeError
 
     def flush_basedata(self, autoid):
-        stuff_detail = self.sd.get_stuff(self.autoid)
+        key_dict = {
+            'autoid': self.autoid
+        }
+        stuff_detail = self.sd.get_stuff(False, **key_dict)
         if stuff_detail:
             self.set_data(stuff_detail)
             self.oridetail = model_to_dict(stuff_detail)
