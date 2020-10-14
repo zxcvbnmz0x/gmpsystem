@@ -95,20 +95,29 @@ class EditpurchasingplanModule(QDialog, Ui_Dialog):
     def on_lineEdit_supplyer_getItem(self, p_obj):
         id = p_obj.text(1)
         name = p_obj.text(2)
+        spid = 0
+        if id not in ('', ' '):
+            key_dict = {'supid': id, 'supname': name}
+            res = self.SC.get_supply(True, *VALUES_TUPLE_SUPPLYER, **key_dict)
+            if len(res):
+                spid = res[0]
         try:
             if id != self.ori_detail['supid'] or name != self.ori_detail[
                 'supname']:
                 self.new_detail['supid'] = id
                 self.new_detail['supname'] = name
+                self.new_detail['spid'] = spid
             else:
                 try:
                     del self.new_detail['supid']
                     del self.new_detail['supname']
+                    del self.new_detail['spid']
                 except KeyError:
                     pass
         except KeyError:
             self.new_detail['supid'] = id
             self.new_detail['supname'] = name
+            self.new_detail['spid'] = spid
 
     @pyqtSlot(str)
     def on_pushButton_creator_signChanged(self, p_str):
@@ -221,6 +230,7 @@ class EditpurchasingplanModule(QDialog, Ui_Dialog):
     def on_pushButton_cancel_clicked(self):
         self.close()
 
+VALUES_TUPLE_SUPPLYER = ('autoid',)
 VALUES_TUPLE_PAPERNO = ('paperno',)
 
 VALUES_TUPLE = (

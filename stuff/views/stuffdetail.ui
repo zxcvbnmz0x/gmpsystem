@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>480</height>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -343,25 +343,12 @@
        <item row="7" column="3">
         <widget class="QLabel" name="ceffectunitlabel">
          <property name="text">
-          <string>效价单位：</string>
+          <string>含量单位：</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
-       </item>
-       <item row="8" column="3">
-        <widget class="QLabel" name="ceffectlabel">
-         <property name="text">
-          <string>效价系数：</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="4">
-        <widget class="QLineEdit" name="ceffect"/>
        </item>
        <item row="9" column="4">
         <widget class="QLineEdit" name="storage"/>
@@ -685,7 +672,6 @@
   <tabstop>recheck</tabstop>
   <tabstop>expired</tabstop>
   <tabstop>ceffectunit</tabstop>
-  <tabstop>ceffect</tabstop>
   <tabstop>storage</tabstop>
   <tabstop>workshop</tabstop>
   <tabstop>acceptButton</tabstop>

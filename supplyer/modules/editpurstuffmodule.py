@@ -22,6 +22,7 @@ class EditpurstuffModule(QDialog, Ui_Dialog):
 
     def __init__(self, spid, ppid=None, autoid=None, parent=None):
         super(EditpurstuffModule, self).__init__(parent)
+        print(spid, ppid, autoid)
         self.ori_detail = dict()
         self.new_detail = dict()
         self.SC = SupplyerController()
@@ -101,6 +102,7 @@ class EditpurstuffModule(QDialog, Ui_Dialog):
         self.new_detail['package'] = stuff['package']
         self.new_detail['unit'] = stuff['spunit']
         self.new_detail['stufftype'] = stuff['stufftype']
+        self.new_detail['expireddays'] = stuff['expireddays']
         self.lineEdit_amount.setFocus()
 
     @pyqtSlot()
@@ -134,5 +136,6 @@ VALUES_TUPLE_PPLIST = (
     "unit", "amount", "arrivedamount"
 )
 VALUES_TUPLE_STUFF = (
-    'stuffid', 'stuffname', 'stufftype', 'spec', 'package', 'spunit'
+    'stuffid', 'stuffname', 'stufftype', 'spec', 'package', 'spunit',
+    'expireddays'
 )

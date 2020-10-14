@@ -66,8 +66,14 @@ class LabrecordsController(object):
     def update_labrecord(self, autoid=0, *args, **kwargs):
         return LabModel.update_labrecord(autoid, *args, **kwargs)
 
+    def delete_labrecord(self, autoid=0, *args, **kwargs):
+        return LabModel.delete_labrecord(autoid, *args, **kwargs)
+
     def update_labitem(self, autoid=0, *args, **kwargs):
         return LabModel.update_labitem(autoid, *args, **kwargs)
+
+    def delete_labitem(self, autoid=0, *args, **kwargs):
+        return LabModel.delete_labitem(autoid, *args, **kwargs)
 
     def update_labimages(self, relakwargs, imgkwargs, relaid=0, imgid=0):
         return ImagesModel.update_img(relakwargs, imgkwargs, relaid, imgid)

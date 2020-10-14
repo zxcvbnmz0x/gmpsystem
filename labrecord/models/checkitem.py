@@ -2,20 +2,26 @@ import traceback
 
 from db.models import Checkitems
 
+from lib.utils.saveexcept import SaveExcept
 
 class CheckItem(object):
     def __init__(self):
         super().__init__()
 
     # 根据物料/产品编号查询记录
-    def get_checkitems(self, stuffid, itemtype):
+    def get_checkitems(self, display_flag=False, *args, **kwargs):
         try:
-            return Checkitems.objects.filter(
-                stuffid=stuffid, itemtype=itemtype
-            ).order_by('seqid')
+            flat = True if len(args) == 1 else False
+            res = Checkitems.objects.filter(**kwargs)
+            if len(args):
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
         except Exception as e:
-            print('repr(e):\t', repr(e))
-            return False
+            SaveExcept(e, "获取设置检验项目时出错", *args, **kwargs)
 
     # 根据autoid查询记录
     def get_checkitem(self, autoid):

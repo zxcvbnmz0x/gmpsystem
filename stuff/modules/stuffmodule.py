@@ -36,11 +36,15 @@ class StuffModule(QtWidgets.QDialog, Ui_Dialog):
             try:
                 # 原料检验项目itemtype=0
                 if tab_name == "原料检验项目":
-                    items = self.check_item.get_checkitems(self.stuffid.text(), 0)
+                    items = self.check_item.get_checkitems(
+                        False, stuffid=self.stuffid.text(), itemtype=0
+                    )
                     widget = self.checkitem
                 # 前处理检验项目itemtype=5
                 else:
-                    items = self.check_item.get_checkitems(self.stuffid.text(), 5)
+                    items = self.check_item.get_checkitems(
+                        False, stuffid=self.prodid.text(), itemtype=5
+                    )
                     widget = self.precheckitem
                 widget.clear()
                 for item in items:
@@ -518,20 +522,6 @@ class StuffModule(QtWidgets.QDialog, Ui_Dialog):
                     pass
         except KeyError:
             self.new_detail['cunit'] = p_int
-
-    # 修改效价系数时触发
-    @QtCore.pyqtSlot(str)
-    def on_ceffect_textChanged(self, p_int):
-        try:
-            if p_int != self.oridetail['cstandard']:
-                self.new_detail['cstandard'] = p_int
-            else:
-                try:
-                    del self.new_detail['cstandard']
-                except KeyError:
-                    pass
-        except KeyError:
-            self.new_detail['cstandard'] = p_int
 
     # 修改储存条件时触发
     @QtCore.pyqtSlot(str)

@@ -38,7 +38,8 @@ class PurchasingplanModule(QWidget, Ui_Form):
 
     def get_orderdetail(self):
         self.treeWidget_orderlist.clear()
-        # self.treeWidget_orderlist.hideColumn(0)
+        self.treeWidget_orderlist.hideColumn(0)
+        self.treeWidget_orderlist.hideColumn(1)
 
         index = self.tabWidget.currentIndex()
         key_dict_prod = {
@@ -68,7 +69,7 @@ class PurchasingplanModule(QWidget, Ui_Form):
     # 获取物料信息
     def get_stuffdetail(self):
         self.treeWidget_stufflist.clear()
-        # self.treeWidget_stufflist.hideColumn(0)
+        self.treeWidget_stufflist.hideColumn(0)
         key_dict = {
             'ppid': self.ppid
         }

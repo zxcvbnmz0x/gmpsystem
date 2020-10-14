@@ -18,29 +18,22 @@ PUTINTYPE = ("无", "含量", "水分", "效价", "相对密度", "杂质")
 # 若传入autoid，则查询后返回找到的内容，
 # 若无对应的autoid则返回错误信息
 class StuffDetail(StuffModule):
-    def __init__(self, parent=None):
+    def __init__(self, autoid=None, parent=None):
         super(StuffDetail, self).__init__(parent)
         # 数据库操作类
         self.sd = StuffModel()
-
-
-    def set_autoid(self, autoid):
         self.autoid = autoid
-        # 若autoid不为空，则查询对应的记录，并关联到表格中
-        if self.autoid:
-            self.flush_basedata(self.autoid)
-            self.new_detail.clear()
-        else:
-            raise TypeError
+        if autoid is not None:
+            self.flush_basedata()
 
-    def flush_basedata(self, autoid):
+    def flush_basedata(self):
         key_dict = {
             'autoid': self.autoid
         }
-        stuff_detail = self.sd.get_stuff(False, **key_dict)
+        stuff_detail = self.sd.get_stuffdict(False, **key_dict)
         if stuff_detail:
-            self.set_data(stuff_detail)
-            self.oridetail = model_to_dict(stuff_detail)
+            self.set_data(stuff_detail[0])
+            self.oridetail = model_to_dict(stuff_detail[0])
         else:
             errordialig = QtWidgets.QErrorMessage(self)
             errordialig.setWindowTitle("错误")
@@ -71,8 +64,6 @@ class StuffDetail(StuffModule):
         self.recheck.setText(str(detail.countercheckdays))
         self.expired.setText(str(detail.expireddays))
         self.ceffectunit.setText(detail.cunit)
-        if detail.cstandard != 0:
-            self.ceffect.setText(str(detail.cstandard))
         self.storage.setText(detail.storage)
         # 若为前处理，则不显示原料检验项目和供应商和生产厂家
         if detail.stufftype == 1:

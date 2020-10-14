@@ -1,0 +1,1672 @@
+
+2020-10-12 14:20:09
+IntegrityError(1048, "Column 'srID' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'srID' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'srID' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"position": "原料仓", "stuffid": "0599056", "stuffname": "麻黄鱼腥草卷膜袋", "spec": "3120个/件", "package": "3120个/件", "unit": "个", "stufftype": 2, "producer": "1", "amount": "45", "piamount": "45", "supid": "13002", "supname": "佛山市三水诚远包装彩印有限公司", "paperno": "0001", "papertype": 1}
+--------------------
+2020-10-12 15:06:49
+TypeError("Stuffcheckin() got an unexpected keyword argument 'createdate'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 315, in update_stuffcheckin
+    return Stuffcheckin.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Stuffcheckin() got an unexpected keyword argument 'createdate'
+
+更新进货登记时出错
+kwargs={"paperno": "270", "pppaperno": "00018", "createdate": null, "creatorid": "001", "creatorname": "sys02", "supid": "130002", "supname": "新兴县厚德五金塑料制品有限公司", "remark": "", "buyerid": "5518", "buyername": "温玉燕", "buydate": null, "pikind": 0, "papertype": 0, "status": 0}
+--------------------
+2020-10-12 15:07:47
+IntegrityError(1048, "Column 'eflag' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'eflag' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 315, in update_stuffcheckin
+    return Stuffcheckin.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'eflag' cannot be null")
+
+更新进货登记时出错
+kwargs={"paperno": "270", "pppaperno": "00028", "createdate": null, "creatorid": "001", "creatorname": "sys02", "supid": "130242", "supname": "广东金榜塑料包装有限公司", "remark": "", "buyerid": "5518", "buyername": "温玉燕", "buydate": null, "pikind": 0, "papertype": 0, "status": 0}
+--------------------
+2020-10-12 16:13:24
+AttributeError("'dict' object has no attribute 'pk'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 364, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.bulk_create(args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 490, in bulk_create
+    self._populate_pk_values(objs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 452, in _populate_pk_values
+    if obj.pk is None:
+AttributeError: 'dict' object has no attribute 'pk'
+
+更新进货登记的物料时出错
+args=[{"paperno": "0113", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}, {"paperno": "0113", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}]
+--------------------
+2020-10-12 16:15:57
+TypeError("'>' not supported between instances of 'dict' and 'int'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 364, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.bulk_create(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 475, in bulk_create
+    assert batch_size is None or batch_size > 0
+TypeError: '>' not supported between instances of 'dict' and 'int'
+
+更新进货登记的物料时出错
+args=[{"paperno": "0114", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}, {"paperno": "0114", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}]
+--------------------
+2020-10-12 16:19:40
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:19:40
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:23:56
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:23:59
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:25:07
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:25:07
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:27:22
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:27:22
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:28:22
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:28:22
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:33:02
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:33:02
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:33:27
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:33:27
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:35:21
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:35:21
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:36:55
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:36:55
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:40:32
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:40:32
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:41:06
+IntegrityError(1048, "Column 'piAmount' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'piAmount' cannot be null")
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0506123", "stuffname": "100ml水针通用彩箱", "stufftype": 3, "spec": "340mm×270mm×260mm", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:41:06
+TransactionManagementError("An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 362, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 78, in _execute
+    self.db.validate_no_broken_transaction()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\base\base.py", line 447, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+
+更新进货登记的物料时出错
+kwargs={"paperno": "0115", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}
+--------------------
+2020-10-12 16:46:54
+TypeError("'>' not supported between instances of 'dict' and 'int'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 364, in update_stuffcheckinlist
+    return Stuffcheckinlist.objects.bulk_create(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 475, in bulk_create
+    assert batch_size is None or batch_size > 0
+TypeError: '>' not supported between instances of 'dict' and 'int'
+
+更新进货登记的物料时出错
+args=[{"paperno": "0118", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "piamount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}, {"paperno": "0118", "papertype": 0, "makedate": null, "expireddate": null, "checkindate": null, "amount": null, "piamount": null, "stuffid": "0599055", "stuffname": "单孔泡沫垫", "stufftype": 3, "spec": "上垫，外尺寸：61mm×61mm×18mm(±1mm)，", "package": "", "unit": "套"}]
+--------------------
+2020-10-12 16:52:08
+IntegrityError(1062, "Duplicate entry '0119-0' for key 'pp'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '0119-0' for key 'pp'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 315, in update_stuffcheckin
+    return Stuffcheckin.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1062, "Duplicate entry '0119-0' for key 'pp'")
+
+更新进货登记时出错
+kwargs={"paperno": "0119", "pppaperno": "00018", "createdate": null, "creatorid": "001", "creatorname": "sys02", "supid": "130002", "supname": "新兴县厚德五金塑料制品有限公司", "remark": "", "buyerid": "5518", "buyername": "温玉燕", "buydate": null, "pikind": "采购", "papertype": 0, "status": 0}
+--------------------
+2020-10-12 17:29:14
+FieldError("Cannot resolve keyword 'stuffid' into field. Choices are: auditorid, auditorname, autoid, buydate, buyerid, buyername, createdate, creatorid, creatorname, deptid, deptname, eflag, paperno, papertype, pikind, pppaperno, remark, status, supid, supname, warehouseid, warehousemanid, warehousemanname, warehousename")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'stuffid' into field. Choices are: auditorid, auditorname, autoid, buydate, buyerid, buyername, createdate, creatorid, creatorname, deptid, deptname, eflag, paperno, papertype, pikind, pppaperno, remark, status, supid, supname, warehouseid, warehousemanid, warehousemanname, warehousename
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 298, in get_stuffcheckin
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'stuffid' into field. Choices are: auditorid, auditorname, autoid, buydate, buyerid, buyername, createdate, creatorid, creatorname, deptid, deptname, eflag, paperno, papertype, pikind, pppaperno, remark, status, supid, supname, warehouseid, warehousemanid, warehousemanname, warehousename
+
+获取进货登记信息时出错
+autoid
+args=["status", "stuffid", "stuffname", "stufftype", "batchno", "mbatchno", "spec", "package", "position", "amount", "piamount", "producer"]
+kwargs={"paperno": "0005", "papertype": 0}
+--------------------

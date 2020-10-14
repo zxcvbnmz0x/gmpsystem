@@ -4,6 +4,13 @@ from warehouse.models.warehousemodel import WarehouseModel
 from stuff.controllers.stuffcontroller import StuffController
 from supplyer.controllers.supplyercontroller import SupplyerController
 
+from django.db import transaction
+
+import datetime
+
+import user
+
+
 class WarehouseController(object):
 
     def __init__(self):
@@ -45,6 +52,9 @@ class WarehouseController(object):
                         break
         return res
 
+    def update_stuffrepository(self, autoid=None, *args, **kwargs):
+        return WarehouseModel.update_stuffrepository(autoid, *args, **kwargs)
+
     def update_stuffrepository_amount(self, *args, **kwargs):
         return WarehouseModel.update_stuffrepository_amount(*args, **kwargs)
 
@@ -83,3 +93,59 @@ class WarehouseController(object):
 
     def delete_pwqrcode(self, autoid, *args, **kwargs):
         return WarehouseModel.delete_pwqrcode(autoid, *args, **kwargs)
+
+    def get_stuffcheckin(self, display_flag=False, *args, **kwargs):
+        return WarehouseModel.get_stuffcheckin(display_flag, *args, **kwargs)
+
+    def update_stuffcheckin(self, autoid, *args, **kwargs):
+        return WarehouseModel.update_stuffcheckin(autoid, *args, **kwargs)
+
+    def new_stuffcheckin(self, ppid, *args, **kwargs):
+        detail = dict()
+        key_dict = {'ppid': ppid}
+        stuff_query = self.SP.get_purchstuff(
+            False, *VALUES_TUPLE_PPLIST, **key_dict
+        )
+        if not len(stuff_query):
+            return
+        stuff_list = list(stuff_query)
+        with transaction.atomic():
+            p1 = transaction.savepoint()
+            res = WarehouseModel.update_stuffcheckin(None, *args, **kwargs)
+
+            for item in stuff_list:
+                if item['amount']-item['arrivedamount'] <=0:
+                    continue
+                detail['paperno'] = res.paperno
+                detail['papertype'] = 0
+                detail['makedate'] = user.now_date
+                detail['expireddate'] = user.now_date + datetime.timedelta(
+                    days=item['expireddays']
+                )
+                detail['checkindate'] = user.now_date
+                detail['amount'] = item['amount']-item['arrivedamount']
+                detail['piamount'] = item['amount']-item['arrivedamount']
+                del item['amount']
+                del item['arrivedamount']
+                del item['expireddays']
+                detail.update(item)
+                WarehouseModel.update_stuffcheckinlist(None, **detail)
+
+
+    def delete_stuffcheckin(self, autoid, *args, **kwargs):
+        return WarehouseModel.delete_stuffcheckin(autoid, *args, **kwargs)
+
+    def get_stuffcheckinlist(self, display_flag=False, *args, **kwargs):
+        return WarehouseModel.get_stuffcheckinlist(display_flag, *args, **kwargs)
+
+    def update_stuffcheckinlist(self, autoid, *args, **kwargs):
+        return WarehouseModel.update_stuffcheckinlist(autoid, *args, **kwargs)
+
+    def delete_stuffcheckinlist(self, autoid, *args, **kwargs):
+        return WarehouseModel.delete_stuffcheckinlist(autoid, *args, **kwargs)
+
+
+VALUES_TUPLE_PPLIST = (
+    'stuffid', 'stuffname', 'stufftype', 'spec', 'package', 'unit', 'amount',
+    'arrivedamount', 'expireddays'
+)

@@ -23,99 +23,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2578acca-1a85-4b91-a6e5-bbf7b3242777" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/imageslib/imagesmodel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/checkreportmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/editcheckitemmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/labreportlistmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/labsamplelistmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/oricheckpapermodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/samplingmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/selectoricheckpaper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mywidget/myplaintextedit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/pdf2pxmap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/tts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/menu/modules/menumodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qrcode/controlllers/qrcodecontroller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qrcode/models/qrcodemodel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcodeinputmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcodeoutputmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcoderepositorymodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qrcode/modules/qrcodereturnmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sale/controllers/salecontroller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sale/models/salemodel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/selfdefinedfirmat/controllers/selfdefinedformatcontroller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/selfdefinedfirmat/models/selfdefinedformatmodel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supplyer/modules/editpurstuffmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supplyer/modules/purchasingplanmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supplyer/modules/selectstuffModule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/controllers/systemcontroller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/models/systemmodel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/warehouse/modules/oddmentputinnotemodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/warehouse/modules/productputinlistmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/midproddetailmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/midproddrawnotemodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/modifymiddetailmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/modifyoddmentmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/oddmentdetailmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/oddmentdrawnotemodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/oddmentregisternotemodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/packageinstructionmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/productioninstructionmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/productputinnotemodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/qrcodelistmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/scanqrcodemodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workshop/modules/selectoddmentdrawmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reject/modules/applyrejectmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/editregstuffmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/editstuffcheckin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/newpurchregmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/purchaseregistrationmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/purstuffcheckinmodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.ui" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_copy.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.ui" beforeDir="false" afterPath="$PROJECT_DIR$/cleanfirmity/views/cleanconfirmity_original.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/controllers/checkitem.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/controllers/checkitem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labrecord/controllers/labrecordscontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/controllers/labrecordscontroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/models/checkitem.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/models/checkitem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labrecord/models/labmodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/models/labmodel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labrecord/modules/applycheckmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/modules/applycheckmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labrecord/views/applycheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/views/applycheck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labrecord/views/applycheck.ui" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/views/applycheck.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mywidget/comboline.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mywidget/comboline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mywidget/mylineedit.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mywidget/mylineedit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sign/sign.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/sign.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sign/sign.ui" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/sign.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sign/signbutton.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/signbutton.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sign/signmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sign/signmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/messagebox.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/messagebox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/saveexcept.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/saveexcept.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/xmlwidget/xmlcombobox.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/xmlwidget/xmlcombobox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/xmlwidget/xmlreadwrite.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/xmlwidget/xmlreadwrite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linepost/modules/postdetailmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/linepost/modules/postdetailmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linepost/views/postdetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/linepost/views/postdetail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linepost/views/postdetail.ui" beforeDir="false" afterPath="$PROJECT_DIR$/linepost/views/postdetail.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/modules/checkreportmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/modules/checkreportmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labrecord/modules/samplingmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/modules/samplingmodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu/controllers/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/controllers/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/views/mainmenu.ui" beforeDir="false" afterPath="$PROJECT_DIR$/menu/views/mainmenu.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/views/mainmenuUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/views/mainmenuUI.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/views/menuimages.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/menuimages.qrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/views/menuimages_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/menuimages_rc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/controllers/productcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/controllers/productcontroller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models/productmodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models/productmodel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/modules/editproducingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/modules/editproducingplanmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/modules/producingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/modules/producingplanmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/modules/menumodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/modules/menumodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product/modules/productdetailmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/modules/productdetailmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stuff/controllers/stuffcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/controllers/stuffcontroller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stuff/controllers/stuffdetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/controllers/stuffdetail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stuff/models/stuffmodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/models/stuffmodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff/modules/stuffdictionarymodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/modules/stuffdictionarymodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff/modules/stuffmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/modules/stuffmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff/views/stuffdetail.py" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/views/stuffdetail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff/views/stuffdetail.ui" beforeDir="false" afterPath="$PROJECT_DIR$/stuff/views/stuffdetail.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/supplyer/controllers/supplyercontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/controllers/supplyercontroller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/supplyer/models/supplyermodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/models/supplyermodel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supplyer/modules/editpurstuffmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/modules/editpurstuffmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supplyer/modules/purchasingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/modules/purchasingplanmodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/warehouse/controllers/warehousecontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/controllers/warehousecontroller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/warehouse/models/warehousemodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/models/warehousemodel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse/modules/stuffpickingmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/modules/stuffpickingmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop/controllers/workshopcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/controllers/workshopcontroller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop/models/workshopmodels.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/models/workshopmodels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop/modules/producingmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/modules/producingmodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/数据库结构修改.txt" beforeDir="false" afterPath="$PROJECT_DIR$/数据库结构修改.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +81,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/supplyer/modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/warehouse/modules" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -166,10 +105,10 @@
       <recent name="D:\pyproject\GMPsystem\linepost\views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pyproject\gmpsystem\warehouse\modules" />
       <recent name="D:\pyproject\gmpsystem\supplyer\modules" />
       <recent name="D:\pyproject\gmpsystem\qrcode\modules" />
       <recent name="D:\pyproject\gmpsystem\lib\mywidget" />
-      <recent name="D:\pyproject\gmpsystem\warehouse\modules" />
       <recent name="D:\pyproject\gmpsystem\menu\modules" />
     </key>
   </component>
@@ -332,8 +271,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test3" />
         <item itemvalue="Python.main2" />
+        <item itemvalue="Python.test3" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.evalenv" />
         <item itemvalue="Python.test (1)" />
@@ -406,72 +345,73 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="404" y="174" key="#com.intellij.tools.ToolEditorDialog/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598335181003" />
-    <state x="397" y="109" key="FileChooserDialogImpl" timestamp="1598336112299">
-      <screen x="0" y="0" width="1280" height="689" />
+    <state x="397" y="108" key="FileChooserDialogImpl" timestamp="1602553941007">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="397" y="108" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602553941007" />
     <state x="397" y="109" key="FileChooserDialogImpl/0.0.1280.689/1920.0.1920.1050@0.0.1280.689" timestamp="1598320687765" />
     <state x="397" y="109" key="FileChooserDialogImpl/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336112299" />
-    <state width="1259" height="179" key="GridCell.Tab.0.bottom" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.0.bottom" timestamp="1602644758561">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.bottom/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854503" />
-    <state width="1259" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758561" />
     <state width="1259" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.bottom/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="156" key="GridCell.Tab.0.bottom/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.0.center" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.0.center" timestamp="1602644758561">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.center/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854502" />
-    <state width="1259" height="179" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758561" />
     <state width="1259" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.center/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="156" key="GridCell.Tab.0.center/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.0.left" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.0.left" timestamp="1602644758561">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.left/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854502" />
-    <state width="1259" height="179" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758561" />
     <state width="1259" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.left/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816788" />
     <state width="1259" height="156" key="GridCell.Tab.0.left/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.0.right" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.0.right" timestamp="1602644758561">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.right/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854503" />
-    <state width="1259" height="179" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758561" />
     <state width="1259" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.right/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="156" key="GridCell.Tab.0.right/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.1.bottom" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.1.bottom" timestamp="1602644758562">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758562" />
     <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.bottom/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816790" />
     <state width="1259" height="183" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
-    <state width="1259" height="179" key="GridCell.Tab.1.center" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.1.center" timestamp="1602644758561">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758561" />
     <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.center/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="183" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
-    <state width="1259" height="179" key="GridCell.Tab.1.left" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.1.left" timestamp="1602644758561">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758561" />
     <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.left/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="183" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
-    <state width="1259" height="179" key="GridCell.Tab.1.right" timestamp="1602322149547">
+    <state width="1259" height="179" key="GridCell.Tab.1.right" timestamp="1602644758561">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602322149547" />
+    <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602644758561" />
     <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.right/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816790" />
     <state width="1259" height="183" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
@@ -486,10 +426,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="158" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1599637502641" />
-    <state x="0" y="0" width="605" height="680" key="find.popup" timestamp="1602317061627">
+    <state x="0" y="0" width="605" height="680" key="find.popup" timestamp="1602572241133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" width="605" height="680" key="find.popup/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602317061627" />
+    <state x="0" y="0" width="605" height="680" key="find.popup/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602572241133" />
     <state x="0" y="0" width="605" height="689" key="find.popup/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600069898032" />
     <state x="303" y="10" width="672" height="670" key="search.everywhere.popup" timestamp="1602316066654">
       <screen x="0" y="0" width="1280" height="680" />
@@ -522,14 +462,14 @@
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/supplyer/models/supplyermodel.py</url>
           <line>113</line>
           <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/labrecord/models/labmodel.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

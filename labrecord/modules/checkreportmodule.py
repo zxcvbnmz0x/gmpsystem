@@ -63,11 +63,12 @@ class CheckreportModule(QMainWindow, Ui_MainWindow):
         # 获取原始检验记录
         self.get_oricheckpaper(autoid)
         # 检验项目的右键菜单功能
-        if self.ori_detail['paperno'] == '':
-            self.get_paperno()
-        self.new_paperstatus = self.ori_detail['paperstatus']
-        # 根据签名情况确定是否允许修改签名
-        self.set_paperstatus()
+        if len(self.ori_detail):
+            if self.ori_detail['paperno'] == '':
+                self.get_paperno()
+            self.new_paperstatus = self.ori_detail['paperstatus']
+            # 根据签名情况确定是否允许修改签名
+            self.set_paperstatus()
 
     def set_paperstatus(self):
         paperstatus = self.ori_detail['paperstatus']

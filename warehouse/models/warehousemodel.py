@@ -2,7 +2,7 @@
 
 from db.models import Stuffdrawpaper, Planprescription, Producingplan, \
     Stuffrepository, Productstuff, Productputoutpaper, Ppopqrcode, \
-    Productwithdrawnotes, Pwngoods, Pwqrcode
+    Productwithdrawnotes, Pwngoods, Pwqrcode, Stuffcheckin, Stuffcheckinlist
 
 from lib.utils.saveexcept import SaveExcept
 
@@ -41,7 +41,7 @@ class WarehouseModel(object):
                        **kwargs)
 
     @staticmethod
-    def update_stuffrepository(autoid=None, **kwargs):
+    def update_stuffrepository(autoid=None, *args, **kwargs):
         try:
             if autoid is None:
                 return Stuffrepository.objects.create(**kwargs)
@@ -61,6 +61,23 @@ class WarehouseModel(object):
                     **kwargs)
         except Exception as e:
             SaveExcept(e, "更新产品物料出错", data=autoid, **kwargs)
+
+    @staticmethod
+    def update_stuffrepository(autoid=None, **kwargs):
+        try:
+            if autoid:
+                if type(autoid) is int:
+                    return Productstuff.objects.filter(autoid=autoid).\
+                        update(**kwargs)
+                else:
+                    return Productstuff.objects.filter(autoid__in=autoid).\
+                        update(**kwargs)
+
+            else:
+                return Stuffrepository.objects.create(**kwargs)
+
+        except Exception as e:
+            SaveExcept(e, "更新物料库存时出错", data=autoid, **kwargs)
 
     @staticmethod
     def update_stuffrepository_amount(*args, **kwargs):
@@ -285,3 +302,97 @@ class WarehouseModel(object):
                 return False
         except Exception as e:
             SaveExcept(e, "删除产品退货二维码时出错", *args, *kwargs)
+
+    @staticmethod
+    def get_stuffcheckin(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            res = Stuffcheckin.objects.filter(**kwargs)
+            if len(args):
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, "获取进货登记信息时出错", *args, **kwargs)
+
+    @staticmethod
+    def update_stuffcheckin(autoid, *args, **kwargs):
+        try:
+            if autoid:
+                if type(autoid) == int:
+                    return Stuffcheckin.objects.filter(
+                        autoid=autoid).update(**kwargs)
+                else:
+                    return Stuffcheckin.objects.filter(
+                        autoid__in=autoid).update(**kwargs)
+            elif kwargs:
+                return Stuffcheckin.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "更新进货登记时出错", data=autoid, *args, **kwargs)
+
+    @staticmethod
+    def delete_stuffcheckin(autoid=None, *args, **kwargs):
+        try:
+            if autoid is not None:
+                if type(autoid) == int:
+                    return Stuffcheckin.objects.filter(
+                        autoid=autoid).delete()
+                elif type(autoid) == list:
+                    return Stuffcheckin.objects.filter(
+                        autoid__in=autoid).delete()
+            elif len(kwargs):
+                return Stuffcheckin.objects.filter(**kwargs).delete()
+            else:
+                return False
+        except Exception as e:
+            SaveExcept(e, "删除进货登记时出错", *args, *kwargs)
+
+    @staticmethod
+    def get_stuffcheckinlist(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            res = Stuffcheckinlist.objects.filter(**kwargs)
+            if len(args):
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, "获取进货登记的物料信息时出错", *args, **kwargs)
+
+    @staticmethod
+    def update_stuffcheckinlist(autoid=None, *args, **kwargs):
+        try:
+            if autoid:
+                if type(autoid) == int:
+                    return Stuffcheckinlist.objects.filter(
+                        autoid=autoid).update(**kwargs)
+                else:
+                    return Stuffcheckinlist.objects.filter(
+                        autoid__in=autoid).update(**kwargs)
+            elif kwargs:
+                return Stuffcheckinlist.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "更新进货登记的物料时出错", autoid, *args, **kwargs)
+
+    @staticmethod
+    def delete_stuffcheckinlist(autoid=None, *args, **kwargs):
+        try:
+            if autoid is not None:
+                if type(autoid) == int:
+                    return Stuffcheckinlist.objects.filter(
+                        autoid=autoid).delete()
+                elif type(autoid) == list:
+                    return Stuffcheckinlist.objects.filter(
+                        autoid__in=autoid).delete()
+            elif len(kwargs):
+                return Stuffcheckinlist.objects.filter(**kwargs).delete()
+            else:
+                return False
+        except Exception as e:
+            SaveExcept(e, "删除进货登记的物料时出错", *args, *kwargs)

@@ -8,6 +8,8 @@ from labrecord.controllers.labrecordscontroller import LabrecordsController
 
 from labrecord.views.sampling import Ui_Dialog
 
+import datetime
+
 import user
 
 
@@ -34,7 +36,7 @@ class SamplingModule(QDialog, Ui_Dialog):
     def get_records(self):
         values_list = (
             'chkid', 'chkname', 'checkamount', 'caunit', 'samplesource',
-            'applyerid', 'applyername','applydate', 'sampleamount',
+            'applyerid', 'applyername', 'applydate', 'sampleamount',
             'sampleunit'
             ''
         )
@@ -42,10 +44,18 @@ class SamplingModule(QDialog, Ui_Dialog):
         res = self.LC.get_labrecord(False, *values_list, **key_dict)
         if len(res):
             self.ori_detail = res[0]
-            self.label_chkitem.setText(self.ori_detail['chkid'] + ' ' + self.ori_detail['chkname'])
-            self.label_checkamount.setText(str(self.ori_detail['checkamount']) + self.ori_detail['caunit'])
-            self.label_applyer.setText(self.ori_detail['applyerid'] + ' ' + self.ori_detail['applyername'])
-            self.dateEdit_applydate.setDate(self.ori_detail['applydate'])
+            self.label_chkitem.setText(
+                self.ori_detail['chkid'] + ' ' + self.ori_detail['chkname'])
+            self.label_checkamount.setText(
+                str(self.ori_detail['checkamount']) + self.ori_detail['caunit'])
+            self.label_applyer.setText(
+                self.ori_detail['applyerid'] + ' ' + self.ori_detail[
+                    'applyername'])
+            self.dateEdit_applydate.setDate(
+                self.ori_detail['applydate'] if type(
+                    self.ori_detail['applydate']) is datetime.date else
+                user.now_date
+            )
             self.label_sampleunit.setText(self.ori_detail['sampleunit'])
             self.dateEdit_sampledate.setDate(user.now_date)
 
@@ -109,7 +119,8 @@ class SamplingModule(QDialog, Ui_Dialog):
             self.new_detail['samplerid'] = user.user_id
             self.new_detail['samplername'] = user.user_name
             self.new_detail['status'] = 2
-            res = self.LC.update_labrecord(autoid=self.autoid, **self.new_detail)
+            res = self.LC.update_labrecord(autoid=self.autoid,
+                                           **self.new_detail)
             if len(self.new_labitemstate):
                 for item in self.new_labitemstate:
                     self.LC.update_labitem(**item)

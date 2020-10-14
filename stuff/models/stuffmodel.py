@@ -60,7 +60,7 @@ class StuffModel(object):
                     return res.values(*args)
 
             else:
-                return Productstuff.objects.filter(**kwargs)
+                return Stuffdictionary.objects.filter(**kwargs)
         except Exception as e:
             SaveExcept(e, "获取产品物料时出错", *args, **kwargs)
 

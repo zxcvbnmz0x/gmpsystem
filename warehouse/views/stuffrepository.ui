@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>828</width>
+    <height>554</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>全部</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTreeWidget" name="treeWidget_stuffbatchnolist">
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>lrid</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>状态</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>物料</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>种类</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>进厂批号</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>厂家批号</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>含量规格</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>包装规格</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>入库数量</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>剩余库存</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>单位</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>生产日期</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>入库日期</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>过期日期</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>复检日期</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>生产厂家</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>含量</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>水分</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>相对密度</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>杂质</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>仓管员</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTreeWidget" name="treeWidget_stuffkindlist">
+         <column>
+          <property name="text">
+           <string>种类</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>剩余库存</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>入库数量</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>单位</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_0">
+      <attribute name="title">
+       <string>主材料</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_1">
+      <attribute name="title">
+       <string>前处理</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>辅材料</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>内包材</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>外包材</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QRadioButton" name="radioButton_batchno">
+       <property name="text">
+        <string>按物料批次排序</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_kind">
+       <property name="text">
+        <string>按物料类别排序</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

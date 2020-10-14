@@ -97,9 +97,7 @@ autoid,SeqID,PostName,RoomName,Options,ExpiredDays from workflow where plid = li
 declare 
 
 document cursor for (select SeqID,DocID from postdocument where wfID = workid);
-declare continue handler for 
-
-not found set done=1;
+declare continue handler for not found set done=1;
 SELECT 
     prodid, prodname, batchno, spec, package, lineid
 INTO prodid_var , 
@@ -153,10 +151,7 @@ insert into linepost (ppid,SeqID,PostName,RoomName,Options,ExpiredDays) values
 
 createdocument:loop
 		fetch document into sid,docid_var;
-		if done = 1 then
-		
-
-	leave createdocument;
+		if done = 1 then leave createdocument;
 		end if;
         if docid_var > 0 then
 			insert into 
@@ -568,9 +563,119 @@ ADD COLUMN `ppid`  int NOT NULL DEFAULT 0 AFTER `autoid`;
 ADD COLUMN `package`  varchar(60) NOT NULL DEFAULT '' AFTER `Spec`;
 MODIFY COLUMN `ArrivedAmount`  decimal(10,3) NOT NULL DEFAULT 0 AFTER `Price`,
 MODIFY COLUMN `iPosID`  int(11) NOT NULL DEFAULT 0 AFTER `ArrivedAmount`;
+CHANGE COLUMN `iPosID` `ExpiredDays`  int(11) NOT NULL DEFAULT 365 AFTER `ArrivedAmount`;
 
 
 update pplist as pp, purchasingplan as pl set pp.ppid = pl.autoid where pp.PaperNo=pl.PaperNo;
 
 UPDATE purchasingplan as pp, supplyer as sp set pp.spid = sp.autoid where pp.SupID = sp.SupID;
 
+
+ALTER TABLE `stuffcheckinlist`
+DROP COLUMN `AllowNo`,
+DROP COLUMN `BasicUnit`,
+DROP COLUMN `BasicAmount`,
+CHANGE COLUMN `piTime` `piDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `piAmount`,
+MODIFY COLUMN `status`  int(11) NOT NULL DEFAULT 0 AFTER `content`,
+CHANGE COLUMN `CheckInTime` `CheckInDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `status`,
+MODIFY COLUMN `pplID`  int(11) NOT NULL DEFAULT 0 AFTER `srID`,
+MODIFY COLUMN `lrID`  int(11) NOT NULL DEFAULT 0 AFTER `pplID`,
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL DEFAULT 0 AFTER `rDensity`,
+MODIFY COLUMN `mBatchNo`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `impurity`;
+
+ALTER TABLE `stuffcheckin`
+MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ,
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `ppPaperNo`,
+MODIFY COLUMN `status`  int(11) NOT NULL DEFAULT 0 AFTER `PaperType`;
+
+ALTER TABLE `labrecords`
+CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `ciID`;
+
+CREATE TRIGGER `updatelabrecord` AFTER UPDATE ON `labrecords`
+FOR EACH ROW if new.labtype = 0 and new.status in (1,2,3,4)
+then
+    update stuffcheckinlist set status = new.status where autoid = new.ciid;
+end if;;
+
+ALTER TABLE `labrecords`
+MODIFY COLUMN `conclusion`  tinyint(4) NOT NULL DEFAULT 2 AFTER `WarrantorName`;
+
+ALTER TABLE `stuffrepository`
+CHANGE COLUMN `CheckInTime` `CheckInDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `BasicAmount`,
+CHANGE COLUMN `PutinTime` `PutinDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `CheckInDate`;
+
+ALTER TABLE `labrecordsdetail`
+ADD COLUMN `PutInType`  tinyint NOT NULL DEFAULT 0 AFTER `CheckerName`;
+
+ALTER TABLE `stuffcheckinlist`
+MODIFY COLUMN `mBatchNo`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `BatchNo`,
+MODIFY COLUMN `content`  decimal(8,2) NOT NULL DEFAULT 100.00 AFTER `position`,
+MODIFY COLUMN `rDensity`  decimal(12,4) NOT NULL DEFAULT 1.0000 AFTER `water`,
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL DEFAULT 0.00 AFTER `rDensity`,
+ADD COLUMN `cUnit`  varchar(20) NULL DEFAULT '' AFTER `content`;
+
+ALTER TABLE `stuffrepository`
+MODIFY COLUMN `mBatchNo`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `BatchNo`,
+MODIFY COLUMN `Content`  decimal(8,2) NOT NULL DEFAULT 100.00 AFTER `WarehousemanName`,
+MODIFY COLUMN `cUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `Content`,
+MODIFY COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT '相对密度' AFTER `Water`,
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT '杂质' AFTER `rDensity`;
+
+delimiter $$
+drop TRIGGER if exists updatepaperstatus$$
+CREATE TRIGGER `updatepaperstatus` AFTER UPDATE ON `stuffcheckinlist` FOR EACH ROW 
+begin
+declare done,stuffstatus,ppno int default 0;
+declare newstatus bool default true;
+declare nextamount decimal(10,3);
+declare stuffliststatus cursor for select status from stuffcheckinlist where paperno=new.paperno and papertype=0;
+declare ppliststatus cursor for select amount-arrivedamount as amount from pplist where paperno=ppno;
+declare continue handler for not found set done=1;
+if new.status>=5 and new.papertype=0
+then
+    update pplist as pp,stuffcheckin as si set pp.arrivedamount = pp.arrivedamount + new.piamount where 
+        pp.stuffid=new.stuffid and pp.paperno=si.pppaperno and si.papertype=0 and si.paperno=new.paperno;
+    set newstatus = true;
+    set done = 0;
+    open stuffliststatus;
+    checkstatus:loop
+        fetch stuffliststatus into stuffstatus;
+        if done = 1 
+        then
+            leave checkstatus;
+        end if;
+        if stuffstatus <5
+        then
+            set newstatus = false;
+            leave checkstatus;
+        end if;
+    end loop checkstatus;
+    close stuffliststatus;
+    if newstatus = true
+    then
+        update stuffcheckin set status = 1 where papertype=0 and paperno=new.paperno;
+        set ppno = (select pppaperno from stuffcheckin where paperno=new.paperno and papertype=0);
+        open  ppliststatus;
+        set done = 0;
+        set newstatus = true;
+        pplist:loop
+            fetch ppliststatus into nextamount;
+            if done = 1 
+            then 
+                leave pplist;
+            end if;
+            if nextamount>0
+            then
+                set newstatus=false;
+                leave pplist;
+            end if;
+        end loop pplist;
+        close ppliststatus;
+        if newstatus = true
+        then
+            update purchasingplan set status = 2 where paperno = ppno;
+        end if;
+    end if;
+end if;
+end$$
+delimiter ;

@@ -45,7 +45,6 @@ class ApplycheckModule(QDialog, Ui_dialog):
             self.ori_detail = res[0]
             self.lineEdit_checkamount.setText(str(self.ori_detail['checkamount']))
             self.label_checkunit.setText(self.ori_detail['caunit'])
-            self.comboBox_samplesource.setCurrentText(self.ori_detail['samplesource'])
             self.lineEdit_applyremark.setText(self.ori_detail['applyremark'])
             self.label_status.setText(STATUS[self.ori_detail['status']])
             if self.ori_detail['status'] == 0:
@@ -65,6 +64,8 @@ class ApplycheckModule(QDialog, Ui_dialog):
         res = self.LC.get_labrecord(True, *value_list, **key_dict)
         if len(res):
             self.comboBox_samplesource.addItems(res.distinct())
+        self.comboBox_samplesource.setCurrentText(
+            self.ori_detail['samplesource'])
 
     # 获取检验项目
     def get_labrecord_item(self):
@@ -105,6 +106,7 @@ class ApplycheckModule(QDialog, Ui_dialog):
                 self.pushButton_cancel.setVisible(True)
                 self.pushButton_apply.setVisible(False)
                 self.label_status.setText(STATUS[1])
+                self.accept()
 
     @pyqtSlot()
     def on_pushButton_cancel_clicked(self):

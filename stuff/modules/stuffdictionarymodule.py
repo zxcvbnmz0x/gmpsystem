@@ -170,18 +170,12 @@ class StuffDictionaryModule(QtWidgets.QDialog, Ui_Form):
     # 物料列表双击功能
     @QtCore.pyqtSlot(QtWidgets.QTreeWidgetItem, int)
     def on_stufflist_itemDoubleClicked(self, QTreeWidgetItem, p_int):
-        autoid = QTreeWidgetItem.text(0)
-        try:
-            # 物料详细列表
-            detail = StuffDetail(self)
-            detail.set_autoid(autoid)
-            detail.flush_signal.connect(self.show_stuff_list)
-            # 修改了物料记录，刷新列表
-            detail.show()
-
-
-        except Exception as e:
-            print(repr(e))
+        autoid = int(QTreeWidgetItem.text(0))
+        # 物料详细列表
+        detail = StuffDetail(autoid, self)
+        detail.flush_signal.connect(self.show_stuff_list)
+        # 修改了物料记录，刷新列表
+        detail.show()
 
     # 物料类型的选择，6个按键共用一个方法
     @QtCore.pyqtSlot()

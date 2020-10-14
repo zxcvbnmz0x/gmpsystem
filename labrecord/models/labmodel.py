@@ -84,12 +84,46 @@ class LabModel(object):
             return Labrecords.objects.create(**kwargs)
 
     @staticmethod
+    def delete_labrecord(autoid=None, *args, **kwargs):
+        try:
+            if autoid is not None:
+                if type(autoid) == int:
+                    return Labrecords.objects.filter(
+                        autoid=autoid).delete()
+                elif type(autoid) == list:
+                    return Labrecords.objects.filter(
+                        autoid__in=autoid).delete()
+            elif len(kwargs):
+                return Labrecords.objects.filter(**kwargs).delete()
+            else:
+                return False
+        except Exception as e:
+            SaveExcept(e, "删除检验记录时出错", *args, *kwargs)
+
+    @staticmethod
     def update_labitem(autoid=0, *args, **kwargs):
         if autoid:
             return Labrecordsdetail.objects.filter(autoid=autoid).update(
                 **kwargs)
         else:
             return Labrecordsdetail.objects.create(**kwargs)
+
+    @staticmethod
+    def delete_labitem(autoid=None, *args, **kwargs):
+        try:
+            if autoid is not None:
+                if type(autoid) == int:
+                    return Labrecordsdetail.objects.filter(
+                        autoid=autoid).delete()
+                elif type(autoid) == list:
+                    return Labrecordsdetail.objects.filter(
+                        autoid__in=autoid).delete()
+            elif len(kwargs):
+                return Labrecordsdetail.objects.filter(**kwargs).delete()
+            else:
+                return False
+        except Exception as e:
+            SaveExcept(e, "删除检验项目时出错", *args, *kwargs)
 
     @staticmethod
     def update_oricheckpaper(autoid=0, *args, **kwargs):

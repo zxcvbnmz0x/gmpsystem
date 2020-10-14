@@ -9,12 +9,12 @@ class SupplyerModel(object):
         super().__init__()
 
     @staticmethod
-    def get_supply(flag=0, *args, **kwargs):
+    def get_supply(display_flag=False, *args, **kwargs):
         flat = True if len(args) == 1 else False
         try:
             if len(args):
                 res = Supplyer.objects.filter(**kwargs)
-                if flag == 0:
+                if display_flag:
                     return res.values_list(*args, flat=flat)
                 else:
                     return res.values(*args)

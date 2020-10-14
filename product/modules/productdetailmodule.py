@@ -60,17 +60,20 @@ class ProductDetailModule(QtWidgets.QDialog, Ui_Dialog):
             try:
                 # 原料检验项目itemtype=0
                 if tab_name == "中间产品检验项目":
-                    items = self.check_item.get_checkitems(self.prodid.text(),
-                                                           2)
+                    items = self.check_item.get_checkitems(
+                        False, stuffid=self.prodid.text(), itemtype=2
+                    )
                     widget = self.precheckitem
                 # 前处理检验项目itemtype=5
                 elif tab_name == "成品检验项目":
-                    items = self.check_item.get_checkitems(self.prodid.text(),
-                                                           1)
+                    items = self.check_item.get_checkitems(
+                        False, stuffid=self.prodid.text(), itemtype=1
+                    )
                     widget = self.prodcheckitem
                 elif tab_name == "留样检验项目":
-                    items = self.check_item.get_checkitems(self.prodid.text(),
-                                                           6)
+                    items = self.check_item.get_checkitems(
+                        False, stuffid=self.prodid.text(), itemtype=6
+                    )
                     widget = self.samplecheckitem
                 widget.clear()
                 for item in items:

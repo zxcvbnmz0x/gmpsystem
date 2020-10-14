@@ -5,8 +5,8 @@ from supplyer.models.supplyermodel import SupplyerModel
 
 class SupplyerController(object):
 
-    def get_supply(self, flag=0, *args,  **kwargs):
-        return SupplyerModel.get_supply(flag=0, *args, **kwargs)
+    def get_supply(self, display_flag=False, *args,  **kwargs):
+        return SupplyerModel.get_supply(display_flag, *args, **kwargs)
 
     def get_purchasingplan(self, display_flag=False, *args, **kwargs):
         return SupplyerModel.get_purchasingplan(display_flag, *args, **kwargs)

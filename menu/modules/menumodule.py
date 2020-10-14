@@ -9,6 +9,8 @@ from menu.views.mainmenu import Ui_MainWindow
 from clerks.controllers.deptclerks import Clerks
 from stuff.controllers.stuffdictionary import StuffDictionary
 
+from supplyer.modules.purchasingplanmodule import PurchasingplanModule
+
 from product.controllers.productdictionary import ProductDictionary
 from product.controllers.producingplan import Producingplan
 
@@ -18,6 +20,9 @@ from labrecord.modules.labreportlistmodule import LabreportlistModule
 from warehouse.modules.stuffpickingmodule import StuffpickingModule
 from warehouse.modules.oddmentputinnotemodule import OddmentputinnoteModule
 from warehouse.modules.productputinlistmodule import ProductputinlistModule
+from warehouse.modules.purchaseregistrationmodule import PurchaseRegistrationModule
+from warehouse.modules.purstuffcheckinmodule import PurStuffCheckInModule
+
 
 from workshop.modules.midproddetailmodule import MidproddetailModule
 from workshop.modules.oddmentdetailmodule import OddmentdetailModule
@@ -80,5 +85,8 @@ MODULE_NAME = {
     "零头登记/发放": ("oddmentdetail", OddmentdetailModule),
     "零头寄库": ("oddmentputin", OddmentputinnoteModule),
     "产品寄库": ("prodputin", ProductputinlistModule),
-    "生产领料": ("stuffpicking", StuffpickingModule)
+    "生产领料": ("stuffpicking", StuffpickingModule),
+    "采购计划": ("purcharsingplan", PurchasingplanModule),
+    "进货登记": ("purstuffreg", PurchaseRegistrationModule),
+    "物料采购入库": ("purstuffcheckin", PurStuffCheckInModule)
 }
