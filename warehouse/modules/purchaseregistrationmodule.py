@@ -257,6 +257,7 @@ class PurchaseRegistrationModule(QWidget, Ui_Form):
                         'putintype': item['putintype'],
                         'startdate': user.now_date,
                         'enddate': user.now_date,
+                        'checked': 2
 
                     }
                     self.LC.update_labitem(**kwargs_checkitem)

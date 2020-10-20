@@ -1,27 +1,10 @@
-import decimal
-from db.models import Productstuff,Workflow, Linepost,Eqrunnotes
-from django.db import connection,transaction
-import sys,datetime
-import os
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication  ,QWidget,QLineEdit, QDialog
-from PyQt5.QtGui import   QPainter ,QPixmap, QPen
-from PyQt5.QtCore import Qt , QPoint, QDate,QFile, QUrl,QTextStream,QIODevice,QByteArray, pyqtSlot
-from PyQt5.QtXmlPatterns import QXmlQuery
-from PyQt5.QtXml import QDomDocument,QDomNode,QDomElement
-from equipment.controllers.equipmentcontroller import EquipmentController
+from PyQt5.QtCore import QDate, pyqtSlot
 
-from django.forms import model_to_dict
-import json
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QFormLayout, QLineEdit, \
     QLabel, QPushButton
-from PyQt5.QtCore import QDateTime
-from lib.sign.signbutton import SignButton
-from equipment.modules.eqrunnotedodule import EqrunnoteModule
 from stuff.modules.stuffdrawpapermodule import StuffdrawpaperModule
-from warehouse.modules.drawstuffmodule import DrawstuffModule
-from warehouse.modules.stuffpickingmodule import StuffpickingModule
+
 
 class Winform(QWidget):
     def __init__(self, parent=None):
@@ -48,7 +31,7 @@ class Winform(QWidget):
         res = s.show()
         print(res)
 
-from django.db.models import Aggregate, CharField
+from django.db.models import CharField
 from django.db.models.expressions import Func
 class Concat(Func):
     """ORM用来分组显示其他字段 相当于group_concat"""
@@ -65,33 +48,6 @@ class Concat(Func):
         print(distinct)
         print(extra)
 
-
-from PyQt5.QtWidgets import QTreeWidgetItem
-from db.models import Productstuff
-from lib.utils.inputcode import Inputcode
-from labrecord.modules.applycheckmodule import ApplycheckModule
-from labrecord.modules.labsamplelistmodule import LabsamplelistModule
-from labrecord.modules.labreportlistmodule import LabreportlistModule
-from labrecord.modules.checkreportmodule import CheckreportModule
-from workshop.modules.productioninstructionmodule import PorductionInstructionModule
-from workshop.modules.packageinstructionmodule import PackageInstructionModule
-from workshop.modules.midproddrawnotemodule import MidproddrawnoteModule
-from workshop.modules.midproddetailmodule import MidproddetailModule
-from workshop.modules.oddmentregisternotemodule import OddmentregisternoteModule
-from workshop.modules.oddmentdrawnotemodule import OddmentdrawnoteModule
-from workshop.modules.oddmentdetailmodule import OddmentdetailModule
-from warehouse.modules.oddmentputinnotemodule import OddmentputinnoteModule
-from workshop.modules.productputinnotemodule import ProductputinModule
-from warehouse.modules.productputinlistmodule import ProductputinlistModule
-from workshop.modules.qrcodelistmodule import QrcodelistModule
-from workshop.modules.scanqrcodemodule import ScanqrcodeModule
-from qrcode.modules.qrcodeinputmodule import QrcodeinputModule
-from qrcode.modules.qrcodeoutputmodule import QrcodeoutputModule
-from qrcode.modules.qrcodereturnmodule import QrcodereturnModule
-from supplyer.modules.purchasingplanmodule import PurchasingplanModule
-
-import re
-from db.models import Relativepictures, Imagelib
 
 class a():
     b = 0
@@ -149,16 +105,14 @@ def on_lineEdit_remark_textChanged(self, p_str):
 import datetime
 
 datetime.date.today()
-from supplyer.modules.purchasingplanmodule import PurchasingplanModule
-from warehouse.modules.editregstuffmodule import EditRegStuffModule
-from warehouse.modules.purchaseregistrationmodule import PurchaseRegistrationModule
-from warehouse.modules.purstuffcheckinmodule import PurStuffCheckInModule
-from warehouse.modules.editstuffcheckin import EditStuffCheckInModule
+from sale.modules.saleorderlistmodule import SaleOrderListModule
+from sale.modules.editsaleprodmodule import EditSaleProdMudule
+
 if __name__ == "__main__":
 
     app = QApplication(sys.argv)
 
-    form = PurStuffCheckInModule()
+    form = SaleOrderListModule()
     form.show()
     sys.exit(app.exec_())
 

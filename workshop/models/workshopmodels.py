@@ -78,9 +78,11 @@ class WorkshopModels(object):
                        **kwargs)
 
     @staticmethod
-    def update_productputinnote(key_dict=dict, *args, **kwargs):
-        if key_dict:
-            return Productputinnotes.objects.filter(**key_dict).update(**kwargs)
+    def update_productputinnote(autoid, *args, **kwargs):
+        if type(autoid) is int:
+            return Productputinnotes.objects.filter(autoid=autoid).update(**kwargs)
+        elif type(autoid) is list:
+            return Productputinnotes.objects.filter(autoid__in=autoid).update(**kwargs)
         else:
             return Productputinnotes.objects.create(**kwargs)
 

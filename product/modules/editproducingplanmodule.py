@@ -58,7 +58,10 @@ class EditProducingplan(QtWidgets.QDialog, Ui_Dialog):
         if autoid:
             # flag：产品的类型，0成品，1半成品，2退货
             flag = self.productkind.currentIndex()
-            res = self.product.get_product_or_stuff(flag, autoid)
+            key_dict = {'autoid': autoid}
+            res = self.product.get_product_or_stuff_dictionary(
+                flag, False, **key_dict
+            )
             if res:
                 self.unit.setText(res.spunit)
                 lineid = res.plid

@@ -1,0 +1,242 @@
+
+2020-10-19 13:35:40
+FieldError("Cannot resolve keyword 'package' into field. Choices are: autoid, bpamount, bpunit, commonname, hpunit, inmethod, mpamount, mpunit, price, prodid, prodname, remark, saleamount, snid, spamount, spec, spunit")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'package' into field. Choices are: autoid, bpamount, bpunit, commonname, hpunit, inmethod, mpamount, mpunit, price, prodid, prodname, remark, saleamount, snid, spamount, spec, spunit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\sale\models\salemodel.py", line 160, in get_salenotegoods
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'package' into field. Choices are: autoid, bpamount, bpunit, commonname, hpunit, inmethod, mpamount, mpunit, price, prodid, prodname, remark, saleamount, snid, spamount, spec, spunit
+
+获取待售货物信息时出错
+autoid
+args=["prodid", "prodname", "spec", "package", "spunit", "saleamount"]
+kwargs={"snid": "21"}
+--------------------
+2020-10-19 13:40:01
+FieldError("Cannot resolve keyword 'prodid' into field. Choices are: autoid, deptid, deptname, hxamount, hxbpstockamount, hxid, hxstockamount, indate, piamount, pisource, position, ppid, stockamount, warehousemanid, warehousemanname")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 394, in get_productrepository
+    res = Productrepository.objects.filter(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1258, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1084, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'prodid' into field. Choices are: autoid, deptid, deptname, hxamount, hxbpstockamount, hxid, hxstockamount, indate, piamount, pisource, position, ppid, stockamount, warehousemanid, warehousemanname
+
+获取产品库存信息时出错
+kwargs={"prodid": "03040703", "stockamount__gt": 0}
+--------------------
+2020-10-19 16:44:46
+IntegrityError(1048, "Column 'Status' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'Status' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\sale\models\salemodel.py", line 83, in update_salenotes
+    return Salesnotes.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'Status' cannot be null")
+
+更新销售订单信息时出错
+kwargs={"paperno": "00002", "creatorid": "001", "creatorname": "sys02"}
+--------------------
+2020-10-19 17:05:41
+TypeError("Salesnotes() got an unexpected keyword argument 'linkman'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\sale\models\salemodel.py", line 83, in update_salenotes
+    return Salesnotes.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Salesnotes() got an unexpected keyword argument 'linkman'
+
+更新销售订单信息时出错
+kwargs={"paperno": "00002", "saledate": null, "deliverydate": null, "deliveryplace": "新兴", "linkman": "大股东", "telno": "0760-88888888", "clientid": "Z003", "clientname": "新兴化药综合制剂车间成品仓3", "remark": "96", "creatorid": "001", "creatorname": "sys02"}
+--------------------
+2020-10-19 17:09:30
+IntegrityError(1048, "Column 'Status' cannot be null")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'Status' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\sale\models\salemodel.py", line 83, in update_salenotes
+    return Salesnotes.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 750, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 787, in save_base
+    updated = self._save_table(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 930, in _do_insert
+    return manager._insert(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\backends\mysql\base.py", line 74, in execute
+    return self.cursor.execute(query, args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'Status' cannot be null")
+
+更新销售订单信息时出错
+kwargs={"paperno": "00002", "saledate": null, "deliverydate": null, "deliveryplace": "新兴", "linkman": "大股东", "telno": "0760-88888888", "clientid": "Z003", "clientname": "新兴化药综合制剂车间成品仓3", "remark": "123", "creatorid": "001", "creatorname": "sys02"}
+--------------------

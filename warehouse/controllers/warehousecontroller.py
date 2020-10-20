@@ -37,8 +37,9 @@ class WarehouseController(object):
         else:
             return []
 
-    def get_stuffrepository(self, flag=0, *args, **kwargs):
-        res = self.WM.get_stuffrepository(flag, *args, **kwargs)
+    def get_stuffrepository(self, display_flag=False, *args, **kwargs):
+        return self.WM.get_stuffrepository(display_flag, *args, **kwargs)
+        """res = self.WM.get_stuffrepository(flag, *args, **kwargs)
         supid_list = []
         if len(res):
             for item in res:
@@ -51,6 +52,7 @@ class WarehouseController(object):
                         item['supname'] = supplyer[1]
                         break
         return res
+        """
 
     def update_stuffrepository(self, autoid=None, *args, **kwargs):
         return WarehouseModel.update_stuffrepository(autoid, *args, **kwargs)
@@ -58,13 +60,13 @@ class WarehouseController(object):
     def update_stuffrepository_amount(self, *args, **kwargs):
         return WarehouseModel.update_stuffrepository_amount(*args, **kwargs)
 
-    def get_prodputoutpaper(self, display_flag=False, *args, **kwargs):
+    def get_productputoutpaper(self, display_flag=False, *args, **kwargs):
         return WarehouseModel.get_productputoutpaper(display_flag, *args, **kwargs)
 
-    def update_prodputoutpaper(self, autoid, *args, **kwargs):
+    def update_productputoutpaper(self, autoid=None, *args, **kwargs):
         return WarehouseModel.update_productputoutpaper(autoid, *args, **kwargs)
 
-    def delete_productputpaper(self, autoid, *args, **kwargs):
+    def delete_productputoutpaper(self, autoid=None, *args, **kwargs):
         return WarehouseModel.delete_productputoutpaper(autoid, *args, **kwargs)
 
     def get_prodwithdrawnote(self, display_flag=False, *args, **kwargs):
@@ -109,6 +111,7 @@ class WarehouseController(object):
         if not len(stuff_query):
             return
         stuff_list = list(stuff_query)
+
         with transaction.atomic():
             p1 = transaction.savepoint()
             res = WarehouseModel.update_stuffcheckin(None, *args, **kwargs)
@@ -125,6 +128,8 @@ class WarehouseController(object):
                 detail['checkindate'] = user.now_date
                 detail['amount'] = item['amount']-item['arrivedamount']
                 detail['piamount'] = item['amount']-item['arrivedamount']
+                detail['supid'] = kwargs['supid']
+                detail['supname'] = kwargs['supname']
                 del item['amount']
                 del item['arrivedamount']
                 del item['expireddays']
@@ -143,6 +148,15 @@ class WarehouseController(object):
 
     def delete_stuffcheckinlist(self, autoid, *args, **kwargs):
         return WarehouseModel.delete_stuffcheckinlist(autoid, *args, **kwargs)
+
+    def get_productrepository(self, display_flag=False, *args, **kwargs):
+        return WarehouseModel.get_productrepository(display_flag, *args, **kwargs)
+
+    def update_productrepository(self, autoid, *args, **kwargs):
+        return WarehouseModel.update_productrepository(autoid, *args, **kwargs)
+
+    def delete_productrepository(self, autoid, *args, **kwargs):
+        return WarehouseModel.delete_productrepository(autoid, *args, **kwargs)
 
 
 VALUES_TUPLE_PPLIST = (

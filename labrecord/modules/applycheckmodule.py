@@ -30,11 +30,13 @@ class ApplycheckModule(QDialog, Ui_dialog):
         self.get_applysourcelist()
         # 获取检验项目
         self.get_labrecord_item()
-    
+
+    """
     def show(self):
         if len(self.ori_detail):
             # 如果找不到对应的检验记录则不显示内容
             super(ApplycheckModule, self).show()
+    """
 
     # 获取检验记录
     def get_labreord_detail(self):

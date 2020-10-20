@@ -1,9 +1,9 @@
-#ÉèÖÃ²úÆ·×Öµä
+#ï¿½ï¿½ï¿½Ã²ï¿½Æ·ï¿½Öµï¿½
 ALTER TABLE `productdictionary`
 MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ,
 MODIFY COLUMN `InputCode`  varchar(60) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `ProdName`;
 
-#ÉèÖÃÉú²úÖ¸ÁîµÄÄ¬ÈÏÖµ
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµ
 ALTER TABLE `producingplan`
 MODIFY COLUMN `spec`  varchar(200) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `CommonName`,
 MODIFY COLUMN `PlanAmount`  decimal(10,2) NOT NULL DEFAULT 0 AFTER `ProductGist`,
@@ -22,7 +22,7 @@ MODIFY COLUMN `plflag`  int(11) NOT NULL DEFAULT 0 AFTER `DayKind`,
 AUTO_INCREMENT=4;
 
 
-#½¨Á¢Éú²úÖ¸Áî
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
 delimiter $$
 CREATE FUNCTION createproducingplan(flag int, id varchar(40)) RETURNS int(11)
 begin
@@ -32,7 +32,7 @@ insert into producingplan (prodid,prodname,commonname,spec,medkind,package,allow
 				    select prodid,prodname,commonname,spec,medkind,package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basicamount,basicunit,plid,expireddates from productdictionary where autoid = id;
 elseif flag = 1
 then
-insert into producingplan (prodid,prodname,commonname,spec,medkind,package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basucamount,basicunit,lineid,expireddates) select prodid,prodname,kind,spec,'Ç°´¦Àí',package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basicamount,basicunit,plid,expireddays from productdictionary where autoid = id;
+insert into producingplan (prodid,prodname,commonname,spec,medkind,package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basucamount,basicunit,lineid,expireddates) select prodid,prodname,kind,spec,'Ç°ï¿½ï¿½ï¿½ï¿½',package,allowno,bpunit,mpunit,spunit,mpamount,spamount,basicamount,basicunit,plid,expireddays from productdictionary where autoid = id;
 else
 return 0;
 end if;
@@ -42,16 +42,16 @@ return @autoid;
 end$$
 delimiter ;
 
-#Éú²úÏßÔö¼ÓÉèÖÃÎïÁÏ²ÖºÍ³ÉÆ·²Ö
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ÖºÍ³ï¿½Æ·ï¿½ï¿½
 ALTER TABLE `productline`
 ADD COLUMN `StuffWorkshopID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `plflag`,
 ADD COLUMN `ProductWorkshopID`  varchar(10) CHARACTER SET gbk NOT NULL DEFAULT '' AFTER `StuffWorkshopID`;
 
-#²¿ÃÅÔö¼ÓË÷Òý
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `department`
 ADD INDEX `DeptID` (`DeptID`) USING BTREE ;
 
-#ÖÐ¼ä²úÆ·ÇëÑéµ¥ÐòºÅ¸Äµ½-17£¬Ô­À´µÄÇå³¡ºÏ¸ñÖ¤£¨Õý±¾£©£¨-17£©¿ªÊ¼¶¼Íùºó-1
+#ï¿½Ð¼ï¿½ï¿½Æ·ï¿½ï¿½ï¿½éµ¥ï¿½ï¿½Å¸Äµï¿½-17ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½å³¡ï¿½Ï¸ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-17ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-1
 update postdocument set docid=docid-1 where docid<=-17;
 update postdocument set docid=-17 where docid = -31;
 update linepostdocumentset docid=docid-1 where docid<=-17;
@@ -59,7 +59,7 @@ update linepostdocumentset set docid=-17 where docid = -31;
 update labrecords set labtype = labtype+1 where labtype>=4;
 update labrecords set labtype = 4 where labtype>=10;
 
-#¸üÐÂ¼ìÑé¼ÇÂ¼
+#ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Â¼
 ALTER TABLE `labrecords`
 MODIFY COLUMN `LabType`  int(11) NOT NULL AFTER `autoid`,
 MODIFY COLUMN `BatchNo`  varchar(50) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `PaperNo`,
@@ -71,7 +71,7 @@ MODIFY COLUMN `PaperType`  int(11) NOT NULL DEFAULT 0 AFTER `status`,
 MODIFY COLUMN `NoSub`  tinyint(4) NOT NULL DEFAULT 0 AFTER `SeqID`,
 MODIFY COLUMN `itType`  int(11) NOT NULL DEFAULT '-1' AFTER `NoSub`;
 
-#¸ÚÎ»±íÌí¼ÓË÷Òý
+#ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE `linepost`
 ADD INDEX `roomname` (`RoomName`) USING BTREE ;
 MODIFY COLUMN `SeqID`  int(11) NOT NULL DEFAULT 0 AFTER `ppID`,
@@ -80,7 +80,7 @@ MODIFY COLUMN `status`  int(11) NOT NULL DEFAULT 0 AFTER `Humidity`;
 
 
 
-# ½¨Á¢Éú²úÎÄµµ
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½
 delimiter $$
 drop procedure if exists startproducingplan$$
 CREATE procedure startproducingplan(id varchar(40))
@@ -89,11 +89,11 @@ declare done,lid,workid,seid,opt,exdays,sid,postid,docid_var,did,wid,i int defau
 declare prodid_var,proddeptid, proddeptname,stuffdeptid,stuffdeptname, prodname_var , batchno_var , spec_var , package_var,pname,rname varchar(40) default '';
 
 declare fname varchar(50);
-# ¸ÚÎ»ÓÎ±ê
+# ï¿½ï¿½Î»ï¿½Î±ï¿½
 declare poname cursor for (select 
 
 autoid,SeqID,PostName,RoomName,Options,ExpiredDays from workflow where plid = lid);
-# ¸ÚÎ»ÎÄµµÓÎ±ê
+# ï¿½ï¿½Î»ï¿½Äµï¿½ï¿½Î±ï¿½
 declare 
 
 document cursor for (select SeqID,DocID from postdocument where wfID = workid);
@@ -269,12 +269,12 @@ MODIFY COLUMN `StartStatus`  tinyint(4) NOT NULL DEFAULT 0 AFTER `Maintenance`,
 MODIFY COLUMN `StopStatus`  tinyint(4) NOT NULL DEFAULT 0 AFTER `StartStatus`;
 
 ALTER TABLE `productstuff`
-MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT 'ÔÓÖÊ' AFTER `wdName`,
-ADD COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT 'Ïà¶ÔÃÜ¶È' AFTER `impurity`;
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½' AFTER `wdName`,
+ADD COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½' AFTER `impurity`;
 
 ALTER TABLE `stuffrepository`
-MODIFY COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT 'Ïà¶ÔÃÜ¶È' AFTER `source`,
-MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT 'ÔÓÖÊ' AFTER `rDensity`;
+MODIFY COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½' AFTER `source`,
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½' AFTER `rDensity`;
 
 
 ALTER TABLE `productstuff`
@@ -386,34 +386,34 @@ ALTER TABLE `labrecordsdetail`
 MODIFY COLUMN `Result`  tinyint NOT NULL AFTER `ExprRemark`;
 
 ALTER TABLE `producingplan`
-CHANGE COLUMN `PlanTime` `PlanDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '¼Æ»®ÈÕÆÚ£¬ÖÆ¶¨ÈÕÆÚ' AFTER `PlanAmount`,
-MODIFY COLUMN `InstructorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ÖÆ¶¨ÈËid' AFTER `LabelImgID`,
-MODIFY COLUMN `InstructorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ÖÆ¶¨ÈËname' AFTER `InstructorID`,
-MODIFY COLUMN `QAAuditorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'QA¸´ºËÈËid' AFTER `InstructorName`,
-MODIFY COLUMN `QAAuditorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'QA¸´ºËÈËname' AFTER `QAAuditorID`,
-MODIFY COLUMN `QADate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'QA¸´ºËÈÕÆÚ' AFTER `QAAuditorName`,
-MODIFY COLUMN `WarrantorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'Åú×¼ÈËid' AFTER `QADate`,
-MODIFY COLUMN `WarrantorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'Åú×¼ÈËname' AFTER `WarrantorID`,
-MODIFY COLUMN `WarrantDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'Åú×¼ÈÕÆÚ' AFTER `WarrantorName`,
-MODIFY COLUMN `ExecutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'Ö´ÐÐÈËid' AFTER `ProdStatus`,
-MODIFY COLUMN `ExecutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'Ö´ÐÐÈËname' AFTER `ExecutorID`,
-CHANGE COLUMN `ExecuteTime` `ExecuteDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Ö´ÐÐÈÕÆÚ' AFTER `ExecutorName`,
-MODIFY COLUMN `bpConstitutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°ÖÆ¶¨ÈËid' AFTER `ExpiredDates`,
-MODIFY COLUMN `bpConstitutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°ÖÆ¶¨name' AFTER `bpConstitutorID`,
-MODIFY COLUMN `bpCOnsDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '°ü×°ÖÆ¶¨ÈÕÆÚ' AFTER `bpConstitutorName`,
-MODIFY COLUMN `bpQAID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°QA¸´ºËÈËid' AFTER `bpCOnsDate`,
-MODIFY COLUMN `bpQAName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°QA¸´ºËÈËname' AFTER `bpQAID`,
-MODIFY COLUMN `bpQADate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '°ü×°QA¸´ºËÈÕÆÚ' AFTER `bpQAName`,
-MODIFY COLUMN `bpWarrantorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°Åú×¼ÈËid' AFTER `bpQADate`,
-MODIFY COLUMN `bpWarrantorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°Åú×¼ÈËname' AFTER `bpWarrantorID`,
-MODIFY COLUMN `bpWarrantDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '°ü×°Åú×¼ÈÕÆÚ' AFTER `bpWarrantorName`,
-MODIFY COLUMN `bpDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '°ü×°ÈÕÆÚ' AFTER `bpWarrantDate`,
-MODIFY COLUMN `bpExecutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°Ö´ÐÐÈËid' AFTER `plType`,
-MODIFY COLUMN `bpExecutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT '°ü×°Ö´ÐÐÈËname' AFTER `bpExecutorID`,
-CHANGE COLUMN `bpExecuteTime` `bpExecuteDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '°ü×°Ö´ÐÐÈÕÆÚ' AFTER `bpExecutorName`;
+CHANGE COLUMN `PlanTime` `PlanDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'ï¿½Æ»ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½' AFTER `PlanAmount`,
+MODIFY COLUMN `InstructorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½Æ¶ï¿½ï¿½ï¿½id' AFTER `LabelImgID`,
+MODIFY COLUMN `InstructorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½Æ¶ï¿½ï¿½ï¿½name' AFTER `InstructorID`,
+MODIFY COLUMN `QAAuditorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'QAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id' AFTER `InstructorName`,
+MODIFY COLUMN `QAAuditorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'QAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½name' AFTER `QAAuditorID`,
+MODIFY COLUMN `QADate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'QAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' AFTER `QAAuditorName`,
+MODIFY COLUMN `WarrantorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×¼ï¿½ï¿½id' AFTER `QADate`,
+MODIFY COLUMN `WarrantorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×¼ï¿½ï¿½name' AFTER `WarrantorID`,
+MODIFY COLUMN `WarrantDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½' AFTER `WarrantorName`,
+MODIFY COLUMN `ExecutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'Ö´ï¿½ï¿½ï¿½ï¿½id' AFTER `ProdStatus`,
+MODIFY COLUMN `ExecutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'Ö´ï¿½ï¿½ï¿½ï¿½name' AFTER `ExecutorID`,
+CHANGE COLUMN `ExecuteTime` `ExecuteDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' AFTER `ExecutorName`,
+MODIFY COLUMN `bpConstitutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°ï¿½Æ¶ï¿½ï¿½ï¿½id' AFTER `ExpiredDates`,
+MODIFY COLUMN `bpConstitutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°ï¿½Æ¶ï¿½name' AFTER `bpConstitutorID`,
+MODIFY COLUMN `bpCOnsDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'ï¿½ï¿½×°ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½' AFTER `bpConstitutorName`,
+MODIFY COLUMN `bpQAID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°QAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½id' AFTER `bpCOnsDate`,
+MODIFY COLUMN `bpQAName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°QAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½name' AFTER `bpQAID`,
+MODIFY COLUMN `bpQADate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'ï¿½ï¿½×°QAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' AFTER `bpQAName`,
+MODIFY COLUMN `bpWarrantorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°ï¿½ï¿½×¼ï¿½ï¿½id' AFTER `bpQADate`,
+MODIFY COLUMN `bpWarrantorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°ï¿½ï¿½×¼ï¿½ï¿½name' AFTER `bpWarrantorID`,
+MODIFY COLUMN `bpWarrantDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'ï¿½ï¿½×°ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½' AFTER `bpWarrantorName`,
+MODIFY COLUMN `bpDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½' AFTER `bpWarrantDate`,
+MODIFY COLUMN `bpExecutorID`  varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°Ö´ï¿½ï¿½ï¿½ï¿½id' AFTER `plType`,
+MODIFY COLUMN `bpExecutorName`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' COMMENT 'ï¿½ï¿½×°Ö´ï¿½ï¿½ï¿½ï¿½name' AFTER `bpExecutorID`,
+CHANGE COLUMN `bpExecuteTime` `bpExecuteDate`  date NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'ï¿½ï¿½×°Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½' AFTER `bpExecutorName`;
 
 ALTER TABLE `producingplan`
-CHANGE COLUMN `bpCOnsDate` `bpConsDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT '°ü×°ÖÆ¶¨ÈÕÆÚ' AFTER `bpConstitutorName`;
+CHANGE COLUMN `bpCOnsDate` `bpConsDate`  date NOT NULL DEFAULT '0000-00-00' COMMENT 'ï¿½ï¿½×°ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½' AFTER `bpConstitutorName`;
 
 ALTER TABLE `oddmentdrawnotes`
 MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ;
@@ -446,13 +446,17 @@ update oddmentdrawnotes as od, producingplan as pp set od.unit = pp.spunit where
 update oddmentdrawnotes as od, producingplan as pp set od.amount = od.amount*pp.basicamount and od.unit = pp.basicunit where od.amount<1 and od.ppid = pp.autoid;
 
 
-
-CREATE EVENT `updateoddmentflag`
+delimiter $$
+CREATE EVENT `updatedata`
 ON SCHEDULE EVERY 1 DAY
 ON COMPLETION NOT PRESERVE
 ENABLE
 DO
+begin
 update oddmentdrawnotes set flag = 4 where invaliddate < NOW() and flag=0;
+update stuffrepository set status =if(expireddate < now(),3,if(DATE_SUB(expireddate,INTERVAL 1 MONTH)<now(), 2, if(nextcheckdate  < NOW(),1,0)))  where amount >0 and status<3;
+end$$
+delimiter ;
 
 ALTER TABLE `productputinnotes`
 MODIFY COLUMN `piAmount`  int(11) NOT NULL DEFAULT 0 AFTER `dpAmount`;
@@ -460,24 +464,15 @@ MODIFY COLUMN `Oddment`  int(11) NOT NULL DEFAULT 0.000 AFTER `UnitType`;
 
 
 ALTER TABLE `productrepository`
-DROP COLUMN `ProdID`,
-DROP COLUMN `ProdName`,
-DROP COLUMN `CommonName`,
-DROP COLUMN `Spec`,
-DROP COLUMN `AllowNo`,
 DROP COLUMN `bpUnit`,
 DROP COLUMN `mpUnit`,
-DROP COLUMN `spUnit`,
 DROP COLUMN `spAmount`,
 DROP COLUMN `mpAmount`,
 DROP COLUMN `BasicAmount`,
 DROP COLUMN `BasicUnit`,
 DROP COLUMN `spPrice`,
-DROP COLUMN `BatchNo`,
-DROP COLUMN `MakeDate`,
 DROP COLUMN `WorkShopID`,
 DROP COLUMN `WorkShopName`,
-DROP COLUMN `ExpiredDays`,
 DROP COLUMN `InputCode`,
 DROP COLUMN `chkPaperNo`,
 DROP COLUMN `flag`,
@@ -485,25 +480,49 @@ DROP COLUMN `hxBatchNo`,
 DROP COLUMN `hxMakeDate`,
 DROP COLUMN `bpAmount`,
 DROP COLUMN `DayKind`,
+DROP COLUMN `hxbatchno`,
+DROP COLUMN `hxbpStockAmount`;
+
 MODIFY COLUMN `ppID`  int(11) NOT NULL DEFAULT 0 AFTER `autoid`,
 MODIFY COLUMN `hpUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `DeptName`,
-ADD COLUMN `bpid`  int NOT NULL DEFAULT 0 AFTER `piSource`,
+ADD COLUMN `hxid`  int NOT NULL DEFAULT 0 AFTER `piSource`,
+ADD COLUMN `hxbatchno`  varchar(100) NOT NULL AFTER `hxid`;
+ADD COLUMN `Package`  varchar(60) NOT NULL AFTER `Spec`;
+CHANGE COLUMN `ExpiredDates` `ExpiredDate`  date NOT NULL AFTER `MakeDate`;
 DROP INDEX `pp`,
 DROP INDEX `InputCode`,
 AUTO_INCREMENT=291;
 
 DELIMITER $$
-create PROCEDURE `addprodrep`(intype int, id int, amount decimal, bpid int, bpamount decimal)
+create PROCEDURE `addprodrep`(intype int, id int, amount decimal, hxid int, bpamount decimal)
 begin
 if intype in (0, 1, 3) then
 	insert into productrepository (ppid,position,indate,pisource,piamount,stockamount,WarehousemanID,WarehousemanName,DeptID,DeptName) 
 		select ppid,position,pidate,intype,amount,amount,WarehousemanID,WarehousemanName,WarehouseID,WarehouseName from productputinnotes where ppid=id;
 elseif intype = 2 then
-	insert into productrepository (ppid,bpid,position,indate,pisource,piamount,stockamount,hxamount,hxstockamount,WarehousemanID,WarehousemanName,DeptID,DeptName) 
-		select id,bpid,position,pidate,intype,amount,amount,bpamount,bpamount,WarehousemanID,WarehouseID,DeptID,WarehouseName from productputinnotes where ppid=id;
+	insert into productrepository (ppid,hxid,position,indate,pisource,piamount,stockamount,hxamount,hxstockamount,WarehousemanID,WarehousemanName,DeptID,DeptName)
+		select id,hxid,position,pidate,intype,amount,amount,bpamount,bpamount,WarehousemanID,WarehouseID,DeptID,WarehouseName from productputinnotes where ppid=id;
 end if;
 end;
 DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `addprodrep`;
+
+CREATE DEFINER = `root`@`localhost` PROCEDURE `addprodrep`(IN `intype` tinyint,IN `id` int,IN `amount` decimal,IN `bpid` int,`bpamount` decimal)
+BEGIN
+	#Routine body goes here...
+if intype in (0, 1, 3) then
+	insert into productrepository (prodid,prodname,commonname,allowno,spec,package,spunit,batchno,expireddate,ppid,position,indate,pisource,piamount,stockamount,WarehousemanID,WarehousemanName,DeptID,DeptName) 
+		select pp.prodid,pp.prodname,pp.commonname,pp.allowno,pp.spec,pp.package,pp.spunit,pp.batchno,DATE_ADD(pp.MakeDate,INTERVAL pp.ExpiredDates DAY),pi.ppid,pi.position,pi.pidate,intype,amount,amount,pi.WarehousemanID,pi.WarehousemanName,pi.WarehouseID,pi.WarehouseName from productputinnotes as pi,producingplan as pp where pi.ppid=id and pi.ppID=pp.autoid;
+elseif intype = 2 then
+	insert into productrepository (prodid,prodname,commonname,allowno,spec,package,spunit,batchno,expireddate,ppid,hxid,position,indate,pisource,piamount,stockamount,hxamount,hxstockamount,WarehousemanID,WarehousemanName,DeptID,DeptName) 
+		select pp.prodid,pp.prodname,pp.commonname,pp.allowno,pp.spec,pp.package,pp.spunit,pp.batchno,DATE_ADD(pp.MakeDate,INTERVAL pp.ExpiredDates DAY),id,bpid,pi.position,pi.pidate,intype,amount,amount,bpamount,bpamount,pi.WarehousemanID,pi.WarehouseID,pi.WarehouseID,pi.WarehouseName from productputinnotes as pi,producingplan as pp  where ppid=id and pi.ppID=pp.autoid;
+end if;
+END;
+
+
+
+
 
 ALTER TABLE `prodqrcode`
 MODIFY COLUMN `QRCode3`  varchar(200) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `QRCode2`;
@@ -524,8 +543,8 @@ CHANGE COLUMN `UsedTime` `UsedDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `C
 ALTER TABLE `producingplan`
 ADD COLUMN `qrflag`  tinyint NOT NULL DEFAULT 0 AFTER `ProdStatus`;
 
-# °ÑproductputinnotesÀïµÄqrflag¸Äµ½producingplanÀï
-update producingplan as pp, productputinnotes as pi set pp.qrflag = pi.qrflag where pp.autoid = pi.ppid£»
+# ï¿½ï¿½productputinnotesï¿½ï¿½ï¿½qrflagï¿½Äµï¿½producingplanï¿½ï¿½
+update producingplan as pp, productputinnotes as pi set pp.qrflag = pi.qrflag where pp.autoid = pi.ppidï¿½ï¿½
 
 
 ALTER TABLE `ppopqrcode`
@@ -618,8 +637,8 @@ ALTER TABLE `stuffrepository`
 MODIFY COLUMN `mBatchNo`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `BatchNo`,
 MODIFY COLUMN `Content`  decimal(8,2) NOT NULL DEFAULT 100.00 AFTER `WarehousemanName`,
 MODIFY COLUMN `cUnit`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `Content`,
-MODIFY COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT 'Ïà¶ÔÃÜ¶È' AFTER `Water`,
-MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT 'ÔÓÖÊ' AFTER `rDensity`;
+MODIFY COLUMN `rDensity`  decimal(12,4) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½' AFTER `Water`,
+MODIFY COLUMN `impurity`  decimal(8,2) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½' AFTER `rDensity`;
 
 delimiter $$
 drop TRIGGER if exists updatepaperstatus$$
@@ -679,3 +698,25 @@ then
 end if;
 end$$
 delimiter ;
+
+
+ALTER TABLE `stuffrepository`
+MODIFY COLUMN `SupId`  varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `Producer`,
+ADD COLUMN `SupName`  varchar(60) NOT NULL DEFAULT '' AFTER `SupId`;
+
+
+ALTER TABLE `salesnotes`
+ADD COLUMN `paperno`  varchar(20) NOT NULL DEFAULT '' AFTER `autoid`;
+
+ALTER TABLE `salesnotesgoods`
+MODIFY COLUMN `snID`  int(11) NOT NULL DEFAULT 0 AFTER `autoid`;
+ADD COLUMN `package`  varchar(200) NOT NULL AFTER `spec`;
+
+ALTER TABLE `salesnotes`
+ADD COLUMN `linkman`  varchar(30) NOT NULL AFTER `ClientName`,
+ADD COLUMN `telno`  varchar(100) NOT NULL AFTER `linkman`;
+
+ALTER TABLE `productputoutpaper`
+MODIFY COLUMN `snID`  int(11) NOT NULL AFTER `autoid`,
+ADD COLUMN `snpaperno`  varchar(20) NOT NULL DEFAULT '' AFTER `snID`;
+

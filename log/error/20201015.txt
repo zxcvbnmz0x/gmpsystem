@@ -1,0 +1,56 @@
+
+2020-10-15 15:03:16
+FieldError("Cannot resolve keyword 'kind' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkindate, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putindate, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, supname, warehousemanid, warehousemanname, water")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'kind' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkindate, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putindate, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, supname, warehousemanid, warehousemanname, water
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 36, in get_stuffrepository
+    return res.values(*args)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 841, in values
+    clone = self._values(*fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'kind' into field. Choices are: allowno, amount, autoid, basicamount, basicunit, batchno, bpunit, ceffect, chargerid, chargername, checkdate, checkindate, ciid, content, content1, cstandard, cunit, deptid, deptname, expireddate, impurity, lrid, makedate, mbatchno, mpamount, mpunit, nextcheckdate, package, piamount, pltype, position, price, producer, putindate, rdensity, source, spamount, spec, spunit, status, stuffid, stuffkind, stuffname, stufftype, supid, supname, warehousemanid, warehousemanname, water
+
+WarehouseModel-get_stuffrepository获取库存信息时出错
+cunit
+args=["kind", "stufftype", "allowno", "countercheckdays", "spamount", "spunit", "basicamount"]
+kwargs={"autoid": 7}
+--------------------
+2020-10-15 15:20:42
+FieldDoesNotExist("Stuffrepository has no field named 'remark'")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\options.py", line 575, in get_field
+    return self.fields_map[field_name]
+KeyError: 'remark'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 59, in update_stuffrepository
+    return Stuffrepository.objects.filter(autoid=autoid).\
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 780, in update
+    query.add_update_values(kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\subqueries.py", line 85, in add_update_values
+    field = self.get_meta().get_field(name)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\options.py", line 577, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Stuffrepository has no field named 'remark'
+
+更新物料库存时出错
+7
+kwargs={"remark": "原料仓"}
+--------------------

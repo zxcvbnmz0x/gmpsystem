@@ -13,3 +13,16 @@ def set_validator():
     reg = QRegExp('[a-z0-9]+$')
     validator = QRegExpValidator()
     validator.setRegExp(reg)
+
+from db.models import Productrepository, Producingplan
+from django.db.models import Sum
+res = Productrepository.objects.filter(ppid=77)
+select={
+                'prodid': 'prodid', 'prodname': 'prodname', 'spec': 'spec',
+                'commonname': 'commonname', 'batchno': 'batchno',
+                'package': 'package', 'basicunit': 'basicunit',
+                'makedate': 'makedate', 'expirdedates': 'expirdedates'
+            }
+print(type(select))
+print(res)
+

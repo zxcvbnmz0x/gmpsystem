@@ -30,12 +30,20 @@ class ProductModel(object):
             return False
 
     @staticmethod
-    def get_product(autoid):
+    def get_productdictionary(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
         try:
-            return Productdictionary.objects.get(autoid=autoid)
+            res = Productdictionary.objects.filter(**kwargs)
+            if len(args):
+
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
         except Exception as e:
-            print('repr(e):\t', repr(e))
-            return False
+            SaveExcept(e, "获取产品字典时出错", *args, *kwargs)
 
     @staticmethod
     def delete_product(autoid=None, *args):

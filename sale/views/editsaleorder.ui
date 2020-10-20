@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>680</width>
+    <height>414</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>编辑销售订单</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="12" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>备注：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QLineEdit" name="lineEdit_remark"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="ComboLine" name="lineEdit_client">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>付款方式：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="lineEdit_telno"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>联系电话：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>交货日期：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QComboBox" name="comboBox_paymethod">
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QComboBox" name="comboBox_conveyance">
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QDateEdit" name="dateEdit_deliverydate">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="lineEdit_deliveryplace"/>
+   </item>
+   <item row="13" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_accept">
+       <property name="text">
+        <string>确认</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_cancel">
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>客户：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>运输方式：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="lineEdit_linkman"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>地址：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>销售日期：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QDateEdit" name="dateEdit_saledate">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>联系人：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>单号：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="lineEdit_paperno"/>
+   </item>
+  </layout>
+  <zorder>comboBox_paymethod</zorder>
+  <zorder>lineEdit_linkman</zorder>
+  <zorder>comboBox_conveyance</zorder>
+  <zorder>dateEdit_deliverydate</zorder>
+  <zorder>dateEdit_saledate</zorder>
+  <zorder>lineEdit_deliveryplace</zorder>
+  <zorder>lineEdit_telno</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_5</zorder>
+  <zorder>lineEdit_paperno</zorder>
+  <zorder>lineEdit_client</zorder>
+  <zorder>lineEdit_remark</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboLine</class>
+   <extends>QLineEdit</extends>
+   <header>lib.mywidget.comboline.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_paperno</tabstop>
+  <tabstop>lineEdit_client</tabstop>
+  <tabstop>lineEdit_deliveryplace</tabstop>
+  <tabstop>lineEdit_linkman</tabstop>
+  <tabstop>lineEdit_telno</tabstop>
+  <tabstop>dateEdit_saledate</tabstop>
+  <tabstop>dateEdit_deliverydate</tabstop>
+  <tabstop>comboBox_conveyance</tabstop>
+  <tabstop>comboBox_paymethod</tabstop>
+  <tabstop>lineEdit_remark</tabstop>
+  <tabstop>pushButton_accept</tabstop>
+  <tabstop>pushButton_cancel</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

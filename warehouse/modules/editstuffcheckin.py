@@ -155,7 +155,7 @@ class EditStuffCheckInModule(QDialog, Ui_Dialog):
         self.detail['impurity'] = decimal.Decimal(p_str)
 
     @pyqtSlot(str)
-    def on_lineEdit_location_textChanged(self, p_str):
+    def on_comboBox_location_currentTextChanged(self, p_str):
         self.detail['position'] = p_str
 
     @pyqtSlot()
@@ -168,6 +168,7 @@ class EditStuffCheckInModule(QDialog, Ui_Dialog):
         self.detail['spec'] = self.ori_detail['spec']
         self.detail['package'] = self.ori_detail['package']
         self.detail['supid'] = self.ori_detail['supid']
+        self.detail['supname'] = self.ori_detail['supname']
         self.detail['producer'] = self.ori_detail['producer']
         self.detail['makedate'] = self.ori_detail['makedate']
         self.detail['batchno'] = self.ori_detail['batchno']
@@ -214,6 +215,5 @@ VALUES_TUPLE_LAB = ('labvalue', 'putintype')
 VALUES_TUPLE_CHECK_IN_LIST = (
     "autoid", "stuffid", "stuffname", "spec", "package", "producer", "batchno",
     "mbatchno", "unit", "amount", "makedate", "expireddate", "position",
-    "supid",
-    "checkindate", "lrid"
+    "supid", "supname", "checkindate", "lrid"
 )

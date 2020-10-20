@@ -2,7 +2,8 @@
 
 from db.models import Stuffdrawpaper, Planprescription, Producingplan, \
     Stuffrepository, Productstuff, Productputoutpaper, Ppopqrcode, \
-    Productwithdrawnotes, Pwngoods, Pwqrcode, Stuffcheckin, Stuffcheckinlist
+    Productwithdrawnotes, Pwngoods, Pwqrcode, Stuffcheckin, Stuffcheckinlist, \
+    Productrepository, Productputoutdata
 
 from lib.utils.saveexcept import SaveExcept
 
@@ -25,12 +26,12 @@ class WarehouseModel(object):
                        **kwargs)
 
     @staticmethod
-    def get_stuffrepository(flag=0, *args, **kwargs):
+    def get_stuffrepository(display_flag=False, *args, **kwargs):
         flat = True if len(args) == 1 else False
         try:
             if len(args):
                 res = Stuffrepository.objects.filter(**kwargs)
-                if flag == 0:
+                if display_flag:
                     return res.values_list(*args, flat=flat)
                 else:
                     return res.values(*args)
@@ -39,17 +40,6 @@ class WarehouseModel(object):
         except Exception as e:
             SaveExcept(e, "WarehouseModel-get_stuffrepository获取库存信息时出错", *args,
                        **kwargs)
-
-    @staticmethod
-    def update_stuffrepository(autoid=None, *args, **kwargs):
-        try:
-            if autoid is None:
-                return Stuffrepository.objects.create(**kwargs)
-            else:
-                return Stuffrepository.objects.filter(autoid=autoid).update(
-                    **kwargs)
-        except Exception as e:
-            SaveExcept(e, "更新物料库存出错", data=autoid, **kwargs)
 
     @staticmethod
     def update_productstuff(autoid=None, **kwargs):
@@ -67,10 +57,10 @@ class WarehouseModel(object):
         try:
             if autoid:
                 if type(autoid) is int:
-                    return Productstuff.objects.filter(autoid=autoid).\
+                    return Stuffrepository.objects.filter(autoid=autoid).\
                         update(**kwargs)
                 else:
-                    return Productstuff.objects.filter(autoid__in=autoid).\
+                    return Stuffrepository.objects.filter(autoid__in=autoid).\
                         update(**kwargs)
 
             else:
@@ -129,7 +119,7 @@ class WarehouseModel(object):
                        **kwargs)
 
     @staticmethod
-    def update_productputoutpaper(autoid, *args, **kwargs):
+    def update_productputoutpaper(autoid=None, *args, **kwargs):
         try:
             if autoid:
                 if type(autoid) == int:
@@ -396,3 +386,50 @@ class WarehouseModel(object):
                 return False
         except Exception as e:
             SaveExcept(e, "删除进货登记的物料时出错", *args, *kwargs)
+
+    @staticmethod
+    def get_productrepository(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            res = Productrepository.objects.filter(**kwargs)
+            if len(args):
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, "获取产品库存信息时出错", *args, **kwargs)
+
+    @staticmethod
+    def update_productrepository(autoid=None, *args, **kwargs):
+        try:
+            if autoid:
+                if type(autoid) == int:
+                    return Productrepository.objects.filter(
+                        autoid=autoid).update(**kwargs)
+                else:
+                    return Productrepository.objects.filter(
+                        autoid__in=autoid).update(**kwargs)
+            elif kwargs:
+                return Productrepository.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "更新产品库存时出错", autoid, *args, **kwargs)
+
+    @staticmethod
+    def delete_productrepository(autoid=None, *args, **kwargs):
+        try:
+            if autoid is not None:
+                if type(autoid) == int:
+                    return Productrepository.objects.filter(
+                        autoid=autoid).delete()
+                elif type(autoid) == list:
+                    return Productrepository.objects.filter(
+                        autoid__in=autoid).delete()
+            elif len(kwargs):
+                return Productrepository.objects.filter(**kwargs).delete()
+            else:
+                return False
+        except Exception as e:
+            SaveExcept(e, "删除产品库存时出错", *args, *kwargs)

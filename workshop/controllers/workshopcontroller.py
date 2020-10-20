@@ -30,7 +30,6 @@ class WorkshopController():
             # 每个项目分别是一个元组，包括3个元素，
             #   0：入库类型，1：记录对应的autoid,用于入库时补全信息， 2：本项的数量
             for item in putin_msg:
-                print(item)
                 '''
                 cursor.execute(
                     r"call addprodrep(%s, %s, %s, %s, %s)" % (item[i] for i in range(0,4))

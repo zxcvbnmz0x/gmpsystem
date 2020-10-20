@@ -39,13 +39,15 @@ class ProductController(object):
     def get_oddmentdrawnotes(self, display_flag=False, *args, **kwargs):
         return ProductModel.get_oddmentdrawnotes(display_flag, *args, **kwargs)
 
-    def get_product_or_stuff(self, flag=0, autoid=0):
+    def get_product_or_stuff_dictionary(self, flag=0, display_flag=False, *args, **kwargs):
         # flag：产品的类型，0和2为成品，1为前处理
         if flag in (0, 2):
-            return ProductModel.get_product(autoid)
+            return ProductModel.get_productdictionary(
+                display_flag, *args, **kwargs
+            )
         elif flag == 1:
             sm = StuffModel()
-            return sm.get_stuff(autoid)
+            return sm.get_stuff(display_flag, *args, **kwargs)
 
     def update_producingplan_status(self, autoid, *args, **kwargs):
         return ProductModel.update_producingplan_status(autoid, *args, **kwargs)

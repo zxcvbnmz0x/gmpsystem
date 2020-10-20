@@ -25,7 +25,7 @@ class EditpurchasingplanModule(QDialog, Ui_Dialog):
         self.setupUi(self)
         row = ('autoid', 'supid', 'supname')
         key = ('supid', 'supname', 'inputcode')
-        row_name = ('id', '供应商编号', '供应商名称')
+        row_name = ("id", "供应商编号", "供应商名称")
         self.lineEdit_supplyer.setup('Supplyer', row, key, row_name, 539, 240)
 
         self.autoid = autoid

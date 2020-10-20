@@ -46,7 +46,7 @@ class QrcodeoutputModule(QWidget, Ui_Form):
             key_dict['status'] = index + 1
         else:
             key_dict['status__gte'] = 1
-        self.orderlist = self.WC.get_prodputoutpaper(False, *VALUES_LIST,
+        self.orderlist = self.WC.get_productputoutpaper(False, *VALUES_LIST,
                                                   **key_dict)
         if not len(self.orderlist):
             return
@@ -89,7 +89,7 @@ class QrcodeoutputModule(QWidget, Ui_Form):
             clipboard.setProperty("qrcodeoutputurl", selected_dir)
 
             self.makeqrcodeoutputfile(select_id, file_route)
-            self.WC.update_prodputoutpaper(select_id, status=2)
+            self.WC.update_productputoutpaper(select_id, status=2)
             self.get_order_list()
 
     @pyqtSlot(int)

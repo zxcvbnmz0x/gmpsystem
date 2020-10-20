@@ -19,7 +19,7 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="tab_5">
+     <widget class="QWidget" name="tab_0">
       <attribute name="title">
        <string>全部</string>
       </attribute>
@@ -56,6 +56,11 @@
          </column>
          <column>
           <property name="text">
+           <string>类别</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
            <string>进厂批号</string>
           </property>
          </column>
@@ -66,7 +71,7 @@
          </column>
          <column>
           <property name="text">
-           <string>含量规格</string>
+           <string>规格</string>
           </property>
          </column>
          <column>
@@ -91,6 +96,11 @@
          </column>
          <column>
           <property name="text">
+           <string>存放位置</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
            <string>生产日期</string>
           </property>
          </column>
@@ -107,6 +117,11 @@
          <column>
           <property name="text">
            <string>复检日期</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>供应商</string>
           </property>
          </column>
          <column>
@@ -150,12 +165,12 @@
          </column>
          <column>
           <property name="text">
-           <string>剩余库存</string>
+           <string>入库数量</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>入库数量</string>
+           <string>剩余库存</string>
           </property>
          </column>
          <column>
@@ -167,27 +182,27 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_0">
+     <widget class="QWidget" name="tab_1">
       <attribute name="title">
        <string>主材料</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tab_1">
+     <widget class="QWidget" name="tab_2">
       <attribute name="title">
        <string>前处理</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tab_2">
+     <widget class="QWidget" name="tab_3">
       <attribute name="title">
        <string>辅材料</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tab_3">
+     <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>内包材</string>
       </attribute>
      </widget>
-     <widget class="QWidget" name="tab_4">
+     <widget class="QWidget" name="tab_5">
       <attribute name="title">
        <string>外包材</string>
       </attribute>
@@ -200,6 +215,9 @@
       <widget class="QRadioButton" name="radioButton_batchno">
        <property name="text">
         <string>按物料批次排序</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>

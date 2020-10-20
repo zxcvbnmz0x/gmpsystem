@@ -1753,6 +1753,8 @@ class Productputoutdata(models.Model):
 
 class Productputoutpaper(models.Model):
     autoid = models.AutoField(primary_key=True)
+    snid = models.IntegerField(db_column='snID')  # Field name made lowercase.
+    snpaperno = models.CharField(db_column='snpaperno', max_length=20)
     createdate = ZeroDateField(db_column='CreateDate')  # Field name made lowercase.
     pokind = models.CharField(db_column='poKind', max_length=30)  # Field name made lowercase.
     creatorid = models.CharField(db_column='CreatorID', max_length=20)  # Field name made lowercase.
@@ -1764,10 +1766,9 @@ class Productputoutpaper(models.Model):
     clientid = models.CharField(db_column='ClientID', max_length=30)  # Field name made lowercase.
     clientname = models.CharField(db_column='ClientName', max_length=30)  # Field name made lowercase.
     putoutdate = ZeroDateField(db_column='PutOutDate')  # Field name made lowercase.
-    status = models.IntegerField()
+    status = models.IntegerField(default=0)
     remark = models.CharField(max_length=100)
-    qrflag = models.IntegerField(db_column='QRFLAG')  # Field name made lowercase.
-    snid = models.IntegerField(db_column='snID')  # Field name made lowercase.
+    qrflag = models.IntegerField(db_column='QRFLAG', default=0)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -1776,19 +1777,29 @@ class Productputoutpaper(models.Model):
 
 class Productrepository(models.Model):
     autoid = models.AutoField(primary_key=True)
+    prodid = models.CharField(db_column='ProdID', max_length=20)
+    prodname = models.CharField(db_column='ProdName', max_length=60)
+    commonname = models.CharField(db_column='CommonName', max_length=60)
+    spec = models.CharField(db_column='Spec', max_length=60)
+    package = models.CharField(db_column='Package', max_length=60)
+    spunit = models.CharField(db_column='spUnit')
+
+    allowno = models.CharField(db_column='AllowNo', max_length=30)
+    batchno = models.CharField(db_column='BatchNo', max_length=100)
+    makedate = ZeroDateField(db_column='MakeDate')
+    expireddate = ZeroDateField(db_column='ExpiredDate')
     stockamount = models.DecimalField(db_column='StockAmount', max_digits=12, decimal_places=3)  # Field name made lowercase.
     piamount = models.DecimalField(db_column='piAmount', max_digits=12, decimal_places=3)  # Field name made lowercase.
     position = models.CharField(db_column='Position', max_length=60)  # Field name made lowercase.
     indate = ZeroDateField(db_column='InDate', blank=True, null=True)  # Field name made lowercase.
     pisource = models.IntegerField(db_column='piSource')  # Field name made lowercase.
     ppid = models.IntegerField(db_column='ppID')  # Field name made lowercase.
-    bpid = models.IntegerField(db_column='bpID')  # Field name made lowercase.
-
+    hxid = models.IntegerField(db_column='hxID')  # Field name made lowercase.
     hxamount = models.DecimalField(db_column='hxAmount', max_digits=10, decimal_places=3)  # Field name made lowercase.
     hxstockamount = models.DecimalField(db_column='hxStockAmount', max_digits=10, decimal_places=3)  # Field name made lowercase.
     warehousemanid = models.CharField(db_column='WarehousemanID', max_length=10)  # Field name made lowercase.
     warehousemanname = models.CharField(db_column='WarehousemanName', max_length=30)  # Field name made lowercase.
-    hxbpstockamount = models.DecimalField(db_column='hxbpStockAmount', max_digits=10, decimal_places=3)  # Field name made lowercase.
+    # hxbpstockamount = models.DecimalField(db_column='hxbpStockAmount', max_digits=10, decimal_places=3)  # Field name made lowercase.
     deptid = models.CharField(db_column='DeptID', max_length=30)  # Field name made lowercase.
     deptname = models.CharField(db_column='DeptName', max_length=30)  # Field name made lowercase.
 
@@ -2211,8 +2222,11 @@ class Salesgoods(models.Model):
 
 class Salesnotes(models.Model):
     autoid = models.AutoField(primary_key=True)
+    paperno = models.CharField(db_column='paperno', max_length=20, default='')
     clientid = models.CharField(db_column='ClientID', max_length=30)  # Field name made lowercase.
     clientname = models.CharField(db_column='ClientName', max_length=30)  # Field name made lowercase.
+    linkman = models.CharField(db_column='linkman', max_length=30)
+    telno = models.CharField(db_column='telno', max_length=100)
     saledate = ZeroDateField(db_column='SaleDate')  # Field name made lowercase.
     creatorid = models.CharField(db_column='CreatorID', max_length=10)  # Field name made lowercase.
     creatorname = models.CharField(db_column='CreatorName', max_length=30)  # Field name made lowercase.
@@ -2230,7 +2244,7 @@ class Salesnotes(models.Model):
     deliveryplace = models.CharField(db_column='DeliveryPlace', max_length=60)  # Field name made lowercase.
     conveyance = models.CharField(db_column='Conveyance', max_length=20)  # Field name made lowercase.
     paymethod = models.CharField(db_column='PayMethod', max_length=20)  # Field name made lowercase.
-    status = models.IntegerField(db_column='Status')  # Field name made lowercase.
+    status = models.IntegerField(db_column='Status', default=0)  # Field name made lowercase.
     consignmentdate = ZeroDateField(db_column='ConsignmentDate')  # Field name made lowercase.
     deliverid = models.CharField(db_column='DeliverID', max_length=10)  # Field name made lowercase.
     delivername = models.CharField(db_column='DeliverName', max_length=30)  # Field name made lowercase.
@@ -2242,22 +2256,23 @@ class Salesnotes(models.Model):
 
 class Salesnotesgoods(models.Model):
     autoid = models.AutoField(primary_key=True)
+    snid = models.IntegerField(db_column='snID', default=0)  # Field name made lowercase.
     prodid = models.CharField(db_column='ProdID', max_length=10)  # Field name made lowercase.
     prodname = models.CharField(db_column='ProdName', max_length=30)  # Field name made lowercase.
     commonname = models.CharField(db_column='CommonName', max_length=60)  # Field name made lowercase.
     spec = models.CharField(max_length=200)
+    package = models.CharField(max_length=200)
     bpunit = models.CharField(db_column='bpUnit', max_length=20)  # Field name made lowercase.
     mpunit = models.CharField(db_column='mpUnit', max_length=20)  # Field name made lowercase.
     spunit = models.CharField(db_column='spUnit', max_length=20)  # Field name made lowercase.
-    spamount = models.PositiveIntegerField(db_column='spAmount')  # Field name made lowercase.
-    mpamount = models.PositiveIntegerField(db_column='mpAmount')  # Field name made lowercase.
-    saleamount = models.DecimalField(db_column='SaleAmount', max_digits=12, decimal_places=3)  # Field name made lowercase.
-    price = models.DecimalField(db_column='Price', max_digits=12, decimal_places=2)  # Field name made lowercase.
-    snid = models.IntegerField(db_column='snID')  # Field name made lowercase.
+    spamount = models.PositiveIntegerField(db_column='spAmount', default=0)  # Field name made lowercase.
+    mpamount = models.PositiveIntegerField(db_column='mpAmount', default=0)  # Field name made lowercase.
+    saleamount = models.DecimalField(db_column='SaleAmount', max_digits=12, decimal_places=3, default=0)  # Field name made lowercase.
+    price = models.DecimalField(db_column='Price', max_digits=12, decimal_places=2, default=0)  # Field name made lowercase.
     remark = models.CharField(db_column='Remark', max_length=30)  # Field name made lowercase.
     hpunit = models.CharField(db_column='hpUnit', max_length=20)  # Field name made lowercase.
-    bpamount = models.IntegerField(db_column='bpAmount')  # Field name made lowercase.
-    inmethod = models.IntegerField(db_column='InMethod')  # Field name made lowercase.
+    bpamount = models.IntegerField(db_column='bpAmount', default=0)  # Field name made lowercase.
+    inmethod = models.IntegerField(db_column='InMethod', default=0)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -2599,7 +2614,8 @@ class Stuffrepository(models.Model):
     mpamount = models.PositiveIntegerField(db_column='mpAmount', default=0)  # Field name made lowercase.
     basicunit = models.CharField(db_column='BasicUnit', max_length=20)  # Field name made lowercase.
     producer = models.CharField(db_column='Producer', max_length=100)  # Field name made lowercase.
-    supid = models.CharField(db_column='SupId', max_length=10)  # Field name made lowercase.
+    supid = models.CharField(db_column='SupId', max_length=20)  # Field name made lowercase.
+    supname = models.CharField(db_column='SupName', max_length=60)
     allowno = models.CharField(db_column='AllowNo', max_length=100)  # Field name made lowercase.
     batchno = models.CharField(db_column='BatchNo', max_length=100)  # Field name made lowercase.
     mbatchno = models.CharField(db_column='mBatchNo', max_length=100)  # Field name made lowercase.
