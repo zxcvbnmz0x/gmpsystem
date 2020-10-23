@@ -105,14 +105,17 @@ def on_lineEdit_remark_textChanged(self, p_str):
 import datetime
 
 datetime.date.today()
-from sale.modules.saleorderlistmodule import SaleOrderListModule
+from sale.modules.saleordermodule import SaleOrderModule
 from sale.modules.editsaleprodmodule import EditSaleProdMudule
+from warehouse.modules.productputoutpaperlistmodule import ProductPutOutPaperListModule
+from warehouse.modules.editproductputoutpapermodule import EditProductPutOutPaperModule
+from warehouse.modules.scanppopqrcodemodule import ScanPpopQrcodeMudule
 
 if __name__ == "__main__":
 
     app = QApplication(sys.argv)
 
-    form = SaleOrderListModule()
+    form = ProductPutOutPaperListModule()
     form.show()
     sys.exit(app.exec_())
 

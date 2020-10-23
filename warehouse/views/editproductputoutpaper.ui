@@ -7,38 +7,31 @@
     <x>0</x>
     <y>0</y>
     <width>699</width>
-    <height>188</height>
+    <height>278</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>出库类别：</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>客户：</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
       <string>备注：</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
-    <widget class="ComboLine" name="lineEdit_client"/>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="lineEdit_remark"/>
    </item>
-   <item row="3" column="0" colspan="2">
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>出库类别：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer_2">
@@ -82,17 +75,30 @@
      </item>
     </layout>
    </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="lineEdit_remark"/>
-   </item>
-   <item row="0" column="1">
-    <widget class="QComboBox" name="comboBoxiokind">
+   <item row="1" column="1">
+    <widget class="QComboBox" name="comboBox_pokind">
      <property name="editable">
       <bool>true</bool>
      </property>
     </widget>
    </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>客户：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="ComboLine" name="lineEdit_client"/>
+   </item>
   </layout>
+  <zorder>lineEdit_remark</zorder>
+  <zorder>comboBox_pokind</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_3</zorder>
+  <zorder>lineEdit_client</zorder>
  </widget>
  <customwidgets>
   <customwidget>
@@ -101,6 +107,13 @@
    <header>lib.mywidget.comboline.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_client</tabstop>
+  <tabstop>comboBox_pokind</tabstop>
+  <tabstop>lineEdit_remark</tabstop>
+  <tabstop>pushButton_cancel</tabstop>
+  <tabstop>pushButton_accept</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>462</height>
+    <width>999</width>
+    <height>724</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -63,12 +63,22 @@
          </column>
          <column>
           <property name="text">
+           <string>类型</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
            <string>id</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>类型</string>
+           <string>docid</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>aid</string>
           </property>
          </column>
         </widget>
@@ -379,8 +389,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>640</width>
-     <height>23</height>
+     <width>999</width>
+     <height>30</height>
     </rect>
    </property>
   </widget>

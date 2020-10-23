@@ -14,15 +14,23 @@ def set_validator():
     validator = QRegExpValidator()
     validator.setRegExp(reg)
 
-from db.models import Productrepository, Producingplan
+from db.models import Productrepository, Producingplan, Ppopqrcode, Prodqrcode
 from django.db.models import Sum
-res = Productrepository.objects.filter(ppid=77)
-select={
-                'prodid': 'prodid', 'prodname': 'prodname', 'spec': 'spec',
-                'commonname': 'commonname', 'batchno': 'batchno',
-                'package': 'package', 'basicunit': 'basicunit',
-                'makedate': 'makedate', 'expirdedates': 'expirdedates'
-            }
-print(type(select))
-print(res)
+key_dict = {'ppopid':31}
+VALUES_TUPLE_PROD = (
+    'ppid', 'batchno', 'used'
+)
+# res = Prodqrcode.objects.filter(qrcode1='10').values(*VALUES_TUPLE_PROD).distinct()
+#
+# print(res)
+# print(res.values('used'))
+#
+import operator
+from functools import reduce
 
+s=Productrepository.objects.filter(autoid=310)
+b=s[0]
+print(s)
+b['stockamount'] -= 1
+b.save()
+print(b['stockamount'])

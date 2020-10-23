@@ -1412,8 +1412,9 @@ class Ppopqrcode(models.Model):
     ppid = models.IntegerField(db_column='ppid', default=0)
     batchno = models.CharField(db_column='batchno', max_length=20)  # Field name made lowercase.
     qr0 = models.CharField(max_length=60)
-    flag = models.IntegerField()
-    kind = models.IntegerField()
+    flag = models.IntegerField(default=0)
+    kind = models.IntegerField(default=0)
+    amount = models.IntegerField(default=0)
 
     class Meta:
         managed = False
@@ -1753,7 +1754,7 @@ class Productputoutdata(models.Model):
 
 class Productputoutpaper(models.Model):
     autoid = models.AutoField(primary_key=True)
-    snid = models.IntegerField(db_column='snID')  # Field name made lowercase.
+    snid = models.IntegerField(db_column='snID', default=0)  # Field name made lowercase.
     snpaperno = models.CharField(db_column='snpaperno', max_length=20)
     createdate = ZeroDateField(db_column='CreateDate')  # Field name made lowercase.
     pokind = models.CharField(db_column='poKind', max_length=30)  # Field name made lowercase.

@@ -107,7 +107,7 @@ class SaleOrderListModule(QWidget, Ui_Form):
     def on_treeWidget_orderlist_itemClicked(self, qtreeitem, p_int):
         self.groupBox.setVisible(True)
 
-        self.snid = qtreeitem.text(0)
+        self.snid = int(qtreeitem.text(0))
         self.get_product_list()
 
     @pyqtSlot(QPoint)

@@ -14,8 +14,8 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0" colspan="3">
-    <widget class="QPlainTextEdit" name="plainTextEdit_2">
+   <item row="1" column="0" colspan="5">
+    <widget class="QPlainTextEdit" name="plainTextEdit_qrcode">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -25,25 +25,9 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="3">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>错误信息</string>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QPlainTextEdit" name="plainTextEdit">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="plainText">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
     </widget>
    </item>
    <item row="0" column="0">
@@ -53,7 +37,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0" colspan="3">
+   <item row="5" column="0" colspan="5">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
@@ -69,22 +53,34 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_accept">
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
        <property name="text">
         <string>确认</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_cancel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
        <property name="text">
         <string>取消</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -103,22 +99,66 @@
      </item>
     </layout>
    </item>
+   <item row="2" column="0" colspan="5">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>错误信息</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QPlainTextEdit" name="plainTextEdit_errormsg">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="plainText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QRadioButton" name="radioButton_0">
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="text">
+      <string>整箱出库</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
    <item row="3" column="1">
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="radioButton_2">
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="text">
+      <string>合箱出库</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QRadioButton" name="radioButton_1">
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
      <property name="text">
       <string>零头出库</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QRadioButton" name="radioButton_2">
-     <property name="text">
-      <string>合箱出库</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="myQrcodeLineEdit" name="lineEdit"/>
+   <item row="0" column="1" colspan="4">
+    <widget class="myQrcodeLineEdit" name="lineEdit_qrcode"/>
    </item>
   </layout>
  </widget>
@@ -129,6 +169,16 @@
    <header>lib.mywidget.mylineedit.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_qrcode</tabstop>
+  <tabstop>plainTextEdit_qrcode</tabstop>
+  <tabstop>plainTextEdit_errormsg</tabstop>
+  <tabstop>radioButton_0</tabstop>
+  <tabstop>radioButton_2</tabstop>
+  <tabstop>radioButton_1</tabstop>
+  <tabstop>pushButton_accept</tabstop>
+  <tabstop>pushButton_cancel</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -82,7 +82,7 @@ class ProducingModule(QtWidgets.QMainWindow, Ui_MainWindow):
             qtreeitem.setText(4, str(item.expireddays))
             for it in post_to_doucument[item]:
                 qtreechilditem = QtWidgets.QTreeWidgetItem(qtreeitem)
-                #0 :文档名称，1：autoid,2:docid,3:aid
+                #0:文档名称，1: 类型, 2：autoid, 3: docid, 4: aid
                 if it.docid < 0:
                     # 内建文档
                     qtreechilditem.setText(0, GENERAL_DOC[it.docid])
@@ -96,10 +96,10 @@ class ProducingModule(QtWidgets.QMainWindow, Ui_MainWindow):
                     qtreechilditem.setText(2, str(it.autoid))
                     qtreechilditem.setText(3, str(it.docid))
                     qtreechilditem.setText(4, '0')
-        self.treewidget_filetree.hideColumn(1)
-        self.treewidget_filetree.hideColumn(2)
-        self.treewidget_filetree.hideColumn(3)
-        self.treewidget_filetree.hideColumn(4)
+        # self.treewidget_filetree.hideColumn(1)
+        # self.treewidget_filetree.hideColumn(2)
+        # self.treewidget_filetree.hideColumn(3)
+        # self.treewidget_filetree.hideColumn(4)
         self.treewidget_filetree.expandAll()
 
     # 打开一个新文档

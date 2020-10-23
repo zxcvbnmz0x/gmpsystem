@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from workshop.models.workshopmodels import WorkshopModels
-from warehouse.controllers.warehousecontroller import WarehouseController
 from django.db import transaction, connection
 
 

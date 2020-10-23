@@ -23,35 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2578acca-1a85-4b91-a6e5-bbf7b3242777" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/labrecord/modules/findcheckreportlistmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sale/modules/editsaleordermodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sale/modules/editsaleprodmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sale/modules/saleorderlistmodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/warehouse/modules/modifystuffparametermodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/warehouse/modules/productrepositorymodule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/warehouse/modules/stuffrepositorymodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale/modules/saleordermodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/editproductputoutpapermodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/productputoutpaperlistmodule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/warehouse/modules/scanppopqrcodemodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labrecord/modules/applycheckmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/labrecord/modules/applycheckmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error/20201014.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/error/20201014.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/controllers/productcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/controllers/productcontroller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models/productmodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models/productmodel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/modules/editproducingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/modules/editproducingplanmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qrcode/modules/qrcodeoutputmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/qrcode/modules/qrcodeoutputmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale/controllers/salecontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/sale/controllers/salecontroller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale/models/salemodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/sale/models/salemodel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/supplyer/modules/editpurchasingplanmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sale/modules/saleorderlistmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/sale/modules/saleorderlistmodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/test3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/warehouse/controllers/warehousecontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/controllers/warehousecontroller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/warehouse/models/warehousemodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/models/warehousemodel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse/modules/editstuffcheckin.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/modules/editstuffcheckin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse/modules/purchaseregistrationmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/modules/purchaseregistrationmodule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse/views/editstuffcheckin.py" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/views/editstuffcheckin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse/views/editstuffcheckin.ui" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/views/editstuffcheckin.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse/views/stuffrepository.ui" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/views/stuffrepository.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse/views/editproductputoutpaper.ui" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/views/editproductputoutpaper.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse/views/productputoutpaperlist.ui" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/views/productputoutpaperlist.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse/views/scanppopqrcode.ui" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse/views/scanppopqrcode.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workshop/controllers/workshopcontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/controllers/workshopcontroller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop/models/workshopmodels.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/models/workshopmodels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workshop/modules/producingmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/modules/producingmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workshop/views/producing.ui" beforeDir="false" afterPath="$PROJECT_DIR$/workshop/views/producing.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/数据库结构修改.txt" beforeDir="false" afterPath="$PROJECT_DIR$/数据库结构修改.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,8 +84,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\pyproject\gmpsystem\sale\modules" />
-      <recent name="D:\pyproject\gmpsystem\supplyer\modules" />
       <recent name="D:\pyproject\gmpsystem\warehouse\modules" />
+      <recent name="D:\pyproject\gmpsystem\supplyer\modules" />
       <recent name="D:\pyproject\gmpsystem\qrcode\modules" />
       <recent name="D:\pyproject\gmpsystem\lib\mywidget" />
     </key>
@@ -268,8 +256,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main2" />
         <item itemvalue="Python.test3" />
+        <item itemvalue="Python.main2" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.evalenv" />
         <item itemvalue="Python.test (1)" />
@@ -348,67 +336,67 @@
     <state x="397" y="108" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1602664126341" />
     <state x="397" y="109" key="FileChooserDialogImpl/0.0.1280.689/1920.0.1920.1050@0.0.1280.689" timestamp="1598320687765" />
     <state x="397" y="109" key="FileChooserDialogImpl/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336112299" />
-    <state width="1259" height="179" key="GridCell.Tab.0.bottom" timestamp="1603183100485">
+    <state width="1259" height="152" key="GridCell.Tab.0.bottom" timestamp="1603437498883">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.bottom/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854503" />
-    <state width="1259" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="152" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603437498883" />
     <state width="1259" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.bottom/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="156" key="GridCell.Tab.0.bottom/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.0.center" timestamp="1603183100485">
+    <state width="1259" height="152" key="GridCell.Tab.0.center" timestamp="1603437498883">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.center/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854502" />
-    <state width="1259" height="179" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="152" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603437498883" />
     <state width="1259" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.center/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="156" key="GridCell.Tab.0.center/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.0.left" timestamp="1603183100485">
+    <state width="1259" height="152" key="GridCell.Tab.0.left" timestamp="1603437498883">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.left/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854502" />
-    <state width="1259" height="179" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="152" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603437498883" />
     <state width="1259" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.left/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816788" />
     <state width="1259" height="156" key="GridCell.Tab.0.left/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.0.right" timestamp="1603183100485">
+    <state width="1259" height="152" key="GridCell.Tab.0.right" timestamp="1603437498883">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1899" height="268" key="GridCell.Tab.0.right/-1920.0.1280.700/0.0.1920.1050@0.0.1920.1050" timestamp="1598347854503" />
-    <state width="1259" height="179" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="152" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603437498883" />
     <state width="1259" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.0.right/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="156" key="GridCell.Tab.0.right/0.0.1280.689/1920.0.1920.1080@0.0.1280.689" timestamp="1598336008779" />
     <state width="1259" height="155" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1599557229298" />
-    <state width="1259" height="179" key="GridCell.Tab.1.bottom" timestamp="1603183100485">
+    <state width="1259" height="179" key="GridCell.Tab.1.bottom" timestamp="1603435822133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603435822133" />
     <state width="1259" height="179" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.bottom/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816790" />
     <state width="1259" height="183" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
-    <state width="1259" height="179" key="GridCell.Tab.1.center" timestamp="1603183100485">
+    <state width="1259" height="179" key="GridCell.Tab.1.center" timestamp="1603435822133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603435822133" />
     <state width="1259" height="179" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.center/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="183" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
-    <state width="1259" height="179" key="GridCell.Tab.1.left" timestamp="1603183100485">
+    <state width="1259" height="179" key="GridCell.Tab.1.left" timestamp="1603435822133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603435822133" />
     <state width="1259" height="179" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.left/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816789" />
     <state width="1259" height="183" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
-    <state width="1259" height="179" key="GridCell.Tab.1.right" timestamp="1603183100485">
+    <state width="1259" height="179" key="GridCell.Tab.1.right" timestamp="1603435822133">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603183100485" />
+    <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603435822133" />
     <state width="1259" height="179" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1600853673233" />
     <state width="1259" height="183" key="GridCell.Tab.1.right/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600138816790" />
     <state width="1259" height="183" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1599557229256" />
@@ -429,10 +417,10 @@
     </state>
     <state x="0" y="0" width="887" height="680" key="find.popup/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603182185214" />
     <state x="0" y="0" width="605" height="689" key="find.popup/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1600069898032" />
-    <state x="303" y="10" width="672" height="670" key="search.everywhere.popup" timestamp="1603092135893">
+    <state x="303" y="10" width="672" height="670" key="search.everywhere.popup" timestamp="1603358413837">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="10" width="672" height="670" key="search.everywhere.popup/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603092135893" />
+    <state x="303" y="10" width="672" height="670" key="search.everywhere.popup/0.0.1280.680/1920.0.1280.720@0.0.1280.680" timestamp="1603358413837" />
     <state x="303" y="10" width="672" height="670" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1600757373741" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689/1920.0.1280.720@0.0.1280.689" timestamp="1599809042872" />
   </component>

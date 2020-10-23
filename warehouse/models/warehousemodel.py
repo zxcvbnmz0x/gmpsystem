@@ -215,7 +215,7 @@ class WarehouseModel(object):
             SaveExcept(e, "获取产品出库二维码信息时出错", *args, **kwargs)
 
     @staticmethod
-    def update_ppopqrcode(autoid, *args, **kwargs):
+    def update_ppopqrcode(autoid=None, *args, **kwargs):
         try:
             if autoid:
                 if type(autoid) == int:

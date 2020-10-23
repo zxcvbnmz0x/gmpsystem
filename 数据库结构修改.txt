@@ -550,8 +550,10 @@ update producingplan as pp, productputinnotes as pi set pp.qrflag = pi.qrflag wh
 ALTER TABLE `ppopqrcode`
 ADD COLUMN `ppopid`  int(11) NOT NULL DEFAULT 0 AFTER `autoid`;
 CHANGE COLUMN `ppodID` `batchno`  varchar(20) NOT NULL DEFAULT '' AFTER `autoid`;ALTER TABLE `pwqrcode`
-ADD COLUMN `ppid`  int NOT NULL DEFAULT 0 AFTER `pwdID`,
+ADD COLUMN `ppid`  int NOT NULL DEFAULT 0 AFTER `ppopid`;
 ADD COLUMN `batchno`  varchar(20) NOT NULL DEFAULT '' AFTER `ppid`;
+ADD COLUMN `kind`  tinyint NOT NULL DEFAULT 0 AFTER `flag`;
+ADD COLUMN  `amount`  int(11) NOT NULL DEFAULT 0 AFTER `kind`  ;
 
 ALTER TABLE `purchasingplan`
 MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ,
@@ -567,8 +569,6 @@ CHANGE COLUMN `PutOutTime` `PutOutDate`  date NOT NULL DEFAULT '0000-00-00' AFTE
 ALTER TABLE `productwithdrawnotes`
 CHANGE COLUMN `CreateTime` `CreateDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `CreatorName`;
 
-ALTER TABLE `ppopqrcode`
-ADD COLUMN `ppid`  int NOT NULL DEFAULT 0 AFTER `ppopid`;
 
 ALTER TABLE `purchasingplan`
 MODIFY COLUMN `autoid`  int(11) NOT NULL AUTO_INCREMENT FIRST ,
