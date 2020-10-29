@@ -35,28 +35,39 @@ class StuffpickingModule(QDialog, Ui_Form):
         self.stuffdrawpaperlist.clear()
         if self.current_stuff_kind_button.text() in STUFFTYPE:
             paperstatus = STUFFTYPE.index(self.current_stuff_kind_button.text())
-            self.stuffdrawpaper = self.WC.get_stuffdrawpaper(status=paperstatus)
+            key_dict = {'status': paperstatus}
+            self.stuffdrawpaper = self.WC.get_stuffdrawpaper(
+                False, **key_dict
+            ).\
+                extra(
+                select={
+                    'prodid': 'producingplan.prodid',
+                    'prodname': 'producingplan.prodname',
+                    'spec': 'producingplan.spec',
+                    'package': 'producingplan.package',
+                    'batchno': 'producingplan.batchno'
+                },
+                tables=['producingplan'],
+                where=['stuffdrawpaper.ppid=producingplan.autoid']
+            )
             if len(self.stuffdrawpaper):
                 self.countlabel.setText("共%s条记录" % len(self.stuffdrawpaper))
                 for item in self.stuffdrawpaper:
-                    try:
-                        stufflist = QTreeWidgetItem(
-                            self.stuffdrawpaperlist)
-                        stufflist.setText(0, str(item.autoid))
-                        stufflist.setText(1, str(item.ppid))
-                        stufflist.setText(2, PAPERTYPE[item.papertype])
-                        stufflist.setText(3,
-                                          item.chargerid + ' ' + item.chargername)
-                        stufflist.setText(4, str(item.applytime))
-                        stufflist.setText(5,
-                                          item.providerid + ' ' + item.providername)
-                        stufflist.setText(6, str(item.drawtime))
-                        stufflist.setText(7, item.prod)
-                        stufflist.setText(8, item.spec)
-                        stufflist.setText(9, item.package)
-                        stufflist.setText(10, item.batchno)
-                    except:
-                        pass
+                    stufflist = QTreeWidgetItem(
+                        self.stuffdrawpaperlist)
+                    stufflist.setText(0, str(item.autoid))
+                    stufflist.setText(1, str(item.ppid))
+                    stufflist.setText(2, PAPERTYPE[item.papertype])
+                    stufflist.setText(3,
+                                      item.chargerid + ' ' + item.chargername)
+                    stufflist.setText(4, str(item.applydate))
+                    stufflist.setText(5,
+                                      item.providerid + ' ' + item.providername)
+                    stufflist.setText(6, str(item.drawdate))
+                    stufflist.setText(7, item.prodid + ' ' + item.prodname)
+                    stufflist.setText(8, item.spec)
+                    stufflist.setText(9, item.package)
+                    stufflist.setText(10, item.batchno)
                 # 隐藏第一列的id
                 self.stuffdrawpaperlist.hideColumn(0)
                 self.stuffdrawpaperlist.hideColumn(1)

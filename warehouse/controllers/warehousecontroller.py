@@ -29,8 +29,8 @@ class WarehouseController(object):
         self.PC = ProductController()
 
     def get_stuffdrawpaper(self, *args, **kwargs):
-        res = self.SC.get_stuffdrawpaper(*args, **kwargs)
-        if len(res):
+        return self.SC.get_stuffdrawpaper(*args, **kwargs)
+        """if len(res):
             ppid_list = list()
             for item in res:
                 ppid_list.append(item.ppid)
@@ -48,7 +48,7 @@ class WarehouseController(object):
                         item.batchno = it[5]
             return res
         else:
-            return []
+            return []"""
 
     def get_stuffrepository(self, display_flag=False, *args, **kwargs):
         return self.WM.get_stuffrepository(display_flag, *args, **kwargs)
@@ -390,6 +390,21 @@ class WarehouseController(object):
             else:
                 return 'OK'
 
+    def stuffreturn(self, autoid=0, backamount_list=[], *args, **kwargs):
+        key_dict = {'autoid': 0}
+        with transaction.atomic():
+            p1 = transaction.savepoint()
+            self.SC.update_stuffdrawpaper(autoid, *args, **kwargs)
+            for item in backamount_list:
+                id = item[0]
+                backamount = item[1]
+                key_dict['autoid'] = id
+                sr_list = WarehouseModel.get_stuffrepository(False, **key_dict)
+                if not len(sr_list):
+                    continue
+                sr_item = sr_list[0]
+                sr_item.amount += backamount
+                sr_item.save()
 
 QRCODE_KIND = ('qrcode0', 'qrcode1', 'qrcode2', 'qrcode3')
 VALUES_TUPLE_PPLIST = (

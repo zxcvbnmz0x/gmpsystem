@@ -2,8 +2,10 @@
 from workshop.models.workshopmodels import WorkshopModels
 from django.db import transaction, connection
 
+from warehouse.models.warehousemodel import WarehouseModel
 
 class WorkshopController():
+
 
     def get_productputinnote(self, display_flag=False, *args, **kwargs):
         return WorkshopModels.get_productputinnote(display_flag, *args,
@@ -11,6 +13,9 @@ class WorkshopController():
 
     def get_prodqrcode(self, display_flag=False, *args, **kwargs):
         return WorkshopModels.get_prodqrcode(display_flag, *args, **kwargs)
+
+    def get_plids(self, display_flag=False, *args, **kwargs):
+        return WorkshopModels.get_plids(False, *args, **kwargs)
 
     def get_qrcoderep(self, display_flag=False, *args, **kwargs):
         return WorkshopModels.get_qrcoderep(display_flag, *args, **kwargs)
@@ -41,8 +46,22 @@ class WorkshopController():
             return WorkshopModels.update_productputinnote(autoid, *args,
                                                           **kwargs)
 
+    def update_preproductputinnote(self, autoid, putin_msg, *args, **kwargs):
+        with transaction.atomic():
+            p1 = transaction.savepoint()
+            res1 = WarehouseModel.update_stuffrepository(**putin_msg)
+
+            res2 =  WorkshopModels.update_productputinnote(
+                autoid, *args,  **kwargs)
+            if res1 and res2:
+                return True
+            else:
+                transaction.savepoint_rollback(p1)
+                return False
+
     def update_prodqrcode(self, key_dict=None, *args, **kwargs):
         return WorkshopModels.update_prodqrcode(key_dict, *args, **kwargs)
 
-    def delete_prodqrcode(self, key_dict, *args, **kwargs):
-        return WorkshopModels.delete_prodqrcode(key_dict, *args, **kwargs)
+    def delete_prodqrcode(self, *args, **kwargs):
+        return WorkshopModels.delete_prodqrcode(*args, **kwargs)
+

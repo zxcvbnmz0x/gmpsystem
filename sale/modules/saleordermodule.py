@@ -13,7 +13,7 @@ from sale.modules.editsaleordermodule import EditSaleOrderMudule
 
 from django.db.models import Sum
 
-from lib.utils.messagebox import MessageBox
+from lib.utils.util import to_str
 
 import user
 
@@ -67,7 +67,7 @@ class SaleOrderModule(QDialog, Ui_Dialog):
             qtreeitem.setText(1, item['prodid'] + ' ' + item['prodname'])
             qtreeitem.setText(2, item['spec'])
             qtreeitem.setText(3, item['package'])
-            qtreeitem.setText(4, str(item['saleamount'].to_integral()))
+            qtreeitem.setText(4, to_str(item['saleamount']))
             qtreeitem.setText(5, item['spunit'])
             prodid = item['prodid']
             key_dict_rep = {
@@ -79,7 +79,7 @@ class SaleOrderModule(QDialog, Ui_Dialog):
             ).annotate(amount=Sum('stockamount'))
             if len(product_rep_list):
                 qtreeitem.setText(
-                    6, str(product_rep_list[0]['amount'].to_integral())
+                    6, to_str(product_rep_list[0]['amount'])
                 )
             else:
                 qtreeitem.setText(6, '0')

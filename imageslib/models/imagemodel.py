@@ -2,19 +2,32 @@
 
 from db.models import Imagelib
 
+from lib.utils.saveexcept import SaveExcept
 
 class Imagemodel(object):
 
-    def get_image(sellf, autoid=0, **kwargs):
-        if autoid:
-            kwargs.update(autoid=autoid)
-        return Imagelib.objects.filter(**kwargs)
+    @staticmethod
+    def get_image(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            res = Imagelib.objects.filter(**kwargs)
+            if len(args):
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, "获取图片库时出错", *args, **kwargs)
 
-    def delete_image(self, autoid=0, *args):
-        return Imagelib.objects.filter(autoid__in=autoid).delete()
+    @staticmethod
+    def delete_image(*args, **kwargs):
+        return Imagelib.objects.filter(**kwargs).delete()
 
-    def save_image(self, autoid=None, imagedetail=None, **kwargs):
-        if autoid:
-            return Imagelib.objects.filter(autoid=autoid).update(**imagedetail)
+    @staticmethod
+    def save_image(key_dict=None, *args, **kwargs):
+        if key_dict:
+            return Imagelib.objects.filter(**key_dict).update(**kwargs)
         else:
-            return Imagelib.objects.create(**imagedetail)
+            return Imagelib.objects.create(**kwargs)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from PyQt5.QtWidgets import QWidget, QTreeWidgetItem, QMenu, \
-    QTreeWidgetItemIterator, QDialog, QGridLayout
+    QDialog, QGridLayout
 
 from PyQt5.QtCore import pyqtSlot, QDate, QPoint
 
@@ -10,11 +10,8 @@ from workshop.controllers.workshopcontroller import WorkshopController
 from labrecord.controllers.labrecordscontroller import LabrecordsController
 
 from workshop.modules.productputinnotemodule import ProductputinModule
-from lib.sign.signmodule import SignModule
 
 from warehouse.views.productputinlist import Ui_Form
-
-import datetime
 
 import user
 
@@ -36,7 +33,7 @@ class ProductputinlistModule(QWidget, Ui_Form):
 
     def get_proddetail(self):
         self.treeWidget_prodlist.clear()
-        # self.treeWidget_prodlist.hideColumn(0)
+        self.treeWidget_prodlist.hideColumn(0)
         values_tuple_prod = (
             "autoid", "prodid", "prodname", "commonname", "spec", "package",
             "realamount", "basicunit"
@@ -55,6 +52,7 @@ class ProductputinlistModule(QWidget, Ui_Form):
         if not len(id_list):
             return
         key_dict_prod['autoid__in'] = id_list.distinct()
+        key_dict_prod['pltype'] = 0
 
         values_tuple_lab = ('status', 'ciid')
         key_dict_lab = {

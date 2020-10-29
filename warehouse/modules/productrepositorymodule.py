@@ -9,18 +9,12 @@ from warehouse.controllers.warehousecontroller import WarehouseController
 from labrecord.controllers.labrecordscontroller import LabrecordsController
 from product.controllers.productcontroller import ProductController
 
-from stuff.controllers.stuffcontroller import StuffController
-from warehouse.modules.modifystuffparametermodule import ModifyStuffParmeter
 from labrecord.modules.findcheckreportlistmodule import FindCheckReportModule
-from labrecord.modules.applycheckmodule import ApplycheckModule
-from labrecord.controllers.checkitem import CheckItem
 
 from django.db.models import Sum
+from lib.utils.util import to_str
 
-import decimal
 import datetime
-
-import user
 
 
 class ProductRepositoryModule(QWidget, Ui_Form):
@@ -97,14 +91,13 @@ class ProductRepositoryModule(QWidget, Ui_Form):
                 qtreeitem.setText(4, item['batchno'] + ' ' + hx_batchno)
 
                 qtreeitem.setText(
-                    7, str((item['piamount'] - item[
-                        'hxamount']).to_integral()) + '+'
-                       + str(item['hxamount'].to_integral())
+                    7, to_str((item['piamount'] - item[
+                        'hxamount'])) + '+' +
+                       to_str(item['hxamount'])
                 )
                 qtreeitem.setText(
-                    8, str(item['stockamount'] - item[
-                        'hxstockamount'].to_integral()) + '+' + str(
-                        item['hxstockamount'].to_integral())
+                    8, to_str(item['stockamount'] - item[
+                        'hxstockamount']) + '+' + to_str(item['hxstockamount'])
                 )
             else:
                 qtreeitem.setText(4, item['batchno'])
@@ -145,8 +138,8 @@ class ProductRepositoryModule(QWidget, Ui_Form):
             qtreeitem.setText(1, item['commonname'])
             qtreeitem.setText(2, item['spec'])
             qtreeitem.setText(3, item['package'])
-            qtreeitem.setText(4, str(item['piamount'].to_integral()))
-            qtreeitem.setText(5, str(item['stockamount'].to_integral()))
+            qtreeitem.setText(4, to_str(item['piamount']))
+            qtreeitem.setText(5, to_str(item['stockamount']))
             qtreeitem.setText(6, item['spunit'])
 
     pyqtSlot(bool)

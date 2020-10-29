@@ -1,0 +1,90 @@
+
+2020-10-27 09:28:27
+FieldError("Cannot resolve keyword 'resamount' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname")
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'resamount' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\stuff\models\stuffmodel.py", line 89, in get_prodstuff
+    res = Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 868, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 2172, in set_values
+    self.add_fields(field_names, True)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'resamount' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname
+
+获取产品物料时出错
+stuffid
+args=["stuffname", "drawamount", "drawunit", "realamount", "backamount", "resamount"]
+kwargs={"autoid": 338}
+--------------------
+2020-10-27 15:41:12
+FieldError("Cannot resolve keyword 'backamount_gt' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\stuff\models\stuffmodel.py", line 89, in get_prodstuff
+    res = Productstuff.objects.filter(**kwargs).values_list(*args, flat=flat)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1258, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1084, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'backamount_gt' into field. Choices are: allowno, autoid, backamount, backtime, batchno, checkamount, content, cunit, destroyamount, destroydate, destroyerid, destroyername, destroymethod, drawamount, drawunit, flag, impurity, ismainaux, loss, lpid, lrid, mbatchno, midamount, package, ppid, pracamount, pracunit, precision, presamount, presunit, producer, rdensity, realamount, remark, restamount, sdpid, seqid, spec, srid, stuffid, stuffkind, stuffname, stufftype, supervisorid, supervisorname, water, wdid, wdname
+
+获取产品物料时出错
+autoid
+args=["stuffid", "stuffname", "batchno", "spec", "package", "presamount", "pracamount", "drawamount", "presunit", "pracunit", "drawunit", "restamount", "backamount", "wdid", "wdname"]
+kwargs={"sdpid": 1360, "backamount_gt": 0}
+--------------------
+2020-10-27 17:16:20
+FieldError("Cannot resolve keyword 'stauts' into field. Choices are: applydate, autoid, chargerid, chargername, deptid, deptname, drawdate, drawerid, drawername, mwdstatus, mwdwarehousemanid, mwdwarehousemanname, papertype, ppid, providerid, providername, remark, sdptype, seqid, status, wdchargerid, wdchargername, wddate, wddrawdate, wddrawerid, wddrawername, wdqaid, wdqaname, wdremark, wdstatus, wdwarehousemanid, wdwarehousemanname, workshopid, workshopname")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\stuff\models\stuffmodel.py", line 125, in get_stuffdrawpaper
+    return Stuffdrawpaper.objects.filter(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1258, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1084, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'stauts' into field. Choices are: applydate, autoid, chargerid, chargername, deptid, deptname, drawdate, drawerid, drawername, mwdstatus, mwdwarehousemanid, mwdwarehousemanname, papertype, ppid, providerid, providername, remark, sdptype, seqid, status, wdchargerid, wdchargername, wddate, wddrawdate, wddrawerid, wddrawername, wdqaid, wdqaname, wdremark, wdstatus, wdwarehousemanid, wdwarehousemanname, workshopid, workshopname
+
+获取领料单信息时出错
+kwargs={"stauts": 1}
+--------------------

@@ -36,27 +36,27 @@ class StuffdrawpaperModule(QWidget, Ui_Form):
                 self.pushButton_apply.setText("提交领料")
                 self.label_charger.setText('')
                 self.label_provider.setText('')
-                self.dateTimeEdit_applytime.setVisible(False)
-                self.dateTimeEdit_drawtime.setVisible(False)
+                self.dateEdit_applytime.setVisible(False)
+                self.dateEdit_drawtime.setVisible(False)
             elif self.ori_detail.status == 1:
                 self.label_status.setText("已提交")
                 self.pushButton_apply.setText("取消领料")
                 self.label_charger.setText(
                     self.ori_detail.chargerid + ' ' + self.ori_detail.chargername)
                 self.label_provider.setText('')
-                self.dateTimeEdit_applytime.setDateTime(
-                    self.ori_detail.applytime)
-                self.dateTimeEdit_applytime.setVisible(True)
-                self.dateTimeEdit_drawtime.setVisible(False)
+                self.dateEdit_applytime.setDate(
+                    self.ori_detail.applydate)
+                self.dateEdit_applytime.setVisible(True)
+                self.dateEdit_drawtime.setVisible(False)
             elif self.ori_detail.status == 2:
                 self.label_status.setText("已完成")
                 self.label_charger.setText(
                     self.ori_detail.chargerid + ' ' + self.ori_detail.chargername)
                 self.label_provider.setText(
                     self.ori_detail.providerid + ' ' + self.ori_detail.providername)
-                self.dateTimeEdit_applytime.setDateTime(
-                    self.ori_detail.applytime)
-                self.dateTimeEdit_drawtime.setDateTime(self.ori_detail.drawtime)
+                self.dateEdit_applytime.setDate(
+                    self.ori_detail.applydate)
+                self.dateEdit_drawtime.setDate(self.ori_detail.drawdate)
                 self.get_stufflist()
 
     # 获取已经领取了的物料
@@ -98,7 +98,7 @@ class StuffdrawpaperModule(QWidget, Ui_Form):
             self.new_detail['status'] = 1
             self.new_detail['chargerid'] = user.user_id
             self.new_detail['chargername'] = user.user_name
-            self.new_detail['applytime'] = user.now_time
+            self.new_detail['applydate'] = user.now_date
             # print(self.new_detail)
             res = self.SC.update_stuffdrawpaper(autoid=self.autoid,
                                                 **self.new_detail)
@@ -108,7 +108,7 @@ class StuffdrawpaperModule(QWidget, Ui_Form):
             self.new_detail['status'] = 0
             self.new_detail['chargerid'] = ''
             self.new_detail['chargername'] = ''
-            self.new_detail['applytime'] = None
+            self.new_detail['applydate'] = None
             res = self.SC.update_stuffdrawpaper(autoid=self.autoid,
                                                 **self.new_detail)
         if res:

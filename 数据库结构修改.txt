@@ -720,3 +720,14 @@ ALTER TABLE `productputoutpaper`
 MODIFY COLUMN `snID`  int(11) NOT NULL AFTER `autoid`,
 ADD COLUMN `snpaperno`  varchar(20) NOT NULL DEFAULT '' AFTER `snID`;
 
+ALTER TABLE `plids`
+ADD COLUMN `title`  varchar(50) NOT NULL DEFAULT '' AFTER `ppID`;
+ADD COLUMN `ext`  varchar(10) NOT NULL DEFAULT '' AFTER `imgID`;
+
+ALTER TABLE `stuffdrawpaper`
+CHANGE COLUMN `ApplyTime` `ApplyDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `ppID`,
+CHANGE COLUMN `DrawTime` `DrawDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `ApplyDate`,
+MODIFY COLUMN `wdDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `wdChargerName`,
+ADD COLUMN `wdDrawDate`  date NULL DEFAULT '0000-00-00' AFTER `wdDrawerName`;
+
+

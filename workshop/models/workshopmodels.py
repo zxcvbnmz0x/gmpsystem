@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from lib.utils.saveexcept import SaveExcept
 from django.db import transaction, connection
-from db.models import Productdictionary, Productlabel, Producingplan, Linepost, \
+from db.models import Productdictionary, Plids, Producingplan, Linepost, \
     Linepostdocument, Forms, Selfdefinedformat, Productputinnotes, Prodqrcode, \
     Qrcoderepository
-from imageslib.controllers.image import Image
-import user
 
 
 class WorkshopModels(object):
@@ -62,6 +60,21 @@ class WorkshopModels(object):
                        **kwargs)
 
     @staticmethod
+    def get_plids(display_flag=False, *args, **kwargs):
+        flat = True if len(args) == 1 else False
+        try:
+            res = Plids.objects.filter(**kwargs)
+            if len(args):
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, "获取批记录图片时出错", *args, **kwargs)
+
+    @staticmethod
     def get_qrcoderep(display_flag=False, *args, **kwargs):
         flat = True if len(args) == 1 else False
         try:
@@ -94,6 +107,5 @@ class WorkshopModels(object):
             return Prodqrcode.objects.create(**kwargs)
 
     @staticmethod
-    def delete_prodqrcode(key_dict=dict, *args, **kwargs):
-        if key_dict:
-            return Productputinnotes.objects.filter(**key_dict).delete()
+    def delete_prodqrcode(*args, **kwargs):
+        return Productputinnotes.objects.filter(**kwargs).delete()

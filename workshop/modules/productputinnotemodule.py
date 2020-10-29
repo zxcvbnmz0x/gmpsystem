@@ -209,7 +209,7 @@ class ProductputinModule(QWidget, Ui_Form):
             self.ori_detail['dpwarehousemanid'] + ' ' +
             self.ori_detail['dpwarehousemanname']
         )
-        self.pushButton_piwsman.setText(
+        self.pushButton_piwsman.setSign(
             self.ori_detail['warehousemanid'] + ' ' +
             self.ori_detail['warehousemanname']
         )

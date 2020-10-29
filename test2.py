@@ -110,12 +110,17 @@ from sale.modules.editsaleprodmodule import EditSaleProdMudule
 from warehouse.modules.productputoutpaperlistmodule import ProductPutOutPaperListModule
 from warehouse.modules.editproductputoutpapermodule import EditProductPutOutPaperModule
 from warehouse.modules.scanppopqrcodemodule import ScanPpopQrcodeMudule
-
+from workshop.modules.homepagemodule import HomePageModule
+from stuff.modules.stuffreturnpapermodule import StuffReturnPaperModule
+from warehouse.modules.stuffreturnlistmodule import StuffReturnListModule
+from warehouse.modules.preprodputinlistmodule import PreProdputinlistModule
 if __name__ == "__main__":
 
     app = QApplication(sys.argv)
 
-    form = ProductPutOutPaperListModule()
+    # form = StuffReturnPaperModule(1360)
+    form = PreProdputinlistModule()
+    # form = StuffReturnListModule()
     form.show()
     sys.exit(app.exec_())
 

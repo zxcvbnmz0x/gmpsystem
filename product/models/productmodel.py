@@ -2,7 +2,7 @@
 from lib.utils.saveexcept import SaveExcept
 from django.db import transaction, connection
 from db.models import Productdictionary, Productlabel, Producingplan, Midproddrawnotes, Oddmentdrawnotes
-from imageslib.controllers.image import Image
+from imageslib.controllers.imagecontroller import ImageController
 import user
 
 
@@ -82,10 +82,10 @@ class ProductModel(object):
     def delete_productlabel(autoid, *args):
         try:
             with transaction.atomic():
-                image_model = Image()
+                image_model = ImageController()
                 image_list = Productlabel.objects.filter(
                     autoid__in=autoid).values_list("imgid", flat=True)
-                image_model.delete_image(image_list)
+                image_model.delete_image(autoid=image_list)
                 return Productlabel.objects.filter(autoid__in=autoid).delete()
         except Exception as e:
             SaveExcept(e, "删除产品标签图时出错", autoid=autoid, args=args)
@@ -104,17 +104,18 @@ class ProductModel(object):
             date['modifytime'] = user.now_time
             if autoid:
                 with transaction.atomic():
-                    image_model = Image()
+                    image_model = ImageController()
                     item = Productlabel.objects.filter(
                         autoid=autoid).values_list("imgid", flat=True)
-                    image_model.save_image(autoid=item[0],
-                                           imagedetail=imagedetail)
+                    key_dict ={'autoid': item[0]}
+                    image_model.update_image(key_dict,
+                                           img=imagedetail)
                     return Productlabel.objects.filter(autoid=autoid).update(
                         **date)
             else:
                 with transaction.atomic():
-                    image_model = Image()
-                    image_id = image_model.save_image(imagedetail=imagedetail)
+                    image_model = ImageController()
+                    image_id = image_model.update_image(img=imagedetail)
                     date['imgid'] = image_id.autoid
                     date['flag'] = 0
                     return Productlabel.objects.create(**date)

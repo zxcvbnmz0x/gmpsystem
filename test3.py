@@ -25,12 +25,17 @@ VALUES_TUPLE_PROD = (
 # print(res)
 # print(res.values('used'))
 #
-import operator
+import operator, decimal
 from functools import reduce
 
-s=Productrepository.objects.filter(autoid=310)
-b=s[0]
-print(s)
-b['stockamount'] -= 1
-b.save()
-print(b['stockamount'])
+try:
+    a = decimal.Decimal()
+    b = decimal.Decimal('a')
+    c = decimal.Decimal(3)
+except decimal.InvalidOperation:
+    b = 'a'
+    c = 3
+print(a,b,c)
+s=256*10+128*20+64*30+32*40+16*50+8*60+4*70+2*80+90
+b=(2+4+8+16+32+64+128+256+512)*6
+print('sum=',s/40*4000)

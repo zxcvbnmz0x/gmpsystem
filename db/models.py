@@ -1349,6 +1349,16 @@ class Planprescription(models.Model):
         managed = False
         db_table = 'planprescription'
 
+class Plids(models.Model):
+    autoid = models.AutoField(primary_key=True)
+    ppid = models.IntegerField(db_column='ppID')  # Field name made lowercase.
+    title = models.CharField(db_column='title', max_length=50,  default='')
+    imgid = models.IntegerField(db_column='imgID')  # Field name made lowercase.
+    ext = models.CharField(db_column='ext', max_length=10, default='')
+
+    class Meta:
+        managed = False
+        db_table = 'plids'
 
 class Postdocument(models.Model):
     autoid = models.AutoField(primary_key=True)
@@ -2562,8 +2572,8 @@ class Stuffdrawpaper(models.Model):
     autoid = models.AutoField(primary_key=True)
     papertype = models.IntegerField(db_column='PaperType')  # Field name made lowercase.
     ppid = models.IntegerField(db_column='ppID')  # Field name made lowercase.
-    applytime = ZeroDateTimeField(db_column='ApplyTime')  # Field name made lowercase.
-    drawtime = ZeroDateTimeField(db_column='DrawTime')  # Field name made lowercase.
+    applydate = ZeroDateField(db_column='ApplyDate')  # Field name made lowercase.
+    drawdate = ZeroDateField(db_column='DrawDate')  # Field name made lowercase.
     deptid = models.CharField(db_column='DeptID', max_length=10)  # Field name made lowercase.
     deptname = models.CharField(db_column='DeptName', max_length=30)  # Field name made lowercase.
     chargerid = models.CharField(db_column='ChargerID', max_length=10)  # Field name made lowercase.
@@ -2587,6 +2597,7 @@ class Stuffdrawpaper(models.Model):
     wdstatus = models.IntegerField()
     wddrawerid = models.CharField(db_column='wdDrawerID', max_length=10)  # Field name made lowercase.
     wddrawername = models.CharField(db_column='wdDrawerName', max_length=30)  # Field name made lowercase.
+    wddrawdate = ZeroDateField(db_column='wdDrawDate')
     seqid = models.IntegerField(db_column='SeqID')  # Field name made lowercase.
     mwdstatus = models.IntegerField(db_column='mwdStatus')  # Field name made lowercase.
     mwdwarehousemanid = models.CharField(db_column='mwdWarehousemanID', max_length=10)  # Field name made lowercase.

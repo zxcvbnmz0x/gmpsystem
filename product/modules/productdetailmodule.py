@@ -6,7 +6,7 @@ from lib.utils.saveexcept import SaveExcept
 
 from labrecord.controllers.checkitem import CheckItem
 from labrecord.controllers.setcheckitem import SetCheckItem
-from imageslib.controllers.image import Image
+from imageslib.controllers.imagecontroller import ImageController
 from supplyer.controllers.stuffsupplyer import StuffSupplyer
 from product.controllers.productcontroller import ProductController
 from productline.controllers.setproductline import SetProductLine
@@ -140,7 +140,7 @@ class ProductDetailModule(QtWidgets.QDialog, Ui_Dialog):
     def on_labellist_itemDoubleClicked(self, p_int):
         widget = self.sender()
         autoid = widget.currentItem().text(4)
-        image = Image()
+        image = ImageController()
         image_detail = image.get_image(autoid)
         img = QtGui.QImage.fromData(image_detail[0].img)
         self.productimage.setPixmap(QtGui.QPixmap.fromImage(img))

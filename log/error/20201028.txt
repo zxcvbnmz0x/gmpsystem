@@ -1,0 +1,65 @@
+
+2020-10-28 16:27:41
+TypeError("Stuffrepository() got an unexpected keyword argument 'prodid'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 67, in update_stuffrepository
+    return Stuffrepository.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Stuffrepository() got an unexpected keyword argument 'prodid'
+
+更新物料库存时出错
+kwargs={"prodid": "04060001", "prodname": "金银花", "spec": "20kg/件", "package": " 456", "basicunit": "kg", "commonname": "金银花", "bpunit": "", "mpunit": "件", "spunit": "kg", "spamount": 1, "mpamount": 1, "allowno": "", "batchno": "20051201", "makedate": null, "basicamount": null, "ciid": 1715, "pltype": 1, "stufftype": 1, "expireddate": null, "amount": null, "piamount": null, "position": "成品仓", "checkintime": "datetime.2020-10-28 16:27:38.781396", "putintime": "datetime.2020-10-28 16:27:38.781396", "warehousemanid": "001", "warehousemanname": "sys02", "content": null, "cunit": "%", "water": null, "rdensity": null, "impurity": null, "lrid": 793, "checkdate": null, "nextcheckdate": null, "deptid": "53", "deptname": "水电站"}
+--------------------
+2020-10-28 16:29:20
+TypeError("Stuffrepository() got an unexpected keyword argument 'prodid'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 67, in update_stuffrepository
+    return Stuffrepository.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Stuffrepository() got an unexpected keyword argument 'prodid'
+
+更新物料库存时出错
+kwargs={"prodid": "04060001", "prodname": "金银花", "spec": "20kg/件", "package": " 456", "basicunit": "kg", "commonname": "金银花", "bpunit": "", "mpunit": "件", "spunit": "kg", "spamount": 1, "mpamount": 1, "allowno": "", "batchno": "20051201", "makedate": null, "basicamount": null, "ciid": 1715, "pltype": 1, "stufftype": 1, "expireddate": null, "amount": null, "piamount": null, "position": "成品仓", "checkintime": "datetime.2020-10-28 16:29:02.269851", "putintime": "datetime.2020-10-28 16:29:02.269851", "warehousemanid": "001", "warehousemanname": "sys02", "content": null, "cunit": "%", "water": null, "rdensity": null, "impurity": null, "lrid": 793, "checkdate": null, "nextcheckdate": null, "deptid": "53", "deptname": "水电站"}
+--------------------
+2020-10-28 16:35:26
+TypeError("Stuffrepository() got an unexpected keyword argument 'prodid'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 67, in update_stuffrepository
+    return Stuffrepository.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Stuffrepository() got an unexpected keyword argument 'prodid'
+
+更新物料库存时出错
+kwargs={"prodid": "04060001", "prodname": "金银花", "spec": "20kg/件", "package": " 456", "basicunit": "kg", "commonname": "金银花", "bpunit": "", "mpunit": "件", "spunit": "kg", "spamount": 1, "mpamount": 1, "allowno": "", "batchno": "20051201", "makedate": null, "basicamount": null, "ciid": 1715, "pltype": 1, "stufftype": 1, "expireddate": null, "amount": null, "piamount": null, "position": "成品仓", "checkintime": "datetime.2020-10-28 16:34:38.691922", "putintime": "datetime.2020-10-28 16:34:38.691922", "warehousemanid": "001", "warehousemanname": "sys02", "content": null, "cunit": "%", "water": null, "rdensity": null, "impurity": null, "lrid": 793, "checkdate": null, "nextcheckdate": null, "deptid": "53", "deptname": "水电站"}
+--------------------
+2020-10-28 16:45:19
+TypeError("Stuffrepository() got an unexpected keyword argument 'checkintime'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\warehouse\models\warehousemodel.py", line 67, in update_stuffrepository
+    return Stuffrepository.objects.create(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "D:\Anaconda3\envs\py3.8.5\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Stuffrepository() got an unexpected keyword argument 'checkintime'
+
+更新物料库存时出错
+kwargs={"spec": "20kg/件", "package": " 456", "basicunit": "kg", "bpunit": "", "mpunit": "件", "spunit": "kg", "spamount": 1, "mpamount": 1, "allowno": "", "batchno": "20051201", "makedate": null, "basicamount": null, "stuffid": "04060001", "stuffname": "金银花", "stuffkind": "金银花", "ciid": 1715, "pltype": 1, "stufftype": 1, "expireddate": null, "amount": null, "piamount": null, "position": "成品仓", "checkintime": "datetime.2020-10-28 16:45:16.783565", "putintime": "datetime.2020-10-28 16:45:16.783565", "warehousemanid": "001", "warehousemanname": "sys02", "content": null, "cunit": "%", "water": null, "rdensity": null, "impurity": null, "lrid": 793, "checkdate": null, "nextcheckdate": null, "deptid": "53", "deptname": "水电站"}
+--------------------

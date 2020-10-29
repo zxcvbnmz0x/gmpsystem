@@ -51,7 +51,7 @@ class DrawstuffModule(QDialog, Ui_Dialog):
 
     def showMaximized(self):
         try:
-            # 获取产品信息
+            #获取产品信息
             self.get_product_detail()
             self.get_formula()
             self.get_has_drawstuff(self.ppid)
@@ -138,10 +138,10 @@ class DrawstuffModule(QDialog, Ui_Dialog):
         self.treeWidget_stuffrepository.clear()
         row_tuple = ('autoid', 'stuffkind', 'stuffid', 'stuffname', 'spec',
                      'package', 'batchno', 'mbatchno', 'amount', 'producer',
-                     'supid', 'content', 'cunit', 'water', 'rdensity',
+                     'supid', 'supname', 'content', 'cunit', 'water', 'rdensity',
                      'impurity', 'basicunit', 'lrid', 'stufftype'
                      )
-        res = self.WC.get_stuffrepository(1, *row_tuple,
+        res = self.WC.get_stuffrepository(False, *row_tuple,
                                           stuffkind__in=stuffkind_list,
                                           amount__gt=0)
         self.stuff_repository = res
@@ -172,7 +172,7 @@ class DrawstuffModule(QDialog, Ui_Dialog):
             'prodid', 'version', 'planamount', 'realamount', 'spec',
             'basicamount', 'spamount', 'bpamount', 'bpamount'
         )
-        res = self.PC.get_producingplan(1, *vlist, autoid=self.ppid)
+        res = self.PC.get_producingplan(False, *vlist, autoid=self.ppid)
         self.detail = res[0]
 
     # 系统根据配方自动领料
@@ -697,10 +697,9 @@ class DrawstuffModule(QDialog, Ui_Dialog):
             'status': 2,
             'providerid': user.user_id,
             'providername': user.user_name,
-            'drawtime': user.time
+            'drawdate': user.now_date
         }
         res = self.WC.update_stuffrepository_amount(*draw_list, **sdpid_list)
-        print(res)
         if res == 'accept':
             self.accept()
         elif res == 'rollback':

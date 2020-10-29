@@ -15,6 +15,7 @@ from cleanfirmity.modules.cleanconfirmityoriginalmodule import CleanconfirmityOr
 
 from  workshop.modules.productioninstructionmodule import PorductionInstructionModule
 from workshop.modules.packageinstructionmodule import PackageInstructionModule
+from workshop.modules.homepagemodule import HomePageModule
 
 from labrecord.modules.applycheckmodule import ApplycheckModule
 
@@ -213,6 +214,11 @@ class ProducingModule(QtWidgets.QMainWindow, Ui_MainWindow):
         elif qitem.text(1) == '1':
             self.current_content = PostdetailModule(qitem.text(2), self.detail[0].lineid, qitem.text(3), qitem.text(0), self)
             self.gridLayout_4.addWidget(self.current_content)
+        # 点击的是封面
+        elif qitem.text(1) == '0':
+            self.current_content = HomePageModule(self.autoid, self)
+            self.gridLayout_4.addWidget(self.current_content)
+
 
     @QtCore.pyqtSlot()
     def on_pushButton_accept_clicked(self):

@@ -110,19 +110,24 @@ class StuffModel(object):
             SaveExcept(e, "获取产品物料(部分批次)时出错", data=ppid)
 
     @staticmethod
-    def get_stuffdrawpaper(*args, **kwargs):
+    def get_stuffdrawpaper(display_flag=False, *args, **kwargs):
         flat = True if len(args) == 1 else False
         try:
             if len(args):
-                return Stuffdrawpaper.objects.filter(**kwargs).values_list(*args, flat=flat)
+                res = Stuffdrawpaper.objects.filter(**kwargs).\
+                    values_list(*args, flat=flat)
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+
             else:
                 return Stuffdrawpaper.objects.filter(**kwargs)
-
         except Exception as e:
             SaveExcept(e, "获取领料单信息时出错", *args, **kwargs)
 
     @staticmethod
-    def update_stuffdrawpaper(autoid=0, *args, **kwargs):
+    def update_stuffdrawpaper(autoid, *args, **kwargs):
         try:
             if autoid:
                 return Stuffdrawpaper.objects.filter(autoid=autoid).update(**kwargs)
@@ -130,3 +135,13 @@ class StuffModel(object):
                 return Stuffdrawpaper.objects.create(**kwargs)
         except Exception as e:
             SaveExcept(e, "更新领料单信息时出错", data=autoid , *args, **kwargs)
+
+    @staticmethod
+    def update_productstuff(key_dict, *args, **kwargs):
+        try:
+            if key_dict:
+                return Productstuff.objects.filter(**key_dict).update(**kwargs)
+            else:
+                return Productstuff.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, "更新产品物料信息时出错", data=key_dict , *args, **kwargs)

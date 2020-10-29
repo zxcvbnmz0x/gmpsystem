@@ -12,6 +12,7 @@ from sale.views.editsaleprod import Ui_Dialog
 import decimal
 
 from lib.utils.messagebox import MessageBox
+from lib.utils.util import to_str
 
 
 class EditSaleProdMudule(QDialog, Ui_Dialog):
@@ -45,7 +46,7 @@ class EditSaleProdMudule(QDialog, Ui_Dialog):
         )
         self.label_spec.setText(self.ori_detail['spec'])
         self.label_package.setText(self.ori_detail['package'])
-        self.lineEdit_amount.setText(str(self.ori_detail['saleamount'].to_integral()))
+        self.lineEdit_amount.setText(to_str(self.ori_detail['saleamount']))
         self.label_unit.setText(self.ori_detail['spunit'])
 
     def set_validator(self):
