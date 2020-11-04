@@ -101,3 +101,32 @@ class LabrecordsController(object):
 
     def delete_oricheckpaper(self, id_list):
         return LabModel.delete_oricheckpaper(id_list)
+
+    def get_data(self, table_num: int, display_flag=False, *args, **kwargs):
+        table_str = TABLE_SET[table_num][0]
+        err_msg = "查询" + TABLE_SET[table_num][1]
+        return LabModel.get_data(
+            table_str, err_msg, display_flag, *args, **kwargs
+        )
+
+    def update_data(self, table_num: int, condition={}, *args, **kwargs):
+        table_str = TABLE_SET[table_num][0]
+        err_msg = "更新" + TABLE_SET[table_num][1]
+        return LabModel.update_data(
+            table_str, err_msg, condition, *args, **kwargs
+        )
+
+    def delete_data(self, table_num: int, condition={}, *args, **kwargs):
+        table_str = TABLE_SET[table_num][0]
+        err_msg = "删除" + TABLE_SET[table_num][1]
+        return LabModel.delete_data(
+            table_str, err_msg, condition, *args, **kwargs
+        )
+
+TABLE_SET = [
+    ('Labrecords', "检验报告"),
+    ('Labrecordsdetail', "检验报告项目"),
+    ('Originalcheckpaper', "原始检验记录"),
+    ('Originalcheckpapersetting', "原始检验记录设置"),
+    ('Checkitems', "检验项目"),
+]

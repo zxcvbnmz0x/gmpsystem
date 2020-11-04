@@ -730,4 +730,39 @@ CHANGE COLUMN `DrawTime` `DrawDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `A
 MODIFY COLUMN `wdDate`  date NOT NULL DEFAULT '0000-00-00' AFTER `wdChargerName`,
 ADD COLUMN `wdDrawDate`  date NULL DEFAULT '0000-00-00' AFTER `wdDrawerName`;
 
+ALTER TABLE `equipments`
+MODIFY COLUMN `InDate`  varchar(30) NOT NULL DEFAULT '0000-00-00' AFTER `Manufacturer`,
+MODIFY COLUMN `MakeDate`  varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL AFTER `InstPosition`,
+CHANGE COLUMN `Scale` `Parameter`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `MakeDate`,
+CHANGE COLUMN `Presicion` `performance`  varchar(100) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL DEFAULT '' AFTER `Parameter`;
+MODIFY COLUMN `Price`  varchar(20) NOT NULL DEFAULT '0' AFTER `Unit`;
+
+ALTER TABLE `department`
+ADD COLUMN `autoid`  int NOT NULL AUTO_INCREMENT FIRST ,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`autoid`);
+
+
+CREATE TABLE `eqcheck` (
+`autoid`  int NOT NULL AUTO_INCREMENT ,
+'eqid' int NOT NULL default 0,
+`checkdate`  date NOT NULL ,
+`company`  varchar(100) NOT NULL default '' ,
+`result`  varchar(200) NOT NULL  default '' ,
+'status' int NOT NULL default 0,
+`registerid`  varchar(50) NOT NULL  default '' ,
+`registername`  varchar(50) NOT NULL  default '' ,
+PRIMARY KEY (`autoid`)
+)
+;
+
+ALTER TABLE `eqrunnotes`
+MODIFY COLUMN `RunEndTime`  datetime NOT NULL DEFAULT '0001-01-01 00:00:00' AFTER `RunStartTime`,
+ADD COLUMN `status`  tinyint NOT NULL DEFAULT 0 AFTER `RunTime`;
+
+ALTER TABLE `eqaccidentnotes`
+DROP COLUMN `StopLoss`,
+DROP COLUMN `RepairFee`,
+DROP COLUMN `OtherLoss`,
+CHANGE COLUMN `ProdLoss` `Loss`  varchar(200) NOT NULL DEFAULT '' AFTER `reason`;
 

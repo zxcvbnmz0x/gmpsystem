@@ -104,7 +104,12 @@ class PostdetailModule(QWidget, Ui_Form):
     def get_equiprunnote(self):
         self.treeWidget_equipment.clear()
         EC = EquipmentController()
-        eqrunnotes = EC.get_equip_run_note(lpid=self.autoid)
+        key_dict = {'lpid': self.autoid}
+        eqrunnotes = EC.get_data(1, False, **key_dict).extra(
+            select={'eqname': 'equipments.eqname'},
+            tables=['equipments'],
+            where=['equipments.eqno=eqrunnotes.eqno']
+        )
         if len(eqrunnotes):
             for item in eqrunnotes:
                 qtreeitem = QTreeWidgetItem(self.treeWidget_equipment)
@@ -138,14 +143,15 @@ class PostdetailModule(QWidget, Ui_Form):
             # 编辑运行记录
             if action == button1:
                 eqrun_detail = EqrunnoteModule(sender_widget.currentItem().text(0))
-                res = eqrun_detail.exec()
+                eqrun_detail.accepted.connect(self.get_equiprunnote)
+                res = eqrun_detail.show()
             # 复制运行记录
             elif action == button2:
-                res = EC.insert_equip_run_note(autoid_list)
+                EC.insert_equip_run_note(autoid_list)
+                self.get_equiprunnote()
             # 删除运行记录
             elif action == button3:
-                res = EC.delete_equip_run_note(autoid_list)
-            if res:
+                C.delete_equip_run_note(autoid_list)
                 self.get_equiprunnote()
 
     # 运行记录双击功能

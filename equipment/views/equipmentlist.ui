@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>clerks</class>
- <widget class="QWidget" name="clerks">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -44,14 +44,6 @@
        <string>id</string>
       </property>
      </column>
-     <item>
-      <property name="text">
-       <string>全部部门</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </item>
     </widget>
    </item>
    <item row="0" column="1">
@@ -62,6 +54,14 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>id</string>
+      </property>
+     </column>
      <column>
       <property name="text">
        <string>类型</string>

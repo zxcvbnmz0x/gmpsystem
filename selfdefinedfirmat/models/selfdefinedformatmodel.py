@@ -8,12 +8,12 @@ from lib.utils.saveexcept import SaveExcept
 class SelfdefinedformatModel():
 
     @staticmethod
-    def get_selfdefinedformat(flag=False, *args, **kwargs):
+    def get_selfdefinedformat(display_flag=False, *args, **kwargs):
         try:
             flat = True if len(args) == 1 else False
             res = Selfdefinedformat.objects.filter(**kwargs)
             if len(args):
-                if flag:
+                if display_flag:
                     return res.values_list(*args, flat=flat)
                 else:
                     return res.values(*args)

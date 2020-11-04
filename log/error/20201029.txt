@@ -1,0 +1,61 @@
+
+2020-10-29 16:48:09
+AttributeError("module 'db.models' has no attribute 'department'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\lib\mywidget\comboline.py", line 87, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'department'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "department", "return_row": ["autoid", "deptid", "deptname"], "condition_key": ["deptid", "deptname", "inputcode"], "treeheader_name": ["id", "编号", "名称"], "treewidth": 350, "treeheight": 190}
+--------------------
+2020-10-29 16:48:09
+AttributeError("module 'db.models' has no attribute 'clerks'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\lib\mywidget\comboline.py", line 87, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'clerks'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "clerks", "return_row": ["autoid", "deptid", "deptname"], "condition_key": ["deptid", "deptname", "inputcode"], "treeheader_name": ["id", "编号", "名称"], "treewidth": 350, "treeheight": 190}
+--------------------
+2020-10-29 16:53:01
+AttributeError("module 'db.models' has no attribute 'department'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\lib\mywidget\comboline.py", line 87, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'department'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "department", "return_row": ["autoid", "deptid", "deptname"], "condition_key": ["deptid", "deptname", "inputcode"], "treeheader_name": ["id", "编号", "名称"], "treewidth": 350, "treeheight": 190}
+--------------------
+2020-10-29 16:53:01
+AttributeError("module 'db.models' has no attribute 'clerks'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\lib\mywidget\comboline.py", line 87, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'clerks'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "clerks", "return_row": ["autoid", "deptid", "deptname"], "condition_key": ["deptid", "deptname", "inputcode"], "treeheader_name": ["id", "编号", "名称"], "treewidth": 350, "treeheight": 190}
+--------------------
+2020-10-29 16:54:53
+AttributeError("module 'db.models' has no attribute 'department'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\lib\mywidget\comboline.py", line 87, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'department'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "department", "return_row": ["autoid", "deptid", "deptname"], "condition_key": ["deptid", "deptname", "inputcode"], "treeheader_name": ["id", "编号", "名称"], "treewidth": 350, "treeheight": 190}
+--------------------
+2020-10-29 16:54:53
+AttributeError("module 'db.models' has no attribute 'clerks'")
+Traceback (most recent call last):
+  File "D:\pyproject\gmpsystem\lib\mywidget\comboline.py", line 87, in setup
+    self.module_name = getattr(db_module, db_table)
+AttributeError: module 'db.models' has no attribute 'clerks'
+
+下来菜单设置数据表出错
+kwargs={"db_table": "clerks", "return_row": ["autoid", "deptid", "deptname"], "condition_key": ["deptid", "deptname", "inputcode"], "treeheader_name": ["id", "编号", "名称"], "treewidth": 350, "treeheight": 190}
+--------------------

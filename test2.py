@@ -113,14 +113,17 @@ from warehouse.modules.scanppopqrcodemodule import ScanPpopQrcodeMudule
 from workshop.modules.homepagemodule import HomePageModule
 from stuff.modules.stuffreturnpapermodule import StuffReturnPaperModule
 from warehouse.modules.stuffreturnlistmodule import StuffReturnListModule
-from warehouse.modules.preprodputinlistmodule import PreProdputinlistModule
+from equipment.modules.equipmentlistmodule import EquipmentListModule
+from equipment.modules.editeqcheckdetailmodule import EditEquCheckDetailModule
+from equipment.modules.eqrunlistmodule import EqRunListModule
+from equipment.modules.eqmaintenancelistmodule import EqMaintenanceListModule
+from equipment.modules.eqgeneralrecorslistmodule import EqGeneralRecorsListModule
 if __name__ == "__main__":
 
     app = QApplication(sys.argv)
 
     # form = StuffReturnPaperModule(1360)
-    form = PreProdputinlistModule()
-    # form = StuffReturnListModule()
+    form = EqGeneralRecorsListModule()
     form.show()
     sys.exit(app.exec_())
 

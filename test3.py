@@ -14,7 +14,60 @@ def set_validator():
     validator = QRegExpValidator()
     validator.setRegExp(reg)
 
-from db.models import Productrepository, Producingplan, Ppopqrcode, Prodqrcode
+
+@staticmethod
+def get_data(table_str, err_msg=None, display_flag=False, *args, **kwargs):
+    try:
+        table = globals()[table_str]
+    except KeyError:
+        return False
+    flat = True if len(args) == 1 else False
+    try:
+        res = table.objects.filter(**kwargs)
+        if len(args):
+            if display_flag:
+                return res.values_list(*args, flat=flat)
+            else:
+                return res.values(*args)
+        else:
+            return res
+    except Exception as e:
+        SaveExcept(e, err_msg, *args, **kwargs)
+
+@staticmethod
+def update_data(table_str, err_msg=None, condition={}, *args, **kwargs):
+    try:
+        table = globals()[table_str]
+    except KeyError:
+        return False
+    try:
+        if len(args):
+            return table.objects.filter(autoid__in=args).update(**kwargs)
+        elif len(condition):
+            return table.objects.filter(**condition).update(**kwargs)
+        else:
+            return table.objects.create(**kwargs)
+    except Exception as e:
+        SaveExcept(e, err_msg, *args, **kwargs)
+
+@staticmethod
+def delete_data(table_str, err_msg=None, condition={}, *args, **kwargs):
+    try:
+        table = globals()[table_str]
+    except KeyError:
+        return False
+    try:
+        if len(args):
+            return table.objects.filter(autoid__in=args).delete()
+        elif len(condition):
+            return table.objects.filter(**condition).delete()
+        else:
+            return table.objects.filter(**kwargs).delete()
+    except Exception as e:
+        SaveExcept(e, err_msg, *args, **kwargs)
+
+
+from db.models import Productrepository, Producingplan, Ppopqrcode, Prodqrcode, Selfdefinedformat, Eqnormaldocuments
 from django.db.models import Sum
 key_dict = {'ppopid':31}
 VALUES_TUPLE_PROD = (
@@ -27,15 +80,14 @@ VALUES_TUPLE_PROD = (
 #
 import operator, decimal
 from functools import reduce
+from django.shortcuts import _get_queryset
+from PyQt5.QtCore import QDateTime
+from django.db.models import Q, F
 
-try:
-    a = decimal.Decimal()
-    b = decimal.Decimal('a')
-    c = decimal.Decimal(3)
-except decimal.InvalidOperation:
-    b = 'a'
-    c = 3
-print(a,b,c)
-s=256*10+128*20+64*30+32*40+16*50+8*60+4*70+2*80+90
-b=(2+4+8+16+32+64+128+256+512)*6
-print('sum=',s/40*4000)
+s = Selfdefinedformat.objects.values('format').filter(autoid=2943)
+newgen = Eqnormaldocuments.objects.create(formname="测试表")
+print(newgen)
+b = newgen.favor(*s)
+print(b.query)
+
+

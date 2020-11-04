@@ -3,7 +3,7 @@
 from lib.utils.saveexcept import SaveExcept
 
 from db.models import Labrecords, Labrecordsdetail, Originalcheckpaper, \
-    Originalcheckpapersetting
+    Originalcheckpapersetting, Checkitems
 
 from django.db import connection
 
@@ -136,3 +136,55 @@ class LabModel(object):
     @staticmethod
     def delete_oricheckpaper(id_list):
         return Originalcheckpaper.objects.filter(autoid__in=id_list).delete()
+
+
+    @staticmethod
+    def get_data(table_str, err_msg=None, display_flag=False, *args, **kwargs):
+        try:
+            table = globals()[table_str]
+        except KeyError:
+            return False
+        flat = True if len(args) == 1 else False
+        try:
+            res = table.objects.filter(**kwargs)
+            if len(args):
+                if display_flag:
+                    return res.values_list(*args, flat=flat)
+                else:
+                    return res.values(*args)
+            else:
+                return res
+        except Exception as e:
+            SaveExcept(e, err_msg, *args, **kwargs)
+
+    @staticmethod
+    def update_data(table_str, err_msg=None, condition={}, *args, **kwargs):
+        try:
+            table = globals()[table_str]
+        except KeyError:
+            return False
+        try:
+            if len(args):
+                return table.objects.filter(autoid__in=args).update(**kwargs)
+            elif len(condition):
+                return table.objects.filter(**condition).update(**kwargs)
+            else:
+                return table.objects.create(**kwargs)
+        except Exception as e:
+            SaveExcept(e, err_msg, *args, **kwargs)
+
+    @staticmethod
+    def delete_data(table_str, err_msg=None, condition={}, *args, **kwargs):
+        try:
+            table = globals()[table_str]
+        except KeyError:
+            return False
+        try:
+            if len(args):
+                return table.objects.filter(autoid__in=args).delete()
+            elif len(condition):
+                return table.objects.filter(**condition).delete()
+            else:
+                return table.objects.filter(**kwargs).delete()
+        except Exception as e:
+            SaveExcept(e, err_msg, *args, **kwargs)

@@ -62,7 +62,12 @@ class OricheckpaperModule(QWidget, Ui_Form):
             'rtype': 1
         }
         '''
-        eqrunnotes = EC.get_equip_run_note(pid=self.autoid, rtype=1)
+        key_dict = {'pid':self.autoid, 'rtype': 1}
+        eqrunnotes = EC.get_data(1, False, **key_dict).extra(
+            select={'eqname': 'equipments.eqname'},
+            tables=['equipments'],
+            where=['equipments.eqno=eqrunnotes.eqno']
+        )
         if len(eqrunnotes):
             for item in eqrunnotes:
                 qtreeitem = QTreeWidgetItem(self.treeWidget_equipment)
@@ -80,7 +85,7 @@ class OricheckpaperModule(QWidget, Ui_Form):
     @pyqtSlot(QTreeWidgetItem, int)
     def on_treeWidget_equipment_itemDoubleClicked(self, qitem, p_int):
         eqrun_detail = EqrunnoteModule(qitem.text(0), parent=self)
-        eqrun_detail.flush_signal.connect(self.get_equiprunnote)
+        eqrun_detail.accepted.connect(self.get_equiprunnote)
         eqrun_detail.show()
 
     # 设备运行记录右键菜单功能

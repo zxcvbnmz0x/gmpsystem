@@ -14,6 +14,7 @@ class SelectoricheckpaperModule(QDialog, Ui_Dialog):
         self.detail = []
         self.LC = LabrecordsController()
         self.setupUi(self)
+        self.treeWidget_filelist.hideColumn(1)
         # 或取当前检品的检验报告列表
         self.get_oricheckpaper(dictid, itemtype)
 
@@ -23,7 +24,9 @@ class SelectoricheckpaperModule(QDialog, Ui_Dialog):
             if item['kind'] == '':
                 qtreeitem = QTreeWidgetItem(self.treeWidget_filelist)
             else:
-                itemlist =self.treeWidget_filelist.findItems(item['kind'], Qt.MatchContains, 1)
+                itemlist =self.treeWidget_filelist.findItems(
+                    item['kind'], Qt.MatchContains, 0
+                )
                 if not len(itemlist):
                     qtreeitem_parent = QTreeWidgetItem(self.treeWidget_filelist)
                     qtreeitem_parent.setText(0, item['kind'])
@@ -33,7 +36,7 @@ class SelectoricheckpaperModule(QDialog, Ui_Dialog):
                     qtreeitem = QTreeWidgetItem(itemlist[0])
             qtreeitem.setText(0, item['formatname'])
             qtreeitem.setText(1, str(item['autoid']))
-        self.treeWidget_filelist.hideColumn(1)
+
 
     @pyqtSlot(QTreeWidgetItem, int)
     def on_treeWidget_filelist_itemDoubleClicked(self, qitem, p_int):

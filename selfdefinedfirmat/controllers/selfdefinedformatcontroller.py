@@ -5,8 +5,8 @@ from selfdefinedfirmat.models.selfdefinedformatmodel import SelfdefinedformatMod
 
 class SelfdefinedformatController():
 
-    def get_selfdefinedformat(self, flag, *args, **kwargs):
-        return SelfdefinedformatModel.get_selfdefinedformat(flag, *args, **kwargs)
+    def get_selfdefinedformat(self, display_flag=None, *args, **kwargs):
+        return SelfdefinedformatModel.get_selfdefinedformat(display_flag, *args, **kwargs)
 
     @staticmethod
     def update_selfdefinedformat(autoid=0, *args, **kwargs):

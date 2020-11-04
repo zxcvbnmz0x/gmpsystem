@@ -55,19 +55,21 @@ class ComboLine(myLineEdit):
         self.resize(rect.width(), rect.height())
         self.namelist.move(rect.x(), rect.y() + 20)
 
-    def setup(self, db_table: str, row: tuple, key: set, row_name: list,
+    def setup(self, db_table: str, return_row: tuple, condition_key: set,
+              treeheader_name: list,
               treewidth: int = 200, treeheight: int = 200):
         """ 初始化下拉输入框
-        生产的语句格式：select row from db_table where key like '%str'
+        生产的语句格式：
+            select return_row from db_table where condition_key like '%str'
         参数
         ---------------------
         db_table :str
             数据表名
-        row : tuple
+        return_row : tuple
             查询返回数据表列名
-        key : set
+        condition_key : set
             要进行比较的数据表列名
-        row_name : list
+        treeheader_name : list
             下拉列表中的表头名
         treewidth: int
             下拉列表的宽度
@@ -75,28 +77,34 @@ class ComboLine(myLineEdit):
             下拉列表的高度
         """
         self.namelist.resize(treewidth, treeheight)
-        self.row_name = row_name
+        self.row_name = treeheader_name
         try:
-            self.valuetuple = row
+            self.valuetuple = return_row
             self.key.clear()
-            for item in key:
+            for item in condition_key:
                 self.key.add(item + '__icontains')
             db_module = __import__('db.models', fromlist=['models'])
             self.module_name = getattr(db_module, db_table)
-            if row_name:
+            if treeheader_name:
                 # 把列表的宽度设置为除id行外每列按120算
                 # self.namelist.setFixedWidth((len(row_name) - 1) * 150)
                 # self.namelist.setFixedHeight(200)
                 try:
-                    for key in range(len(row_name)):
-                        self.namelist.headerItem().setText(key, row_name[key])
+                    for key in range(len(treeheader_name)):
+                        self.namelist.headerItem().setText(
+                            key, treeheader_name[key]
+                        )
                 except TypeError:
                     self.namelist.header().setVisible(False)
             else:
                 self.namelist.header().setVisible(False)
         except Exception as e:
-            SaveExcept(e, "下来菜单设置数据表出错", db_table=db_table, row=row, key=key,
-                       row_name=row_name)
+            SaveExcept(
+                e, "下来菜单设置数据表出错", db_table=db_table,
+                return_row=return_row, condition_key=condition_key,
+                treeheader_name=treeheader_name , treewidth=treewidth,
+                treeheight=treeheight
+            )
 
     # 获得当前项目的id
     def get_item(self):

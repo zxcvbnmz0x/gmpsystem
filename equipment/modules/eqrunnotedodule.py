@@ -2,7 +2,7 @@
 
 from PyQt5.QtWidgets import QDialog
 from PyQt5 .QtGui import QRegExpValidator
-from PyQt5.QtCore import pyqtSignal, pyqtSlot, QDateTime, QRegExp
+from PyQt5.QtCore import pyqtSlot, QDateTime, QRegExp
 
 from equipment.controllers.equipmentcontroller import EquipmentController
 from equipment.views.eqrunnote import Ui_Dialog
@@ -13,14 +13,15 @@ import user
 
 
 class EqrunnoteModule(QDialog, Ui_Dialog):
-    flush_signal = pyqtSignal()
 
-    def __init__(self, autoid, starttime=user.currentdatetime, endtime=user.currentdatetime, parent=None):
+    def __init__(self, autoid=None, eqno='', status=0, starttime=user.currentdatetime, endtime=user.currentdatetime, parent=None):
         super(EqrunnoteModule, self).__init__(parent)
 
         self.autoid = autoid
         self.starttime = starttime
         self.endtime = endtime
+        self.eqno = eqno
+        self.status = status
         self.setupUi(self)
         self.maintenance = bin(0)
         self.ori_detail = object
@@ -35,7 +36,16 @@ class EqrunnoteModule(QDialog, Ui_Dialog):
 
     # 获取详细运行记录
     def get_eq_run_note_detail(self, autoid):
-        res = self.EC.get_equip_run_note(autoid)
+        if self.autoid is None:
+            self.dateTimeEdit_runstarttime.setDateTime(QDateTime(user.time))
+            self.dateTimeEdit_runendtime.setDateTime(QDateTime(user.time))
+            return
+        key_dict = {'autoid': autoid}
+        res = self.EC.get_data(1, False, **key_dict).extra(
+            select={'eqname': 'equipments.eqname'},
+            tables=['equipments'],
+            where=['equipments.eqno=eqrunnotes.eqno']
+        )
         if len(res):
             self.ori_detail = res[0]
             self.label_equipment.setText(
@@ -73,45 +83,54 @@ class EqrunnoteModule(QDialog, Ui_Dialog):
 
     # 修改开始运行时间
     @pyqtSlot(QDateTime)
-    def on_dateTimeEdit_runstarttime_dateTimeChanged(self, qdtime):
-        if qdtime.isValid():
-            try:
-                if qdtime != self.ori_detail.runstarttime:
-                    self.new_detail['runstarttime'] = qdtime.toPyDateTime()
-                    #'yyyy-MM-dd hh:mm:ss')
-                    runtime = int((
-                                              self.dateTimeEdit_runendtime.dateTime().toSecsSinceEpoch() - qdtime.toSecsSinceEpoch()) / 60)
-                    self.set_runtime(runtime)
-                    self.new_detail['runtime'] = runtime
-                else:
-                    try:
-                        del self.new_detail['runstarttime']
-                    except KeyError:
-                        pass
+    def on_dateTimeEdit_runstarttime_dateTimeChanged(self, q_time):
 
-            except AttributeError:
+        if not q_time.isValid():
+            return
+        qdtime = q_time.toPyDateTime().strftime('%Y-%m-%d %H:%M')
+        try:
+            if qdtime != self.ori_detail.runstarttime.\
+                    strftime('%Y-%m-%d %H:%M'):
                 self.new_detail['runstarttime'] = qdtime
+                #'yyyy-MM-dd hh:mm:ss')
+
+            else:
+                try:
+                    del self.new_detail['runstarttime']
+                except KeyError:
+                    pass
+        except AttributeError:
+            self.new_detail['runstarttime'] = qdtime
+        runtime = int(
+            (self.dateTimeEdit_runendtime.dateTime().toSecsSinceEpoch() -
+             q_time.toSecsSinceEpoch()) / 60
+        )
+        self.set_runtime(runtime)
+        self.new_detail['runtime'] = runtime
 
     # 修改结束运行时间
     @pyqtSlot(QDateTime)
-    def on_dateTimeEdit_runendtime_dateTimeChanged(self, qdtime):
-        if qdtime.isValid():
-            try:
-                if qdtime != self.ori_detail.runendtime:
-                    self.new_detail['runendtime'] = qdtime.toPyDateTime()
-                    self.new_detail['runendtime'] = datetime.datetime.now()
-                    runtime = int((
-                                              qdtime.toSecsSinceEpoch() - self.dateTimeEdit_runstarttime.dateTime().toSecsSinceEpoch()) / 60)
-                    self.set_runtime(runtime)
-                    self.new_detail['runtime'] = runtime
-                else:
-                    try:
-                        del self.new_detail['runendtime']
-                    except KeyError:
-                        pass
-
-            except AttributeError:
+    def on_dateTimeEdit_runendtime_dateTimeChanged(self, q_time):
+        if not q_time.isValid():
+            return
+        qdtime = q_time.toPyDateTime().strftime('%Y-%m-%d %H:%M')
+        try:
+            if qdtime != self.ori_detail.runendtime.strftime('%Y-%m-%d %H:%M'):
                 self.new_detail['runendtime'] = qdtime
+
+            else:
+                try:
+                    del self.new_detail['runendtime']
+                except KeyError:
+                    pass
+        except AttributeError:
+            self.new_detail['runendtime'] = qdtime
+        runtime = int(
+            (q_time.toSecsSinceEpoch() - self.dateTimeEdit_runstarttime.
+             dateTime().toSecsSinceEpoch()) / 60
+        )
+        self.set_runtime(runtime)
+        self.new_detail['runtime'] = runtime
 
     # 修改运行时长-day
     @pyqtSlot(str)
@@ -296,10 +315,11 @@ class EqrunnoteModule(QDialog, Ui_Dialog):
     @pyqtSlot()
     def on_pushButton_accept_clicked(self):
         if len(self.new_detail):
-            res = self.EC.update_equip_run_note(self.autoid, **self.new_detail)
-            if res:
-                self.flush_signal.emit()
-                self.close()
+            if self.autoid is None:
+                self.new_detail['eqno'] = self.eqno
+                self.new_detail['status'] = self.status
+            self.EC.update_data(1, **self.new_detail)
+            self.accept()
 
     # 取消
     @pyqtSlot()
